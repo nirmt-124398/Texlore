@@ -1,9 +1,9 @@
 {
   "name": "texlore",
   "version": "1.0.0",
-  "description": "Texlore — Agent-driven LaTeX report writer: constraint parsing, doc ingestion, diagram generation, LaTeX compilation",
+  "description": "Agent-driven LaTeX report writer — constraint parsing, doc ingestion, diagram generation, verification, and compilation",
   "license": "ISC",
-  "author": "",
+  "author": "Texlore",
   "type": "commonjs",
   "scripts": {
     "extract-text": "node scripts/extract-text.js",

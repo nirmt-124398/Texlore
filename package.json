@@ -1,0 +1,20 @@
+{
+  "name": "texlore",
+  "version": "1.0.0",
+  "description": "Texlore — Agent-driven LaTeX report writer: constraint parsing, doc ingestion, diagram generation, LaTeX compilation",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "scripts": {
+    "extract-text": "node scripts/extract-text.js",
+    "setup": "bash scripts/setup.sh",
+    "test": "node --test tests/*.test.js"
+  },
+  "dependencies": {
+    "@mermaid-js/mermaid-cli": "^11.15.0",
+    "jschardet": "^3.1.4",
+    "mammoth": "^1.12.0",
+    "pdf-parse": "^2.4.5",
+    "pdfjs-dist": "^5.7.284"
+  }
+}

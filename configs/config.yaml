@@ -1,0 +1,20 @@
+input:
+  constraints_dir: constraints    # User places constraint files here (PDF, DOCX, TXT, MD, etc.)
+  docs_dir: docs                  # User places documentation/data here
+
+diagrams:
+  tool: mermaid
+  output_format: png      # png | svg
+  theme: default          # default | dark | neutral | forest
+
+output:
+  dir: outputs
+  figures_dir: outputs/figures
+  latex_file: outputs/report.tex
+  pdf_file: outputs/report.pdf
+
+latex:
+  default_citation_style: ieee
+  default_font_size: 11pt
+  default_paper_size: a4paper
+  compile_command: pdflatex

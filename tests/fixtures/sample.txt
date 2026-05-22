@@ -1,0 +1,7 @@
+This is a plain text file for testing text extraction.
+
+It has multiple paragraphs. Each paragraph should be preserved as-is during extraction.
+
+The quick brown fox jumps over the lazy dog.
+Hello world. This is a test sentence with e.g. an abbreviation.
+Numbers like 94.2% accuracy should be preserved exactly.

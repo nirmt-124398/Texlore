@@ -1,0 +1,51 @@
+\documentclass{article}
+\usepackage{graphicx}
+
+\title{Sample Report}
+\author{Texlore}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+
+The system achieved 94.2\% accuracy on the test set using a transformer architecture.
+Training was conducted on an NVIDIA A100 GPU for 48 hours.
+This result surpasses the previous state-of-the-art by 3.1\% (i.e. a significant improvement).
+
+\section{Methodology}
+
+We employed a two-stage pipeline consisting of feature extraction and classification.
+The feature extraction stage uses a pre-trained ResNet-50 backbone.
+Classification is performed by a softmax layer with 10 output classes, e.g. cat, dog, bird.
+
+\section{Results}
+
+Table \ref{tab:results} shows the comparison across baseline models.
+Our model (Ours) achieves 94.2\% accuracy, outperforming all baselines.
+Fig.~\ref{fig:architecture} illustrates the proposed architecture.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\linewidth]{figures/architecture.png}
+\caption{System architecture diagram}
+\label{fig:architecture}
+\end{figure}
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{lcc}
+Model & Accuracy & F1 \\
+CNN & 89.1\% & 0.87 \\
+ResNet & 92.3\% & 0.90 \\
+Ours & 94.2\% & 0.93 \\
+\end{tabular}
+\caption{Accuracy comparison}
+\label{tab:results}
+\end{table}
+
+\section{Conclusion}
+
+We presented a novel approach for image classification.
+Future work includes extending the method to video data.
+\end{document}

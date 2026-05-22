@@ -1,0 +1,7 @@
+node_modules/
+.opencode/node_modules/
+outputs/report.pdf
+outputs/report.log
+outputs/report_compile_attempts.json
+outputs/figures/*.png
+outputs/figures/*.mmd

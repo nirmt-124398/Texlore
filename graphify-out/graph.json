@@ -1,0 +1,2087 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "main.toc",
+      "file_type": "code",
+      "source_file": "docs/main.toc",
+      "source_location": "L1",
+      "id": "docs_main_toc",
+      "community": 17,
+      "norm_label": "main.toc"
+    },
+    {
+      "label": "extract-sentences.js",
+      "file_type": "code",
+      "source_file": "scripts/extract-sentences.js",
+      "source_location": "L1",
+      "id": "scripts_extract_sentences_js",
+      "community": 12,
+      "norm_label": "extract-sentences.js"
+    },
+    {
+      "label": "stripLatex()",
+      "file_type": "code",
+      "source_file": "scripts/extract-sentences.js",
+      "source_location": "L31",
+      "id": "scripts_extract_sentences_striplatex",
+      "community": 12,
+      "norm_label": "striplatex()"
+    },
+    {
+      "label": "splitSentences()",
+      "file_type": "code",
+      "source_file": "scripts/extract-sentences.js",
+      "source_location": "L55",
+      "id": "scripts_extract_sentences_splitsentences",
+      "community": 12,
+      "norm_label": "splitsentences()"
+    },
+    {
+      "label": "extractSections()",
+      "file_type": "code",
+      "source_file": "scripts/extract-sentences.js",
+      "source_location": "L109",
+      "id": "scripts_extract_sentences_extractsections",
+      "community": 12,
+      "norm_label": "extractsections()"
+    },
+    {
+      "label": "extract-text.js",
+      "file_type": "code",
+      "source_file": "scripts/extract-text.js",
+      "source_location": "L1",
+      "id": "scripts_extract_text_js",
+      "community": 5,
+      "norm_label": "extract-text.js"
+    },
+    {
+      "label": "extractPDF_pdftotext()",
+      "file_type": "code",
+      "source_file": "scripts/extract-text.js",
+      "source_location": "L33",
+      "id": "scripts_extract_text_extractpdf_pdftotext",
+      "community": 5,
+      "norm_label": "extractpdf_pdftotext()"
+    },
+    {
+      "label": "extractPDF_pdfjs()",
+      "file_type": "code",
+      "source_file": "scripts/extract-text.js",
+      "source_location": "L49",
+      "id": "scripts_extract_text_extractpdf_pdfjs",
+      "community": 5,
+      "norm_label": "extractpdf_pdfjs()"
+    },
+    {
+      "label": "extractPDF_pdfparse()",
+      "file_type": "code",
+      "source_file": "scripts/extract-text.js",
+      "source_location": "L74",
+      "id": "scripts_extract_text_extractpdf_pdfparse",
+      "community": 5,
+      "norm_label": "extractpdf_pdfparse()"
+    },
+    {
+      "label": "extractPDF()",
+      "file_type": "code",
+      "source_file": "scripts/extract-text.js",
+      "source_location": "L81",
+      "id": "scripts_extract_text_extractpdf",
+      "community": 5,
+      "norm_label": "extractpdf()"
+    },
+    {
+      "label": "extractDOCX()",
+      "file_type": "code",
+      "source_file": "scripts/extract-text.js",
+      "source_location": "L101",
+      "id": "scripts_extract_text_extractdocx",
+      "community": 5,
+      "norm_label": "extractdocx()"
+    },
+    {
+      "label": "extractText()",
+      "file_type": "code",
+      "source_file": "scripts/extract-text.js",
+      "source_location": "L115",
+      "id": "scripts_extract_text_extracttext",
+      "community": 5,
+      "norm_label": "extracttext()"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "scripts/extract-text.js",
+      "source_location": "L167",
+      "id": "scripts_extract_text_main",
+      "community": 5,
+      "norm_label": "main()"
+    },
+    {
+      "label": "extract-sentences.test.js",
+      "file_type": "code",
+      "source_file": "tests/extract-sentences.test.js",
+      "source_location": "L1",
+      "id": "tests_extract_sentences_test_js",
+      "community": 14,
+      "norm_label": "extract-sentences.test.js"
+    },
+    {
+      "label": "run()",
+      "file_type": "code",
+      "source_file": "tests/extract-sentences.test.js",
+      "source_location": "L9",
+      "id": "tests_extract_sentences_test_run",
+      "community": 14,
+      "norm_label": "run()"
+    },
+    {
+      "label": "extract-text.test.js",
+      "file_type": "code",
+      "source_file": "tests/extract-text.test.js",
+      "source_location": "L1",
+      "id": "tests_extract_text_test_js",
+      "community": 15,
+      "norm_label": "extract-text.test.js"
+    },
+    {
+      "label": "run()",
+      "file_type": "code",
+      "source_file": "tests/extract-text.test.js",
+      "source_location": "L9",
+      "id": "tests_extract_text_test_run",
+      "community": 15,
+      "norm_label": "run()"
+    },
+    {
+      "label": "CONTEXT.md",
+      "file_type": "document",
+      "source_file": "CONTEXT.md",
+      "source_location": "L1",
+      "id": "context_md",
+      "community": 7,
+      "norm_label": "context.md"
+    },
+    {
+      "label": "Texlore",
+      "file_type": "document",
+      "source_file": "CONTEXT.md",
+      "source_location": "L1",
+      "id": "texlore_context_texlore",
+      "community": 7,
+      "norm_label": "texlore"
+    },
+    {
+      "label": "Language",
+      "file_type": "document",
+      "source_file": "CONTEXT.md",
+      "source_location": "L5",
+      "id": "texlore_context_language",
+      "community": 7,
+      "norm_label": "language"
+    },
+    {
+      "label": "Relationships",
+      "file_type": "document",
+      "source_file": "CONTEXT.md",
+      "source_location": "L43",
+      "id": "texlore_context_relationships",
+      "community": 7,
+      "norm_label": "relationships"
+    },
+    {
+      "label": "Example dialogue",
+      "file_type": "document",
+      "source_file": "CONTEXT.md",
+      "source_location": "L51",
+      "id": "texlore_context_example_dialogue",
+      "community": 7,
+      "norm_label": "example dialogue"
+    },
+    {
+      "label": "Flagged ambiguities",
+      "file_type": "document",
+      "source_file": "CONTEXT.md",
+      "source_location": "L61",
+      "id": "texlore_context_flagged_ambiguities",
+      "community": 7,
+      "norm_label": "flagged ambiguities"
+    },
+    {
+      "label": "OPENCODE.md",
+      "file_type": "document",
+      "source_file": "OPENCODE.md",
+      "source_location": "L1",
+      "id": "opencode_md",
+      "community": 1,
+      "norm_label": "opencode.md"
+    },
+    {
+      "label": "Texlore \u2014 Agent-Driven LaTeX Report Writer",
+      "file_type": "document",
+      "source_file": "OPENCODE.md",
+      "source_location": "L1",
+      "id": "texlore_opencode_texlore_agent_driven_latex_report_writer",
+      "community": 1,
+      "norm_label": "texlore \u2014 agent-driven latex report writer"
+    },
+    {
+      "label": "What This Project Does",
+      "file_type": "document",
+      "source_file": "OPENCODE.md",
+      "source_location": "L3",
+      "id": "texlore_opencode_what_this_project_does",
+      "community": 1,
+      "norm_label": "what this project does"
+    },
+    {
+      "label": "Quick Start",
+      "file_type": "document",
+      "source_file": "OPENCODE.md",
+      "source_location": "L15",
+      "id": "texlore_opencode_quick_start",
+      "community": 1,
+      "norm_label": "quick start"
+    },
+    {
+      "label": "code:bash (# 1. Install dependencies)",
+      "file_type": "document",
+      "source_file": "OPENCODE.md",
+      "source_location": "L17",
+      "id": "texlore_opencode_codeblock_1",
+      "community": 1,
+      "norm_label": "code:bash (# 1. install dependencies)"
+    },
+    {
+      "label": "Pipeline",
+      "file_type": "document",
+      "source_file": "OPENCODE.md",
+      "source_location": "L33",
+      "id": "texlore_opencode_pipeline",
+      "community": 1,
+      "norm_label": "pipeline"
+    },
+    {
+      "label": "Infrastructure",
+      "file_type": "document",
+      "source_file": "OPENCODE.md",
+      "source_location": "L43",
+      "id": "texlore_opencode_infrastructure",
+      "community": 1,
+      "norm_label": "infrastructure"
+    },
+    {
+      "label": "Key Rules",
+      "file_type": "document",
+      "source_file": "OPENCODE.md",
+      "source_location": "L49",
+      "id": "texlore_opencode_key_rules",
+      "community": 1,
+      "norm_label": "key rules"
+    },
+    {
+      "label": "Directory Structure",
+      "file_type": "document",
+      "source_file": "OPENCODE.md",
+      "source_location": "L57",
+      "id": "texlore_opencode_directory_structure",
+      "community": 1,
+      "norm_label": "directory structure"
+    },
+    {
+      "label": "code:block2 (texlore/)",
+      "file_type": "document",
+      "source_file": "OPENCODE.md",
+      "source_location": "L59",
+      "id": "texlore_opencode_codeblock_2",
+      "community": 1,
+      "norm_label": "code:block2 (texlore/)"
+    },
+    {
+      "label": "Reference Files for Agents",
+      "file_type": "document",
+      "source_file": "OPENCODE.md",
+      "source_location": "L99",
+      "id": "texlore_opencode_reference_files_for_agents",
+      "community": 1,
+      "norm_label": "reference files for agents"
+    },
+    {
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "id": "readme_md",
+      "community": 2,
+      "norm_label": "readme.md"
+    },
+    {
+      "label": "Texlore \u2014 Agent-Driven LaTeX Report Writer",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "id": "texlore_readme_texlore_agent_driven_latex_report_writer",
+      "community": 2,
+      "norm_label": "texlore \u2014 agent-driven latex report writer"
+    },
+    {
+      "label": "What This Project Does",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L3",
+      "id": "texlore_readme_what_this_project_does",
+      "community": 2,
+      "norm_label": "what this project does"
+    },
+    {
+      "label": "Quick Start",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L15",
+      "id": "texlore_readme_quick_start",
+      "community": 2,
+      "norm_label": "quick start"
+    },
+    {
+      "label": "code:bash (# 1. Install dependencies)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L17",
+      "id": "texlore_readme_codeblock_1",
+      "community": 2,
+      "norm_label": "code:bash (# 1. install dependencies)"
+    },
+    {
+      "label": "Pipeline",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L33",
+      "id": "texlore_readme_pipeline",
+      "community": 2,
+      "norm_label": "pipeline"
+    },
+    {
+      "label": "Infrastructure",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L43",
+      "id": "texlore_readme_infrastructure",
+      "community": 2,
+      "norm_label": "infrastructure"
+    },
+    {
+      "label": "Key Rules",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L49",
+      "id": "texlore_readme_key_rules",
+      "community": 2,
+      "norm_label": "key rules"
+    },
+    {
+      "label": "Directory Structure",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L57",
+      "id": "texlore_readme_directory_structure",
+      "community": 2,
+      "norm_label": "directory structure"
+    },
+    {
+      "label": "code:block2 (texlore/)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L59",
+      "id": "texlore_readme_codeblock_2",
+      "community": 2,
+      "norm_label": "code:block2 (texlore/)"
+    },
+    {
+      "label": "Reference Files for Agents",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L99",
+      "id": "texlore_readme_reference_files_for_agents",
+      "community": 2,
+      "norm_label": "reference files for agents"
+    },
+    {
+      "label": "AGENTS.md",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L1",
+      "id": "agents_md",
+      "community": 0,
+      "norm_label": "agents.md"
+    },
+    {
+      "label": "Agent Orchestration \u2014 Texlore LaTeX Report Writer",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L1",
+      "id": "texlore_agents_agent_orchestration_texlore_latex_report_writer",
+      "community": 0,
+      "norm_label": "agent orchestration \u2014 texlore latex report writer"
+    },
+    {
+      "label": "Input Layout",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L3",
+      "id": "texlore_agents_input_layout",
+      "community": 0,
+      "norm_label": "input layout"
+    },
+    {
+      "label": "code:block1 (constraints/    \u2190 Place constraint files here (PDF, DOCX, TX)",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L5",
+      "id": "texlore_agents_codeblock_1",
+      "community": 0,
+      "norm_label": "code:block1 (constraints/    \u2190 place constraint files here (pdf, docx, tx)"
+    },
+    {
+      "label": "Agent Overview",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L10",
+      "id": "texlore_agents_agent_overview",
+      "community": 0,
+      "norm_label": "agent overview"
+    },
+    {
+      "label": "Agent 1: ConstraintParser",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L22",
+      "id": "texlore_agents_agent_1_constraintparser",
+      "community": 0,
+      "norm_label": "agent 1: constraintparser"
+    },
+    {
+      "label": "code:block2 (You are a constraint extraction agent. You receive raw text )",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L27",
+      "id": "texlore_agents_codeblock_2",
+      "community": 0,
+      "norm_label": "code:block2 (you are a constraint extraction agent. you receive raw text )"
+    },
+    {
+      "label": "Agent 2: DocIngester",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L45",
+      "id": "texlore_agents_agent_2_docingester",
+      "community": 0,
+      "norm_label": "agent 2: docingester"
+    },
+    {
+      "label": "code:block3 (You are a document ingestion agent. You receive:)",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L50",
+      "id": "texlore_agents_codeblock_3",
+      "community": 0,
+      "norm_label": "code:block3 (you are a document ingestion agent. you receive:)"
+    },
+    {
+      "label": "Agent 3: DiagramPlanner",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L69",
+      "id": "texlore_agents_agent_3_diagramplanner",
+      "community": 0,
+      "norm_label": "agent 3: diagramplanner"
+    },
+    {
+      "label": "code:block4 (You are a diagram planning agent for project reports. You re)",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L74",
+      "id": "texlore_agents_codeblock_4",
+      "community": 0,
+      "norm_label": "code:block4 (you are a diagram planning agent for project reports. you re)"
+    },
+    {
+      "label": "Agent 4: LaTeXWriter",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L91",
+      "id": "texlore_agents_agent_4_latexwriter",
+      "community": 0,
+      "norm_label": "agent 4: latexwriter"
+    },
+    {
+      "label": "code:block5 (You are a LaTeX report writing agent. You receive:)",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L96",
+      "id": "texlore_agents_codeblock_5",
+      "community": 0,
+      "norm_label": "code:block5 (you are a latex report writing agent. you receive:)"
+    },
+    {
+      "label": "Agent 5: LaTeXFixer",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L119",
+      "id": "texlore_agents_agent_5_latexfixer",
+      "community": 0,
+      "norm_label": "agent 5: latexfixer"
+    },
+    {
+      "label": "code:block6 (You are a LaTeX error fixing agent. You receive:)",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L124",
+      "id": "texlore_agents_codeblock_6",
+      "community": 0,
+      "norm_label": "code:block6 (you are a latex error fixing agent. you receive:)"
+    },
+    {
+      "label": "Pipeline Summary",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L142",
+      "id": "texlore_agents_pipeline_summary",
+      "community": 0,
+      "norm_label": "pipeline summary"
+    },
+    {
+      "label": "code:block7 (/parse-constraints   \u2192  /ingest-docs   \u2192  /generate-diagrams)",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L144",
+      "id": "texlore_agents_codeblock_7",
+      "community": 0,
+      "norm_label": "code:block7 (/parse-constraints   \u2192  /ingest-docs   \u2192  /generate-diagrams)"
+    },
+    {
+      "label": "graphify",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L150",
+      "id": "texlore_agents_graphify",
+      "community": 0,
+      "norm_label": "graphify"
+    },
+    {
+      "label": "0001-use-oracle-for-all-pipeline-agents.md",
+      "file_type": "document",
+      "source_file": "adr/0001-use-oracle-for-all-pipeline-agents.md",
+      "source_location": "L1",
+      "id": "adr_0001_use_oracle_for_all_pipeline_agents_md",
+      "community": 16,
+      "norm_label": "0001-use-oracle-for-all-pipeline-agents.md"
+    },
+    {
+      "label": "Use Oracle-level sub-agents for every pipeline step",
+      "file_type": "document",
+      "source_file": "adr/0001-use-oracle-for-all-pipeline-agents.md",
+      "source_location": "L1",
+      "id": "adr_0001_use_oracle_for_all_pipeline_agents_use_oracle_level_sub_agents_for_every_pipeline_step",
+      "community": 16,
+      "norm_label": "use oracle-level sub-agents for every pipeline step"
+    },
+    {
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "docs/README.md",
+      "source_location": "L1",
+      "id": "docs_readme_md",
+      "community": 8,
+      "norm_label": "readme.md"
+    },
+    {
+      "label": "ClassiRoute2 \u2014 System Architecture \\& Design (Part 2)",
+      "file_type": "document",
+      "source_file": "docs/README.md",
+      "source_location": "L1",
+      "id": "docs_readme_classiroute2_system_architecture_design_part_2",
+      "community": 8,
+      "norm_label": "classiroute2 \u2014 system architecture \\& design (part 2)"
+    },
+    {
+      "label": "Structure",
+      "file_type": "document",
+      "source_file": "docs/README.md",
+      "source_location": "L5",
+      "id": "docs_readme_structure",
+      "community": 8,
+      "norm_label": "structure"
+    },
+    {
+      "label": "Required Figures",
+      "file_type": "document",
+      "source_file": "docs/README.md",
+      "source_location": "L12",
+      "id": "docs_readme_required_figures",
+      "community": 8,
+      "norm_label": "required figures"
+    },
+    {
+      "label": "Compiling",
+      "file_type": "document",
+      "source_file": "docs/README.md",
+      "source_location": "L34",
+      "id": "docs_readme_compiling",
+      "community": 8,
+      "norm_label": "compiling"
+    },
+    {
+      "label": "code:bash (cd reports)",
+      "file_type": "document",
+      "source_file": "docs/README.md",
+      "source_location": "L36",
+      "id": "docs_readme_codeblock_1",
+      "community": 8,
+      "norm_label": "code:bash (cd reports)"
+    },
+    {
+      "label": "constraint-parser.md",
+      "file_type": "document",
+      "source_file": "prompts/constraint-parser.md",
+      "source_location": "L1",
+      "id": "prompts_constraint_parser_md",
+      "community": 9,
+      "norm_label": "constraint-parser.md"
+    },
+    {
+      "label": "ConstraintParser Agent Prompt",
+      "file_type": "document",
+      "source_file": "prompts/constraint-parser.md",
+      "source_location": "L1",
+      "id": "prompts_constraint_parser_constraintparser_agent_prompt",
+      "community": 9,
+      "norm_label": "constraintparser agent prompt"
+    },
+    {
+      "label": "Role",
+      "file_type": "document",
+      "source_file": "prompts/constraint-parser.md",
+      "source_location": "L3",
+      "id": "prompts_constraint_parser_role",
+      "community": 9,
+      "norm_label": "role"
+    },
+    {
+      "label": "System Prompt",
+      "file_type": "document",
+      "source_file": "prompts/constraint-parser.md",
+      "source_location": "L6",
+      "id": "prompts_constraint_parser_system_prompt",
+      "community": 9,
+      "norm_label": "system prompt"
+    },
+    {
+      "label": "Output Schema",
+      "file_type": "document",
+      "source_file": "prompts/constraint-parser.md",
+      "source_location": "L21",
+      "id": "prompts_constraint_parser_output_schema",
+      "community": 9,
+      "norm_label": "output schema"
+    },
+    {
+      "label": "code:json ({)",
+      "file_type": "document",
+      "source_file": "prompts/constraint-parser.md",
+      "source_location": "L22",
+      "id": "prompts_constraint_parser_codeblock_1",
+      "community": 9,
+      "norm_label": "code:json ({)"
+    },
+    {
+      "label": "content-verifier.md",
+      "file_type": "document",
+      "source_file": "prompts/content-verifier.md",
+      "source_location": "L1",
+      "id": "prompts_content_verifier_md",
+      "community": 3,
+      "norm_label": "content-verifier.md"
+    },
+    {
+      "label": "ContentVerifier Agent Prompt",
+      "file_type": "document",
+      "source_file": "prompts/content-verifier.md",
+      "source_location": "L1",
+      "id": "prompts_content_verifier_contentverifier_agent_prompt",
+      "community": 3,
+      "norm_label": "contentverifier agent prompt"
+    },
+    {
+      "label": "Role",
+      "file_type": "document",
+      "source_file": "prompts/content-verifier.md",
+      "source_location": "L3",
+      "id": "prompts_content_verifier_role",
+      "community": 3,
+      "norm_label": "role"
+    },
+    {
+      "label": "System Prompt",
+      "file_type": "document",
+      "source_file": "prompts/content-verifier.md",
+      "source_location": "L6",
+      "id": "prompts_content_verifier_system_prompt",
+      "community": 3,
+      "norm_label": "system prompt"
+    },
+    {
+      "label": "Rules",
+      "file_type": "document",
+      "source_file": "prompts/content-verifier.md",
+      "source_location": "L13",
+      "id": "prompts_content_verifier_rules",
+      "community": 3,
+      "norm_label": "rules"
+    },
+    {
+      "label": "Input Format",
+      "file_type": "document",
+      "source_file": "prompts/content-verifier.md",
+      "source_location": "L21",
+      "id": "prompts_content_verifier_input_format",
+      "community": 3,
+      "norm_label": "input format"
+    },
+    {
+      "label": "code:json ({)",
+      "file_type": "document",
+      "source_file": "prompts/content-verifier.md",
+      "source_location": "L25",
+      "id": "prompts_content_verifier_codeblock_1",
+      "community": 3,
+      "norm_label": "code:json ({)"
+    },
+    {
+      "label": "Output Format",
+      "file_type": "document",
+      "source_file": "prompts/content-verifier.md",
+      "source_location": "L39",
+      "id": "prompts_content_verifier_output_format",
+      "community": 3,
+      "norm_label": "output format"
+    },
+    {
+      "label": "code:json ([)",
+      "file_type": "document",
+      "source_file": "prompts/content-verifier.md",
+      "source_location": "L43",
+      "id": "prompts_content_verifier_codeblock_2",
+      "community": 3,
+      "norm_label": "code:json ([)"
+    },
+    {
+      "label": "Guidelines",
+      "file_type": "document",
+      "source_file": "prompts/content-verifier.md",
+      "source_location": "L66",
+      "id": "prompts_content_verifier_guidelines",
+      "community": 3,
+      "norm_label": "guidelines"
+    },
+    {
+      "label": "diagram-planner.md",
+      "file_type": "document",
+      "source_file": "prompts/diagram-planner.md",
+      "source_location": "L1",
+      "id": "prompts_diagram_planner_md",
+      "community": 10,
+      "norm_label": "diagram-planner.md"
+    },
+    {
+      "label": "DiagramPlanner Agent Prompt",
+      "file_type": "document",
+      "source_file": "prompts/diagram-planner.md",
+      "source_location": "L1",
+      "id": "prompts_diagram_planner_diagramplanner_agent_prompt",
+      "community": 10,
+      "norm_label": "diagramplanner agent prompt"
+    },
+    {
+      "label": "Role",
+      "file_type": "document",
+      "source_file": "prompts/diagram-planner.md",
+      "source_location": "L3",
+      "id": "prompts_diagram_planner_role",
+      "community": 10,
+      "norm_label": "role"
+    },
+    {
+      "label": "System Prompt",
+      "file_type": "document",
+      "source_file": "prompts/diagram-planner.md",
+      "source_location": "L6",
+      "id": "prompts_diagram_planner_system_prompt",
+      "community": 10,
+      "norm_label": "system prompt"
+    },
+    {
+      "label": "code:json ([)",
+      "file_type": "document",
+      "source_file": "prompts/diagram-planner.md",
+      "source_location": "L19",
+      "id": "prompts_diagram_planner_codeblock_1",
+      "community": 10,
+      "norm_label": "code:json ([)"
+    },
+    {
+      "label": "doc-ingester.md",
+      "file_type": "document",
+      "source_file": "prompts/doc-ingester.md",
+      "source_location": "L1",
+      "id": "prompts_doc_ingester_md",
+      "community": 6,
+      "norm_label": "doc-ingester.md"
+    },
+    {
+      "label": "DocIngester Agent Prompt",
+      "file_type": "document",
+      "source_file": "prompts/doc-ingester.md",
+      "source_location": "L1",
+      "id": "prompts_doc_ingester_docingester_agent_prompt",
+      "community": 6,
+      "norm_label": "docingester agent prompt"
+    },
+    {
+      "label": "Role",
+      "file_type": "document",
+      "source_file": "prompts/doc-ingester.md",
+      "source_location": "L3",
+      "id": "prompts_doc_ingester_role",
+      "community": 6,
+      "norm_label": "role"
+    },
+    {
+      "label": "System Prompt",
+      "file_type": "document",
+      "source_file": "prompts/doc-ingester.md",
+      "source_location": "L6",
+      "id": "prompts_doc_ingester_system_prompt",
+      "community": 6,
+      "norm_label": "system prompt"
+    },
+    {
+      "label": "Output Schema",
+      "file_type": "document",
+      "source_file": "prompts/doc-ingester.md",
+      "source_location": "L22",
+      "id": "prompts_doc_ingester_output_schema",
+      "community": 6,
+      "norm_label": "output schema"
+    },
+    {
+      "label": "code:json ({)",
+      "file_type": "document",
+      "source_file": "prompts/doc-ingester.md",
+      "source_location": "L23",
+      "id": "prompts_doc_ingester_codeblock_1",
+      "community": 6,
+      "norm_label": "code:json ({)"
+    },
+    {
+      "label": "ID Convention",
+      "file_type": "document",
+      "source_file": "prompts/doc-ingester.md",
+      "source_location": "L45",
+      "id": "prompts_doc_ingester_id_convention",
+      "community": 6,
+      "norm_label": "id convention"
+    },
+    {
+      "label": "latex-fixer.md",
+      "file_type": "document",
+      "source_file": "prompts/latex-fixer.md",
+      "source_location": "L1",
+      "id": "prompts_latex_fixer_md",
+      "community": 11,
+      "norm_label": "latex-fixer.md"
+    },
+    {
+      "label": "LaTeXFixer Agent Prompt",
+      "file_type": "document",
+      "source_file": "prompts/latex-fixer.md",
+      "source_location": "L1",
+      "id": "prompts_latex_fixer_latexfixer_agent_prompt",
+      "community": 11,
+      "norm_label": "latexfixer agent prompt"
+    },
+    {
+      "label": "Role",
+      "file_type": "document",
+      "source_file": "prompts/latex-fixer.md",
+      "source_location": "L3",
+      "id": "prompts_latex_fixer_role",
+      "community": 11,
+      "norm_label": "role"
+    },
+    {
+      "label": "System Prompt",
+      "file_type": "document",
+      "source_file": "prompts/latex-fixer.md",
+      "source_location": "L6",
+      "id": "prompts_latex_fixer_system_prompt",
+      "community": 11,
+      "norm_label": "system prompt"
+    },
+    {
+      "label": "Common Error \u2192 Fix Reference",
+      "file_type": "document",
+      "source_file": "prompts/latex-fixer.md",
+      "source_location": "L23",
+      "id": "prompts_latex_fixer_common_error_fix_reference",
+      "community": 11,
+      "norm_label": "common error \u2192 fix reference"
+    },
+    {
+      "label": "latex-writer.md",
+      "file_type": "document",
+      "source_file": "prompts/latex-writer.md",
+      "source_location": "L1",
+      "id": "prompts_latex_writer_md",
+      "community": 4,
+      "norm_label": "latex-writer.md"
+    },
+    {
+      "label": "LaTeXWriter Agent Prompt",
+      "file_type": "document",
+      "source_file": "prompts/latex-writer.md",
+      "source_location": "L1",
+      "id": "prompts_latex_writer_latexwriter_agent_prompt",
+      "community": 4,
+      "norm_label": "latexwriter agent prompt"
+    },
+    {
+      "label": "Role",
+      "file_type": "document",
+      "source_file": "prompts/latex-writer.md",
+      "source_location": "L3",
+      "id": "prompts_latex_writer_role",
+      "community": 4,
+      "norm_label": "role"
+    },
+    {
+      "label": "System Prompt",
+      "file_type": "document",
+      "source_file": "prompts/latex-writer.md",
+      "source_location": "L6",
+      "id": "prompts_latex_writer_system_prompt",
+      "community": 4,
+      "norm_label": "system prompt"
+    },
+    {
+      "label": "Content Integrity (CRITICAL)",
+      "file_type": "document",
+      "source_file": "prompts/latex-writer.md",
+      "source_location": "L28",
+      "id": "prompts_latex_writer_content_integrity_critical",
+      "community": 4,
+      "norm_label": "content integrity (critical)"
+    },
+    {
+      "label": "Figure Insertion Template",
+      "file_type": "document",
+      "source_file": "prompts/latex-writer.md",
+      "source_location": "L46",
+      "id": "prompts_latex_writer_figure_insertion_template",
+      "community": 4,
+      "norm_label": "figure insertion template"
+    },
+    {
+      "label": "code:latex (\\begin{figure}[htbp])",
+      "file_type": "document",
+      "source_file": "prompts/latex-writer.md",
+      "source_location": "L47",
+      "id": "prompts_latex_writer_codeblock_1",
+      "community": 4,
+      "norm_label": "code:latex (\\begin{figure}[htbp])"
+    },
+    {
+      "label": "Figure Placeholder (when figure generation failed)",
+      "file_type": "document",
+      "source_file": "prompts/latex-writer.md",
+      "source_location": "L56",
+      "id": "prompts_latex_writer_figure_placeholder_when_figure_generation_failed",
+      "community": 4,
+      "norm_label": "figure placeholder (when figure generation failed)"
+    },
+    {
+      "label": "code:latex (% [FIGURE PLACEHOLDER: <caption>])",
+      "file_type": "document",
+      "source_file": "prompts/latex-writer.md",
+      "source_location": "L57",
+      "id": "prompts_latex_writer_codeblock_2",
+      "community": 4,
+      "norm_label": "code:latex (% [figure placeholder: <caption>])"
+    },
+    {
+      "label": "sample.md",
+      "file_type": "document",
+      "source_file": "tests/fixtures/sample.md",
+      "source_location": "L1",
+      "id": "tests_fixtures_sample_md",
+      "community": 13,
+      "norm_label": "sample.md"
+    },
+    {
+      "label": "Sample Markdown",
+      "file_type": "document",
+      "source_file": "tests/fixtures/sample.md",
+      "source_location": "L1",
+      "id": "fixtures_sample_sample_markdown",
+      "community": 13,
+      "norm_label": "sample markdown"
+    },
+    {
+      "label": "Section 1",
+      "file_type": "document",
+      "source_file": "tests/fixtures/sample.md",
+      "source_location": "L5",
+      "id": "fixtures_sample_section_1",
+      "community": 13,
+      "norm_label": "section 1"
+    },
+    {
+      "label": "Section 2",
+      "file_type": "document",
+      "source_file": "tests/fixtures/sample.md",
+      "source_location": "L10",
+      "id": "fixtures_sample_section_2",
+      "community": 13,
+      "norm_label": "section 2"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/extract-sentences.js",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "scripts_extract_sentences_js",
+      "target": "scripts_extract_sentences_striplatex",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/extract-sentences.js",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "scripts_extract_sentences_js",
+      "target": "scripts_extract_sentences_splitsentences",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/extract-sentences.js",
+      "source_location": "L109",
+      "weight": 1.0,
+      "source": "scripts_extract_sentences_js",
+      "target": "scripts_extract_sentences_extractsections",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/extract-text.js",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "scripts_extract_text_js",
+      "target": "scripts_extract_text_extractpdf_pdftotext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/extract-text.js",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "scripts_extract_text_js",
+      "target": "scripts_extract_text_extractpdf_pdfjs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/extract-text.js",
+      "source_location": "L74",
+      "weight": 1.0,
+      "source": "scripts_extract_text_js",
+      "target": "scripts_extract_text_extractpdf_pdfparse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/extract-text.js",
+      "source_location": "L81",
+      "weight": 1.0,
+      "source": "scripts_extract_text_js",
+      "target": "scripts_extract_text_extractpdf",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/extract-text.js",
+      "source_location": "L101",
+      "weight": 1.0,
+      "source": "scripts_extract_text_js",
+      "target": "scripts_extract_text_extractdocx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/extract-text.js",
+      "source_location": "L115",
+      "weight": 1.0,
+      "source": "scripts_extract_text_js",
+      "target": "scripts_extract_text_extracttext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/extract-text.js",
+      "source_location": "L167",
+      "weight": 1.0,
+      "source": "scripts_extract_text_js",
+      "target": "scripts_extract_text_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/extract-text.js",
+      "source_location": "L83",
+      "weight": 1.0,
+      "source": "scripts_extract_text_extractpdf",
+      "target": "scripts_extract_text_extractpdf_pdftotext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/extract-text.js",
+      "source_location": "L86",
+      "weight": 1.0,
+      "source": "scripts_extract_text_extractpdf",
+      "target": "scripts_extract_text_extractpdf_pdfjs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/extract-text.js",
+      "source_location": "L89",
+      "weight": 1.0,
+      "source": "scripts_extract_text_extractpdf",
+      "target": "scripts_extract_text_extractpdf_pdfparse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/extract-sentences.test.js",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "tests_extract_sentences_test_js",
+      "target": "tests_extract_sentences_test_run",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/extract-text.test.js",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "tests_extract_text_test_js",
+      "target": "tests_extract_text_test_run",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CONTEXT.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "context_md",
+      "target": "texlore_context_texlore",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CONTEXT.md",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "texlore_context_texlore",
+      "target": "texlore_context_language",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CONTEXT.md",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "texlore_context_texlore",
+      "target": "texlore_context_relationships",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CONTEXT.md",
+      "source_location": "L51",
+      "weight": 1.0,
+      "source": "texlore_context_texlore",
+      "target": "texlore_context_example_dialogue",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CONTEXT.md",
+      "source_location": "L61",
+      "weight": 1.0,
+      "source": "texlore_context_texlore",
+      "target": "texlore_context_flagged_ambiguities",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "OPENCODE.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "opencode_md",
+      "target": "texlore_opencode_texlore_agent_driven_latex_report_writer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "OPENCODE.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "texlore_opencode_texlore_agent_driven_latex_report_writer",
+      "target": "texlore_opencode_what_this_project_does",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "OPENCODE.md",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "texlore_opencode_texlore_agent_driven_latex_report_writer",
+      "target": "texlore_opencode_quick_start",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "OPENCODE.md",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "texlore_opencode_texlore_agent_driven_latex_report_writer",
+      "target": "texlore_opencode_pipeline",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "OPENCODE.md",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "texlore_opencode_texlore_agent_driven_latex_report_writer",
+      "target": "texlore_opencode_infrastructure",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "OPENCODE.md",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "texlore_opencode_texlore_agent_driven_latex_report_writer",
+      "target": "texlore_opencode_key_rules",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "OPENCODE.md",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "texlore_opencode_texlore_agent_driven_latex_report_writer",
+      "target": "texlore_opencode_directory_structure",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "OPENCODE.md",
+      "source_location": "L99",
+      "weight": 1.0,
+      "source": "texlore_opencode_texlore_agent_driven_latex_report_writer",
+      "target": "texlore_opencode_reference_files_for_agents",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "OPENCODE.md",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "texlore_opencode_quick_start",
+      "target": "texlore_opencode_codeblock_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "OPENCODE.md",
+      "source_location": "L59",
+      "weight": 1.0,
+      "source": "texlore_opencode_directory_structure",
+      "target": "texlore_opencode_codeblock_2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "readme_md",
+      "target": "texlore_readme_texlore_agent_driven_latex_report_writer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "texlore_readme_texlore_agent_driven_latex_report_writer",
+      "target": "texlore_readme_what_this_project_does",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "texlore_readme_texlore_agent_driven_latex_report_writer",
+      "target": "texlore_readme_quick_start",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "texlore_readme_texlore_agent_driven_latex_report_writer",
+      "target": "texlore_readme_pipeline",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "texlore_readme_texlore_agent_driven_latex_report_writer",
+      "target": "texlore_readme_infrastructure",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "texlore_readme_texlore_agent_driven_latex_report_writer",
+      "target": "texlore_readme_key_rules",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "texlore_readme_texlore_agent_driven_latex_report_writer",
+      "target": "texlore_readme_directory_structure",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L99",
+      "weight": 1.0,
+      "source": "texlore_readme_texlore_agent_driven_latex_report_writer",
+      "target": "texlore_readme_reference_files_for_agents",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "texlore_readme_quick_start",
+      "target": "texlore_readme_codeblock_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L59",
+      "weight": 1.0,
+      "source": "texlore_readme_directory_structure",
+      "target": "texlore_readme_codeblock_2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "agents_md",
+      "target": "texlore_agents_agent_orchestration_texlore_latex_report_writer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "texlore_agents_agent_orchestration_texlore_latex_report_writer",
+      "target": "texlore_agents_input_layout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "texlore_agents_agent_orchestration_texlore_latex_report_writer",
+      "target": "texlore_agents_agent_overview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "texlore_agents_agent_orchestration_texlore_latex_report_writer",
+      "target": "texlore_agents_agent_1_constraintparser",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L45",
+      "weight": 1.0,
+      "source": "texlore_agents_agent_orchestration_texlore_latex_report_writer",
+      "target": "texlore_agents_agent_2_docingester",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L69",
+      "weight": 1.0,
+      "source": "texlore_agents_agent_orchestration_texlore_latex_report_writer",
+      "target": "texlore_agents_agent_3_diagramplanner",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L91",
+      "weight": 1.0,
+      "source": "texlore_agents_agent_orchestration_texlore_latex_report_writer",
+      "target": "texlore_agents_agent_4_latexwriter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L119",
+      "weight": 1.0,
+      "source": "texlore_agents_agent_orchestration_texlore_latex_report_writer",
+      "target": "texlore_agents_agent_5_latexfixer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L142",
+      "weight": 1.0,
+      "source": "texlore_agents_agent_orchestration_texlore_latex_report_writer",
+      "target": "texlore_agents_pipeline_summary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L150",
+      "weight": 1.0,
+      "source": "texlore_agents_agent_orchestration_texlore_latex_report_writer",
+      "target": "texlore_agents_graphify",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "texlore_agents_input_layout",
+      "target": "texlore_agents_codeblock_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "texlore_agents_agent_1_constraintparser",
+      "target": "texlore_agents_codeblock_2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "texlore_agents_agent_2_docingester",
+      "target": "texlore_agents_codeblock_3",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L74",
+      "weight": 1.0,
+      "source": "texlore_agents_agent_3_diagramplanner",
+      "target": "texlore_agents_codeblock_4",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L96",
+      "weight": 1.0,
+      "source": "texlore_agents_agent_4_latexwriter",
+      "target": "texlore_agents_codeblock_5",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L124",
+      "weight": 1.0,
+      "source": "texlore_agents_agent_5_latexfixer",
+      "target": "texlore_agents_codeblock_6",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L144",
+      "weight": 1.0,
+      "source": "texlore_agents_pipeline_summary",
+      "target": "texlore_agents_codeblock_7",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "adr/0001-use-oracle-for-all-pipeline-agents.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "adr_0001_use_oracle_for_all_pipeline_agents_md",
+      "target": "adr_0001_use_oracle_for_all_pipeline_agents_use_oracle_level_sub_agents_for_every_pipeline_step",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/README.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "docs_readme_md",
+      "target": "docs_readme_classiroute2_system_architecture_design_part_2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/README.md",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "docs_readme_classiroute2_system_architecture_design_part_2",
+      "target": "docs_readme_structure",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/README.md",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "docs_readme_classiroute2_system_architecture_design_part_2",
+      "target": "docs_readme_required_figures",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/README.md",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "docs_readme_classiroute2_system_architecture_design_part_2",
+      "target": "docs_readme_compiling",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/README.md",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "docs_readme_compiling",
+      "target": "docs_readme_codeblock_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompts/constraint-parser.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "prompts_constraint_parser_md",
+      "target": "prompts_constraint_parser_constraintparser_agent_prompt",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompts/constraint-parser.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "prompts_constraint_parser_constraintparser_agent_prompt",
+      "target": "prompts_constraint_parser_role",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompts/constraint-parser.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "prompts_constraint_parser_constraintparser_agent_prompt",
+      "target": "prompts_constraint_parser_system_prompt",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompts/constraint-parser.md",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "prompts_constraint_parser_constraintparser_agent_prompt",
+      "target": "prompts_constraint_parser_output_schema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompts/constraint-parser.md",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "prompts_constraint_parser_output_schema",
+      "target": "prompts_constraint_parser_codeblock_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompts/content-verifier.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "prompts_content_verifier_md",
+      "target": "prompts_content_verifier_contentverifier_agent_prompt",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompts/content-verifier.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "prompts_content_verifier_contentverifier_agent_prompt",
+      "target": "prompts_content_verifier_role",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompts/content-verifier.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "prompts_content_verifier_contentverifier_agent_prompt",
+      "target": "prompts_content_verifier_system_prompt",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompts/content-verifier.md",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "prompts_content_verifier_contentverifier_agent_prompt",
+      "target": "prompts_content_verifier_rules",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompts/content-verifier.md",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "prompts_content_verifier_contentverifier_agent_prompt",
+      "target": "prompts_content_verifier_input_format",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompts/content-verifier.md",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "prompts_content_verifier_contentverifier_agent_prompt",
+      "target": "prompts_content_verifier_output_format",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompts/content-verifier.md",
+      "source_location": "L66",
+      "weight": 1.0,
+      "source": "prompts_content_verifier_contentverifier_agent_prompt",
+      "target": "prompts_content_verifier_guidelines",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompts/content-verifier.md",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "prompts_content_verifier_input_format",
+      "target": "prompts_content_verifier_codeblock_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompts/content-verifier.md",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "prompts_content_verifier_output_format",
+      "target": "prompts_content_verifier_codeblock_2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompts/diagram-planner.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "prompts_diagram_planner_md",
+      "target": "prompts_diagram_planner_diagramplanner_agent_prompt",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompts/diagram-planner.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "prompts_diagram_planner_diagramplanner_agent_prompt",
+      "target": "prompts_diagram_planner_role",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompts/diagram-planner.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "prompts_diagram_planner_diagramplanner_agent_prompt",
+      "target": "prompts_diagram_planner_system_prompt",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompts/diagram-planner.md",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "prompts_diagram_planner_system_prompt",
+      "target": "prompts_diagram_planner_codeblock_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompts/doc-ingester.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "prompts_doc_ingester_md",
+      "target": "prompts_doc_ingester_docingester_agent_prompt",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompts/doc-ingester.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "prompts_doc_ingester_docingester_agent_prompt",
+      "target": "prompts_doc_ingester_role",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompts/doc-ingester.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "prompts_doc_ingester_docingester_agent_prompt",
+      "target": "prompts_doc_ingester_system_prompt",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompts/doc-ingester.md",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "prompts_doc_ingester_docingester_agent_prompt",
+      "target": "prompts_doc_ingester_output_schema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompts/doc-ingester.md",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "prompts_doc_ingester_output_schema",
+      "target": "prompts_doc_ingester_codeblock_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompts/doc-ingester.md",
+      "source_location": "L45",
+      "weight": 1.0,
+      "source": "prompts_doc_ingester_output_schema",
+      "target": "prompts_doc_ingester_id_convention",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompts/latex-fixer.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "prompts_latex_fixer_md",
+      "target": "prompts_latex_fixer_latexfixer_agent_prompt",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompts/latex-fixer.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "prompts_latex_fixer_latexfixer_agent_prompt",
+      "target": "prompts_latex_fixer_role",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompts/latex-fixer.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "prompts_latex_fixer_latexfixer_agent_prompt",
+      "target": "prompts_latex_fixer_system_prompt",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompts/latex-fixer.md",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "prompts_latex_fixer_latexfixer_agent_prompt",
+      "target": "prompts_latex_fixer_common_error_fix_reference",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompts/latex-writer.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "prompts_latex_writer_md",
+      "target": "prompts_latex_writer_latexwriter_agent_prompt",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompts/latex-writer.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "prompts_latex_writer_latexwriter_agent_prompt",
+      "target": "prompts_latex_writer_role",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompts/latex-writer.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "prompts_latex_writer_latexwriter_agent_prompt",
+      "target": "prompts_latex_writer_system_prompt",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompts/latex-writer.md",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "prompts_latex_writer_latexwriter_agent_prompt",
+      "target": "prompts_latex_writer_content_integrity_critical",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompts/latex-writer.md",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "prompts_latex_writer_latexwriter_agent_prompt",
+      "target": "prompts_latex_writer_figure_insertion_template",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompts/latex-writer.md",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "prompts_latex_writer_latexwriter_agent_prompt",
+      "target": "prompts_latex_writer_figure_placeholder_when_figure_generation_failed",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompts/latex-writer.md",
+      "source_location": "L47",
+      "weight": 1.0,
+      "source": "prompts_latex_writer_figure_insertion_template",
+      "target": "prompts_latex_writer_codeblock_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompts/latex-writer.md",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "prompts_latex_writer_figure_placeholder_when_figure_generation_failed",
+      "target": "prompts_latex_writer_codeblock_2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/fixtures/sample.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "tests_fixtures_sample_md",
+      "target": "fixtures_sample_sample_markdown",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/fixtures/sample.md",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "fixtures_sample_sample_markdown",
+      "target": "fixtures_sample_section_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/fixtures/sample.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "fixtures_sample_sample_markdown",
+      "target": "fixtures_sample_section_2",
+      "confidence_score": 1.0
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "8651c2252770fdbb5f7ce165eee947a711fffd85"
+}

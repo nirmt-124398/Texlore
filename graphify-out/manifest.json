@@ -1,0 +1,158 @@
+{
+  "/home/nirmit/Desktop/Usable/Texlore/docs/main.toc": {
+    "mtime": 1779486047.4958475,
+    "hash": "195a1c1872777c57838df1aae5aae7fb"
+  },
+  "/home/nirmit/Desktop/Usable/Texlore/scripts/extract-sentences.js": {
+    "mtime": 1779486047.4970741,
+    "hash": "7f62f038aab484f45d4a7cad7936e518"
+  },
+  "/home/nirmit/Desktop/Usable/Texlore/scripts/extract-text.js": {
+    "mtime": 1779486047.4971647,
+    "hash": "1cf6ccea42bb517df3cf7d25f29aac90"
+  },
+  "/home/nirmit/Desktop/Usable/Texlore/tests/extract-sentences.test.js": {
+    "mtime": 1779486047.49726,
+    "hash": "5d4c42778b7046d5ba40cc857bcc2687"
+  },
+  "/home/nirmit/Desktop/Usable/Texlore/tests/extract-text.test.js": {
+    "mtime": 1779486047.4974298,
+    "hash": "0fe74eae30e58fd214982f1556081dfa"
+  },
+  "/home/nirmit/Desktop/Usable/Texlore/CONTEXT.md": {
+    "mtime": 1779486047.489075,
+    "hash": "e202bab2fef79a18f4bd6e3214dcb333"
+  },
+  "/home/nirmit/Desktop/Usable/Texlore/OPENCODE.md": {
+    "mtime": 1779486047.4891553,
+    "hash": "6f681bedb81d1e9e84783ce08c41ad9a"
+  },
+  "/home/nirmit/Desktop/Usable/Texlore/README.md": {
+    "mtime": 1779486047.4891553,
+    "hash": "6f681bedb81d1e9e84783ce08c41ad9a"
+  },
+  "/home/nirmit/Desktop/Usable/Texlore/AGENTS.md": {
+    "mtime": 1779563023.8272285,
+    "hash": "dd73fd455d475a454989eef5f7f0c43a"
+  },
+  "/home/nirmit/Desktop/Usable/Texlore/adr/0001-use-oracle-for-all-pipeline-agents.md": {
+    "mtime": 1779486047.4891553,
+    "hash": "8db6ab6720999a2f764aa7051a14867e"
+  },
+  "/home/nirmit/Desktop/Usable/Texlore/configs/config.yaml": {
+    "mtime": 1779486047.4893842,
+    "hash": "d23b07f271ed3ffe3a45f4a24fb621c4"
+  },
+  "/home/nirmit/Desktop/Usable/Texlore/docs/README.md": {
+    "mtime": 1779486047.4896848,
+    "hash": "1d891e8bd4a1a1bbd7cfe1cd99cbe794"
+  },
+  "/home/nirmit/Desktop/Usable/Texlore/prompts/constraint-parser.md": {
+    "mtime": 1779486047.4965417,
+    "hash": "f39713ca7b66e4d7a7eda415ae70014d"
+  },
+  "/home/nirmit/Desktop/Usable/Texlore/prompts/content-verifier.md": {
+    "mtime": 1779486047.496624,
+    "hash": "75928be5b1a4d964aa8929718ecbbce3"
+  },
+  "/home/nirmit/Desktop/Usable/Texlore/prompts/diagram-planner.md": {
+    "mtime": 1779486047.4967234,
+    "hash": "d512d91c3423ec15375ad1abab327da0"
+  },
+  "/home/nirmit/Desktop/Usable/Texlore/prompts/doc-ingester.md": {
+    "mtime": 1779486047.4967985,
+    "hash": "ef157963834c02320ec28daf3f0342a6"
+  },
+  "/home/nirmit/Desktop/Usable/Texlore/prompts/latex-fixer.md": {
+    "mtime": 1779486047.49687,
+    "hash": "8a79cb259743b58f909943ce0c6d530d"
+  },
+  "/home/nirmit/Desktop/Usable/Texlore/prompts/latex-writer.md": {
+    "mtime": 1779486047.4969559,
+    "hash": "2c7a20423bb8f7502b43c2645696a2ab"
+  },
+  "/home/nirmit/Desktop/Usable/Texlore/tests/fixtures/sample.md": {
+    "mtime": 1779486047.4975123,
+    "hash": "94267ef779c907287f46f9a1adece4ff"
+  },
+  "/home/nirmit/Desktop/Usable/Texlore/tests/fixtures/sample.txt": {
+    "mtime": 1779486047.497635,
+    "hash": "4dfb0515d237e0dd302213fbf73d5f07"
+  },
+  "/home/nirmit/Desktop/Usable/Texlore/constraints/TR-104 Report Guidelines for Synopsis.pdf": {
+    "mtime": 1779442502.8986204,
+    "hash": "317ae29b87c93bcb78c95148492f74e0"
+  },
+  "/home/nirmit/Desktop/Usable/Texlore/constraints/TR104 Mid Term File Format.pdf": {
+    "mtime": 1779442513.785439,
+    "hash": "efc38d30315178f0c45790f28df50868"
+  },
+  "/home/nirmit/Desktop/Usable/Texlore/constraints/TR104 Report File.pdf": {
+    "mtime": 1779442508.7617505,
+    "hash": "269dce48f5922897d806c3c6dcbdd509"
+  },
+  "/home/nirmit/Desktop/Usable/Texlore/docs/main.pdf": {
+    "mtime": 1779486047.4951851,
+    "hash": "54c9b3fbca95402b2f7b4f75c4c6979f"
+  },
+  "/home/nirmit/Desktop/Usable/Texlore/docs/gndec_logo.png": {
+    "mtime": 1779486047.4928055,
+    "hash": "5444c89741466935aa7ff1faebebc494"
+  },
+  "/home/nirmit/Desktop/Usable/Texlore/docs/figures/auth_flow.png": {
+    "mtime": 1779486047.489768,
+    "hash": "4546f9c07979659aa3bb9af169dcfdce"
+  },
+  "/home/nirmit/Desktop/Usable/Texlore/docs/figures/db_keys.png": {
+    "mtime": 1779486047.4898295,
+    "hash": "0367ecfd0584e766b5eff0386d916fa3"
+  },
+  "/home/nirmit/Desktop/Usable/Texlore/docs/figures/db_logs.png": {
+    "mtime": 1779486047.489882,
+    "hash": "d33ace9d6edc0f376b937078e51d9c7f"
+  },
+  "/home/nirmit/Desktop/Usable/Texlore/docs/figures/db_users.png": {
+    "mtime": 1779486047.4899347,
+    "hash": "82eb4ecad0096dce35121de377b263a4"
+  },
+  "/home/nirmit/Desktop/Usable/Texlore/docs/figures/deployment_diagram.png": {
+    "mtime": 1779486047.4899974,
+    "hash": "85c1c27abc62c7b00da992fc9f3b1fad"
+  },
+  "/home/nirmit/Desktop/Usable/Texlore/docs/figures/er_diagram.png": {
+    "mtime": 1779486047.490054,
+    "hash": "06b3aa9b36b565606bda92440d18074d"
+  },
+  "/home/nirmit/Desktop/Usable/Texlore/docs/figures/provider_adapter_uml.png": {
+    "mtime": 1779486047.4901137,
+    "hash": "12c5ffed624de9c13ed7878a545d96bb"
+  },
+  "/home/nirmit/Desktop/Usable/Texlore/docs/figures/routing_pipeline.png": {
+    "mtime": 1779486047.490171,
+    "hash": "5ca46fd339e24da149bae0be0c02f347"
+  },
+  "/home/nirmit/Desktop/Usable/Texlore/docs/figures/screenshot_analytics.png": {
+    "mtime": 1779486047.4902315,
+    "hash": "76b7ff73f79078bc6d0d75da848cfec7"
+  },
+  "/home/nirmit/Desktop/Usable/Texlore/docs/figures/screenshot_analytics2.png": {
+    "mtime": 1779486047.4902928,
+    "hash": "113405edede09d2a1c8ec73d5b2d6a41"
+  },
+  "/home/nirmit/Desktop/Usable/Texlore/docs/figures/screenshot_chat.png": {
+    "mtime": 1779486047.4903603,
+    "hash": "e0480e6f68f33c3d749a32ef4107bca4"
+  },
+  "/home/nirmit/Desktop/Usable/Texlore/docs/figures/screenshot_dashboard.png": {
+    "mtime": 1779486047.4904225,
+    "hash": "2bd7eaf252d34aee6ad58d4fc9a2ad9d"
+  },
+  "/home/nirmit/Desktop/Usable/Texlore/docs/figures/screenshot_keys.png": {
+    "mtime": 1779486047.490496,
+    "hash": "e42fd21c07e1e674c882b9c8af7c28da"
+  },
+  "/home/nirmit/Desktop/Usable/Texlore/docs/figures/system_architecture.png": {
+    "mtime": 1779486047.4905558,
+    "hash": "72cf980066215e3149300d0a8143a808"
+  }
+}

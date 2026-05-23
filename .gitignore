@@ -1,13 +1,26 @@
+# Dependencies
 node_modules/
 .opencode/node_modules/
+
+# Build & Tooling Artifacts
 outputs/
 constraints/
-.sisyphus/
 graphify-out/cache/
-*.log
-*.aux
-*.pdf
-*.toc
-*.lof
-*.lot
-*.out
+bui4/
+build/
+bin/
+dist/
+
+# System & Session Files (Fixed typo)
+.sisyphus/
+.DS_Store
+
+# LaTeX Temporary Files
+docs/*.aux
+docs/*.log
+docs/*.toc
+docs/*.lof
+docs/*.lot
+docs/*.out
+docs/*.pdf
+docs/missfont.log

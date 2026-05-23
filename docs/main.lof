@@ -1,0 +1,21 @@
+\babel@toc {english}{}\relax 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces ClassiRoute2 System Architecture Overview}}{12}{figure.caption.6}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Deployment Diagram Showing Component Distribution Across Services}}{22}{figure.caption.7}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Prompt Routing Pipeline — From Request Ingestion to Provider Dispatch}}{23}{figure.caption.8}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces UML Class Diagram for the Provider Adapter Pattern}}{24}{figure.caption.9}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Entity-Relationship Diagram for the ClassiRoute2 Database}}{27}{figure.caption.10}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Authentication and Authorisation Flow Diagram}}{31}{figure.caption.15}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Dashboard Page Showing Analytics Summary and Tier Distribution}}{42}{figure.caption.20}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Chat Playground Showing Streaming Response with Routing Metadata}}{43}{figure.caption.21}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces API Keys Management Page with Create Dialog}}{43}{figure.caption.22}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Detailed Analytics View with Request Logs and Daily Trends}}{44}{figure.caption.23}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Analytics Charts Showing Cost Savings and Tier Utilisation}}{44}{figure.caption.24}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Users Table in PostgreSQL}}{45}{figure.caption.25}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Virtual Keys Table Showing Encrypted API Key Storage}}{46}{figure.caption.26}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Request Logs Table Capturing Per-Request Routing and Usage Data}}{46}{figure.caption.27}%
+\addvspace {10\p@ }

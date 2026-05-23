@@ -1,0 +1,1214 @@
+% ─────────────────────────────────────────────────────────────
+%  ClassiRoute2 — ML-Powered LLM Routing Gateway
+%  TR-104 B.Tech Project Report
+%  Guru Nanak Dev Engineering College, Ludhiana
+%  Department of Computer Science and Engineering
+% ─────────────────────────────────────────────────────────────
+
+\documentclass[12pt,a4paper]{report}
+
+% ── Packages ─────────────────────────────────────────────────
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}                   % Latin Modern — T1-encoded, fully installed
+\usepackage[english]{babel}
+\usepackage[margin=1.25cm, left=3.5cm, top=2.5cm, bottom=1.25cm]{geometry}
+\usepackage{setspace}
+\doublespacing
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage[table]{xcolor}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\setlength{\headheight}{14.5pt}
+\addtolength{\topmargin}{-2.5pt}
+\usepackage{titlesec}
+\usepackage{cite}
+\usepackage{array}
+\usepackage{subcaption}
+\usepackage{url}
+
+% ── Hyperlink setup ─────────────────────────────────────────
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=blue,
+    pdfauthor={ClassiRoute2 Team},
+    pdftitle={ClassiRoute2 - ML-Powered LLM Routing Gateway}
+}
+
+% ── Listing style for code ──────────────────────────────────
+\definecolor{codebg}{RGB}{245,245,245}
+\definecolor{codeframe}{RGB}{200,200,200}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{codebg},
+    frame=single,
+    rulecolor=\color{codeframe},
+    basicstyle=\footnotesize\ttfamily,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=4,
+    language=Python,
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!50!black},
+    stringstyle=\color{red!70!black},
+}
+\lstset{style=mystyle}
+
+% ── Section heading styles ──────────────────────────────────
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries\centering\fontsize{14pt}{16pt}\selectfont}
+  {\chaptertitlename\ \thechapter}{12pt}{}
+\titlespacing*{\chapter}{0pt}{-20pt}{10pt}
+
+\titleformat{\section}
+  {\normalfont\bfseries\fontsize{14pt}{16pt}\selectfont}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\normalsize\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\bfseries\itshape}{\thesubsubsection}{1em}{}
+
+% ── Caption setup ───────────────────────────────────────────
+\captionsetup[figure]{labelfont=bf, textfont=normal, position=bottom}
+\captionsetup[table]{labelfont=bf, textfont=normal, position=top}
+
+% ── Page style ──────────────────────────────────────────────
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ─────────────────────────────────────────────────────────────
+\begin{document}
+
+% ═════════════════════════════════════════════════════════════
+%  TITLE PAGE
+% ═════════════════════════════════════════════════════════════
+\begin{titlepage}
+\begin{center}
+
+\vspace*{2cm}
+
+{\fontsize{24pt}{28pt}\selectfont\bfseries
+ClassiRoute2 \\[0.3cm]
+}
+
+\vspace{0.5cm}
+
+{\fontsize{14pt}{16pt}\selectfont\bfseries
+A Technical Report \\[0.3cm]
+}
+
+{\fontsize{12pt}{14pt}\selectfont
+of Training 104 \\[0.3cm]
+}
+
+\vspace{1cm}
+
+{\fontsize{14pt}{16pt}\selectfont\bfseries
+BACHELOR OF TECHNOLOGY \\[0.3cm]
+}
+
+{\fontsize{14pt}{16pt}\selectfont
+Computer Science and Engineering \\[0.3cm]
+}
+
+\vspace{1.5cm}
+
+{\fontsize{14pt}{16pt}\selectfont\bfseries
+Submitted By: \\[0.3cm]
+}
+
+{\fontsize{14pt}{16pt}\selectfont
+[Student Name] \\[0.2cm]
+University Roll No.: [Roll No.] \\[0.2cm]
+Class Roll No.: [Class Roll No.] \\[0.2cm]
+}
+
+\vspace{1cm}
+
+{\fontsize{14pt}{16pt}\selectfont\bfseries
+Under the Guidance of \\[0.3cm]
+}
+{\fontsize{14pt}{16pt}\selectfont
+TnP Coordinators \\[0.3cm]
+}
+
+\vspace{1.5cm}
+
+\includegraphics[width=3cm]{gndec_logo.png} \\[0.5cm]
+
+{\fontsize{16pt}{18pt}\selectfont\bfseries
+Department of Computer Science and Engineering \\[0.2cm]
+GURU NANAK DEV ENGINEERING COLLEGE, \\[0.2cm]
+LUDHIANA \\[0.2cm]
+}
+
+\vfill
+{\fontsize{12pt}{14pt}\selectfont May 2026}
+
+\end{center}
+\end{titlepage}
+
+% ═════════════════════════════════════════════════════════════
+%  ABSTRACT
+% ═════════════════════════════════════════════════════════════
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+
+ClassiRoute2 is an ML-powered, multi-provider LLM (Large Language Model) routing gateway that intelligently classifies and dispatches user prompts to the most cost-effective model tier. The system addresses a fundamental inefficiency in LLM application development: the one-size-fits-all approach to model selection. Production LLM applications typically commit to a single model provider, paying premium rates for simple queries while risking accuracy loss on complex tasks.
+
+ClassiRoute2 solves this by introducing a three-tier model architecture---Weak, Mid, and Strong---where each tier can be configured with a different model provider (OpenAI-compatible endpoints, Anthropic Claude, or Google Gemini) and a different model variant (e.g., GPT-4o-mini for weak, Claude-3-Haiku for mid, Gemini-2.0-Pro for strong). An XGBoost-based classifier analyses incoming prompts across 22 linguistic and structural features to determine the optimal tier assignment. A regressor estimates per-prompt difficulty, and a confidence threshold mechanism ensures safe fallback to higher tiers when the classifier is uncertain.
+
+The system exposes an OpenAI-compatible \texttt{/v1/chat/completions} endpoint, enabling drop-in replacement for existing OpenAI SDK integrations. A React-based web dashboard provides user authentication, virtual key management, an interactive playground, and comprehensive analytics visualising cost savings, latency distribution, tier utilisation, and success rates. A cascading fallback mechanism ensures robustness: if a provider for the assigned tier fails, the system automatically retries with progressively weaker (and cheaper) tiers without exposing errors to the end user.
+
+The frontend is built with React 19, TypeScript, Vite, Tailwind CSS v4, and Radix UI primitives, deployed on Vercel. The backend is built with Python 3.13, FastAPI, SQLAlchemy (async), and PostgreSQL, deployed via Docker on Render. ML models are trained using scikit-learn and XGBoost on synthetically generated prompt corpora.
+
+% ═════════════════════════════════════════════════════════════
+%  ACKNOWLEDGEMENT
+% ═════════════════════════════════════════════════════════════
+\chapter*{Acknowledgement}
+\addcontentsline{toc}{chapter}{Acknowledgement}
+
+We would like to express our sincere gratitude to the Training and Placement (TnP) coordinators of Guru Nanak Dev Engineering College, Ludhiana, for their invaluable guidance and support throughout the development of this project. Their insights and encouragement have been instrumental in shaping the direction and quality of this work.
+
+We extend our heartfelt thanks to the faculty members of the Department of Computer Science and Engineering for providing a strong academic foundation and the necessary infrastructure that enabled the successful completion of this project.
+
+We are also grateful to our peers and colleagues whose constructive feedback during the development and testing phases helped refine the system's design and user experience.
+
+% ═════════════════════════════════════════════════════════════
+%  LIST OF FIGURES
+% ═════════════════════════════════════════════════════════════
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+
+% ═════════════════════════════════════════════════════════════
+%  LIST OF TABLES
+% ═════════════════════════════════════════════════════════════
+\listoftables
+\addcontentsline{toc}{chapter}{List of Tables}
+
+% ═════════════════════════════════════════════════════════════
+%  TABLE OF CONTENTS
+% ═════════════════════════════════════════════════════════════
+\tableofcontents
+\addcontentsline{toc}{chapter}{Table of Contents}
+
+\clearpage
+
+% ═════════════════════════════════════════════════════════════
+%  CHAPTER 1: INTRODUCTION
+% ═════════════════════════════════════════════════════════════
+\chapter{Introduction}
+
+\section{Introduction to Project}
+
+ClassiRoute2 is a self-hosted, ML-powered API gateway that sits between end-user applications and multiple Large Language Model (LLM) providers. Its primary function is to analyse incoming text prompts, classify them by complexity, and route them to the most appropriate model tier---thereby optimising the trade-off between response quality and operational cost.
+
+The project was conceived in response to a growing problem in the LLM application ecosystem: as the number of available models expands across providers like OpenAI, Anthropic, and Google, developers face a combinatorial explosion of choices. Committing to a single model for all queries is suboptimal---simple tasks (e.g., summarisation, translation, simple Q\&A) are over-served by frontier models at high cost, while complex tasks (e.g., code generation, multi-step reasoning, architectural design) require the most capable (and expensive) models available.
+
+ClassiRoute2 introduces a three-tier abstraction layer---Weak, Mid, Strong---that lets developers configure exactly which model from which provider powers each tier. An ML classifier built on XGBoost \cite{chen2016xgboost} analyses prompt text across 22 linguistic and structural features to predict the optimal tier. A regressor estimates a continuous difficulty score, and a confidence-threshold safety mechanism ensures that ambiguous prompts are automatically escalated to higher tiers.
+
+The system exposes a single OpenAI-compatible \texttt{/v1/chat/completions} endpoint, making it a drop-in replacement for any application already using the OpenAI SDK. This compatibility-by-design eliminates migration friction.
+
+\section{Project Category}
+
+ClassiRoute2 falls under the \textbf{Application Development} category. It is a full-stack web application with an embedded machine learning component that serves as a practical, deployable tool for developers and organisations using LLM APIs. The project spans the following domains:
+
+\begin{itemize}[nosep]
+    \item \textbf{Full-Stack Web Development:} React 19 frontend (TypeScript, Vite, Tailwind CSS v4) and Python 3.13 backend (FastAPI, SQLAlchemy, PostgreSQL).
+    \item \textbf{Machine Learning:} Supervised classification (XGBoost) for prompt tier assignment and regression for difficulty estimation, trained on synthetic prompt corpora.
+    \item \textbf{API Gateway Design:} OpenAI-compatible REST endpoints, provider abstraction layer with adapter pattern, rate limiting, caching, and telemetry.
+    \item \textbf{DevOps \& Deployment:} Docker Compose for local development, Render for backend hosting, Vercel for frontend hosting, automated Alembic database migrations.
+\end{itemize}
+
+\section{Problem Formulation}
+
+Organisations integrating LLMs into their products face three interconnected challenges:
+
+\begin{enumerate}[nosep]
+    \item \textbf{Cost Inefficiency:} Frontier models (GPT-4o, Claude-3.5 Sonnet, Gemini-2.0-Pro) charge \$2--\$15 per million input tokens. A chat application handling millions of queries---where 70\%+ are simple retrievals or short-form Q\&A---pays premium rates for trivial work.
+    \item \textbf{Provider Lock-In:} Building directly against a single provider's SDK couples the application to that provider's API semantics, error handling, and rate limits. Migrating to a different provider or model requires rewiring the entire integration layer.
+    \item \textbf{No Intelligent Routing:} Existing solutions either use a fixed model for all traffic (wasteful) or require the developer to manually implement routing logic (error-prone and inflexible). No widely adopted open-source solution uses ML to automate tier assignment dynamically.
+\end{enumerate}
+
+ClassiRoute2 addresses all three challenges: it reduces costs by routing simple queries to cheap models, eliminates provider lock-in via a uniform adapter interface, and automates routing decisions using ML classification.
+
+\section{Identification/Recognition of Need}
+
+The need for intelligent LLM routing emerged from analysing usage patterns of production LLM applications. A typical AI-powered customer support chatbot, for example, handles:
+
+\begin{itemize}[nosep]
+    \item \textbf{Simple queries (60--70\% of traffic):} Password reset instructions, business hours, order status checks. These require basic language understanding and can be handled by small, cheap models.
+    \item \textbf{Moderate queries (20--25\%):} Product comparisons, troubleshooting steps, policy clarifications. These benefit from mid-tier models with better reasoning.
+    \item \textbf{Complex queries (5--10\%):} Contract analysis, code review, multi-step workflow planning. These demand frontier-model capability.
+\end{itemize}
+
+Without intelligent routing, all queries are handled by the most expensive model, wasting 60--90\% of the API budget. The industry need is clear: a drop-in gateway that learns to discriminate these tiers automatically.
+
+\section{Existing System}
+
+Several approaches exist for managing LLM API usage, each with limitations:
+
+\begin{description}[nosep]
+    \item[Direct SDK Integration:] Applications call provider SDKs (OpenAI, Anthropic, etc.) directly. This is the simplest approach but offers no routing, no provider abstraction, and no cost optimisation. Developers must manually choose which model to call for each request.
+    \item[API Key Rotation / Load Balancing:] Tools like Helicone and MLGateway distribute requests across multiple API keys for rate-limit management but do not perform content-based routing.
+    \item[Manual Tier Selection:] Some applications implement a simple if-else heuristic (e.g., ``if prompt length > 1000 tokens, use strong model''). These heuristics are brittle, require constant adjustment, and fail to capture semantic complexity.
+    \item[Managed Gateways (Azure API Management, Kong):] Enterprise API gateways provide rate limiting, caching, and authentication but lack LLM-specific features like prompt analysis, provider abstraction, and cost analytics.
+\end{description}
+
+No existing open-source solution combines ML-based prompt routing, multi-provider support with a unified adapter interface, cascading fallback, and comprehensive cost analytics in a single deployable package.
+
+\section{Objectives}
+
+The project was guided by the following specific objectives:
+
+\begin{enumerate}[nosep]
+    \item Design and implement a three-tier LLM routing architecture (Weak, Mid, Strong) with configurable providers and models per tier.
+    \item Develop an ML-based prompt classifier using XGBoost that achieves >85\% accuracy in assigning prompts to appropriate tiers based on linguistic and structural features.
+    \item Implement a provider adapter pattern supporting OpenAI-compatible endpoints (NVIDIA NIM, Together AI, Groq, etc.), Anthropic Claude, and Google Gemini with normalised request/response formats.
+    \item Build a cascading fallback mechanism that automatically retries failed provider calls across tiers to ensure zero-downtime request processing.
+    \item Create a full-stack web dashboard with user authentication, virtual API key management, an interactive chat playground, and real-time analytics visualising cost savings, latency, and tier utilisation.
+    \item Expose an OpenAI-compatible \texttt{/v1/chat/completions} endpoint to enable drop-in replacement for existing OpenAI SDK integrations.
+    \item Implement rate limiting, request telemetry (PostHog), and error tracking (Sentry) for production observability.
+    \item Containerise the application using Docker and provide deployment configurations for Render and Vercel.
+\end{enumerate}
+
+\section{Proposed System}
+
+ClassiRoute2 proposes a unified LLM gateway architecture where:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figures/system_architecture.png}
+    \caption{ClassiRoute2 System Architecture Overview}
+    \label{fig:architecture}
+\end{figure}
+
+\noindent The system comprises five principal components:
+
+\begin{enumerate}[nosep]
+    \item \textbf{Frontend Dashboard (React SPA):} A single-page application providing user authentication, virtual key management, an interactive chat playground with streaming responses, and analytics dashboards with Recharts visualisations.
+    \item \textbf{API Gateway (FastAPI Backend):} The core request-processing pipeline---authentication $\rightarrow$ prompt feature extraction $\rightarrow$ ML classification $\rightarrow$ provider dispatch $\rightarrow$ response normalisation $\rightarrow$ telemetry logging.
+    \item \textbf{Provider Adapters:} A polymorphic adapter layer that abstracts provider-specific SDK differences behind a common \texttt{BaseProvider} interface. Each adapter normalises request formats, response structures, error codes, and usage metadata.
+    \item \textbf{ML Routing Engine:} An XGBoost classifier and regressor trained on a feature space of 22 dimensions (complexity score, code patterns, reasoning indicators, readability metrics, etc.) that predicts optimal tier assignment and assigns a confidence score.
+    \item \textbf{PostgreSQL Data Layer:} Persistent storage for user accounts, virtual keys (with Fernet-encrypted API secrets), request logs, and analytics aggregation.
+\end{enumerate}
+
+\section{Unique Features of the Proposed System}
+
+ClassiRoute2 offers the following distinctive capabilities that differentiate it from existing solutions:
+
+\begin{itemize}[nosep]
+    \item \textbf{ML-Powered Tier Assignment:} Unlike static rule-based routing, ClassiRoute2 uses a trained XGBoost classifier that learns from prompt features to predict optimal tier assignment. The classifier is complemented by a regressor that estimates per-prompt difficulty, and a confidence-threshold mechanism that automatically upgrades uncertain predictions.
+    \item \textbf{Multi-Provider Adapter Architecture:} The system supports OpenAI-compatible endpoints, Anthropic Claude, and Google Gemini through a polymorphic adapter pattern. Adding a new provider requires implementing only the \texttt{BaseProvider} interface---no core routing logic changes. The registry pattern (\texttt{register\_provider}/\texttt{get\_provider}) enables zero-config provider registration via import side effects.
+    \item \textbf{Cascading Fallback Resilience:} If a provider call to the assigned tier fails (due to rate limits, API errors, or network issues), the system automatically retries on progressively weaker tiers. The fallback is transparent to the client, which receives a routing metadata header (\texttt{x-llmrouter}) indicating the rerouting.
+    \item \textbf{OpenAI-Compatible Endpoint:} The \texttt{/v1/chat/completions} endpoint mirrors the OpenAI API shape exactly, including streaming chunks, usage metadata, and error formats. Any application using the OpenAI Python/Node.js SDK can switch to ClassiRoute2 by changing only the base URL and API key.
+    \item \textbf{Virtual Key System with Shamir-Style Secret Management:} Each user creates virtual keys that bundle three API credentials (one per tier). The actual API keys are encrypted at rest using Fernet symmetric encryption. The system returns a human-readable key (\texttt{clr-...}) that is stored hashed (SHA-256) for lookup, never in plaintext.
+    \item \textbf{Dynamic Provider Verification:} Before creating a virtual key, the system proactively verifies that each configured model exists on the provider's endpoint by querying the \texttt{/models} API (OpenAI-compatible) or equivalent, providing immediate validation feedback.
+    \item \textbf{Comprehensive Cost Analytics:} The analytics dashboard computes not just raw usage but also cost-saved-vs-always-strong, enabling users to quantify the ROI of intelligent routing. Analytics are broken down by tier, by day, and by individual key.
+\end{itemize}
+
+% ═════════════════════════════════════════════════════════════
+%  CHAPTER 2: REQUIREMENT ANALYSIS AND SYSTEM SPECIFICATION
+% ═════════════════════════════════════════════════════════════
+\chapter{Requirement Analysis and System Specification}
+
+\section{Feasibility Study}
+
+\subsection{Technical Feasibility}
+
+The project leverages mature, well-supported technologies. On the backend, Python 3.13 with FastAPI provides a high-performance async web framework. SQLAlchemy's async ORM with PostgreSQL offers robust data persistence with connection pooling. On the frontend, React 19 with TypeScript provides type-safe component architecture, while Vite ensures rapid development iteration via HMR (Hot Module Replacement).
+
+The ML component uses scikit-learn and XGBoost, both battle-tested libraries with extensive documentation. The model files (\texttt{router\_classifier.pkl}, \texttt{router\_regressor.pkl}) are serialised using Python's pickle format, loaded at application startup. In the absence of model files, the system gracefully degrades to heuristic routing based on a complexity score threshold.
+
+All dependencies are available via PyPI and npm, with locked versions in \texttt{uv.lock} and \texttt{package.json} respectively. Docker images are based on \texttt{python:3.13-slim} with multi-stage builds for minimal footprint.
+
+\subsection{Economical Feasibility}
+
+The project is entirely open-source and uses free-tier or low-cost infrastructure:
+\begin{itemize}[nosep]
+    \item \textbf{Backend host:} Render free tier (512 MB RAM, shared CPU) is sufficient for low-traffic deployments.
+    \item \textbf{Frontend host:} Vercel free tier provides generous bandwidth and global CDN.
+    \item \textbf{Database:} PostgreSQL can be self-hosted via Docker or provisioned via Render's managed PostgreSQL (\$7/month) or Supabase free tier.
+    \item \textbf{ML training:} No GPU required---XGBoost training on CPU takes seconds for the synthetic dataset.
+\end{itemize}
+
+The total monthly cost for a production deployment is approximately \$0--\$15, making the system economically viable for startups and small teams.
+
+\subsection{Operational Feasibility}
+
+The system is designed for minimal operational overhead. Alembic migrations run automatically on application startup (via the FastAPI lifespan hook). Container startup includes a database-wait script that polls the PostgreSQL port before launching. Health checks (\texttt{/health}) verify database connectivity.
+
+Logging is structured and tiered: Python's \texttt{logging} module for system logs, Sentry for error tracking (with noise filtering for 404/422 responses), and PostHog for product telemetry. All features are gated by environment variables and degrade gracefully when optional services (PostHog, Sentry) are not configured.
+
+\section{Software Requirement Specification}
+
+\subsection{Data Requirements}
+
+The system persists four primary entity types:
+
+\begin{itemize}[nosep]
+    \item \textbf{User:} Email (unique, indexed), username, bcrypt-hashed password, admin flag, creation timestamp.
+    \item \textbf{VirtualKey:} Owner (foreign key to User), name, SHA-256 hash of the raw key, three tiers of model configuration (model ID, Fernet-encrypted API key, base URL, provider type), active flag, timestamps for creation and last use.
+    \item \textbf{RequestLog:} Links to VirtualKey and User, prompt preview (truncated to 200 chars), prompt length, assigned tier, confidence score, model used, token counts, latency (ms), cost estimate (USD), status, error message, timestamp.
+    \item \textbf{Analytics (computed):} Aggregated from RequestLog---total requests, requests by tier, total cost, cost saved vs. always-strong, average latency, success rate, daily breakdowns.
+\end{itemize}
+
+\subsection{Functional Requirements}
+
+\begin{enumerate}[nosep]
+    \item \textbf{FR1 - User Registration:} The system shall allow new users to register with email, username, and password (minimum 8 characters). Passwords shall be hashed using bcrypt. Duplicate email registration shall be rejected.
+    \item \textbf{FR2 - User Authentication:} The system shall issue JWT tokens (default 30-day expiry, HS256 signing) upon successful login. Token validation shall occur on all protected API routes. The \texttt{/auth/me} endpoint shall return the authenticated user's profile.
+    \item \textbf{FR3 - Virtual Key Management:} Authenticated users shall be able to create, list, and revoke virtual keys. Each key bundles three tier configurations. The raw key (\texttt{clr-...}) shall be displayed exactly once upon creation. API keys at rest shall be encrypted using Fernet symmetric encryption.
+    \item \textbf{FR4 - Provider Verification:} Before creating a key, the system shall verify that the configured model exists on the specified provider's endpoint. For OpenAI-compatible providers, this is done via \texttt{GET /models}. Anthropic and Gemini have dedicated verification endpoints.
+    \item \textbf{FR5 - Chat Completion:} The \texttt{/v1/chat/completions} endpoint shall accept OpenAI-format requests and return OpenAI-format responses (both streaming and non-streaming). The endpoint shall authenticate via \texttt{Bearer clr-...} tokens.
+    \item \textbf{FR6 - ML-Based Routing:} Each incoming prompt shall be analysed by the feature extractor. If the ML classifier is loaded, it shall predict the optimal tier. If confidence is below 0.60, the tier shall be upgraded by one level. If the classifier is unavailable, heuristic routing based on complexity score shall be used.
+    \item \textbf{FR7 - Cascading Fallback:} If a provider call fails on the assigned tier, the system shall retry the request on progressively weaker tiers (e.g., tier 2 $\rightarrow$ 1 $\rightarrow$ 0) until success or exhaustion.
+    \item \textbf{FR8 - Rate Limiting:} The system shall enforce sliding-window rate limits: 60 requests/minute for chat, 20/min for auth, 200/min for general API, and 100/min for admin endpoints.
+    \item \textbf{FR9 - Analytics:} Authenticated users shall be able to view summary statistics (total requests, cost, latency, success rate), request logs (paginated, filterable by key), and daily usage trends. Cost-saved-vs-always-strong shall be computed and displayed.
+    \item \textbf{FR10 - User Profile Management:} Authenticated users shall be able to update their username, email, and password via the \texttt{/users/me} endpoint.
+    \item \textbf{FR11 - Admin User Management:} Admin users shall be able to list all registered users with pagination.
+\end{enumerate}
+
+\subsection{Performance Requirements}
+
+\begin{itemize}[nosep]
+    \item API response time for routing classification shall not exceed 50ms (including feature extraction).
+    \item Database query latency for analytics aggregation over 30-day windows shall complete within 500ms.
+    \item The system shall handle a minimum of 50 concurrent streaming connections.
+    \item Page load for the analytics dashboard shall complete within 2 seconds on a standard broadband connection.
+\end{itemize}
+
+\subsection{Dependability Requirements}
+
+\begin{itemize}[nosep]
+    \item Database connection shall use connection pooling (10 pool size, 10 overflow) with \texttt{pool\_pre\_ping=True} to detect stale connections.
+    \item Connection recycling shall occur every 30 minutes to prevent cloud-PG idle connection termination.
+    \item The API shall include a \texttt{/health} endpoint that reports database connectivity status.
+    \item Cascading fallback shall ensure that a single provider outage does not cascade to application-level failure.
+\end{itemize}
+
+\subsection{Maintainability Requirements}
+
+\begin{itemize}[nosep]
+    \item Database schema changes shall be managed via Alembic migrations with versioned, reversible migrations.
+    \item Provider adapters shall implement the \texttt{BaseProvider} abstract interface, enabling new providers to be added without modifying core routing or dispatch logic.
+    \item Feature extraction shall be a pure function operating on text input, independently testable and replaceable.
+    \item Environment configuration shall be managed via \texttt{.env} files with documented defaults in \texttt{.env.example}.
+\end{itemize}
+
+\subsection{Security Requirements}
+
+\begin{itemize}[nosep]
+    \item Passwords shall be hashed using bcrypt via the \texttt{passlib} library.
+    \item JWT tokens shall use HS256 with a minimum 64-character secret key.
+    \item Provider API keys shall be encrypted at rest using Fernet symmetric encryption (AES-128-CBC with HMAC-SHA256 authentication).
+    \item Virtual keys shall be stored as SHA-256 hashes; the raw value is never persisted.
+    \item CORS shall be restricted to configured origins (default: localhost:5173, localhost:3000).
+    \item Rate limiting on auth endpoints shall mitigate brute-force attacks.
+\end{itemize}
+
+\subsection{Look and Feel Requirements}
+
+\begin{itemize}[nosep]
+    \item The UI shall use a dark colour scheme with consistent brand tokens (orange\#d97757, blue\#6a9bcc, green\#788c5d).
+    \item The layout shall feature a collapsible sidebar navigation with icons (Lucide iconset) and responsive breakpoints.
+    \item All data tables shall support loading, empty, and error states.
+    \item Streaming chat output shall render markdown with syntax highlighting (highlight.js via react-markdown and rehype-highlight).
+    \item Analytics charts shall use Recharts with custom-branded tooltips.
+\end{itemize}
+
+\section{SDLC Model to be Used}
+
+The project was developed following an \textbf{Iterative and Incremental Development} model, which aligns with the practical constraints of a solo/team academic project. The development proceeded in six iterations:
+
+\begin{enumerate}[nosep]
+    \item \textbf{Iteration 1 - Core API:} FastAPI server with a single \texttt{/chat} endpoint, basic provider adapter (NVIDIA NIM), and health check.
+    \item \textbf{Iteration 2 - Authentication:} User registration, JWT token issuance, password hashing, protected routes.
+    \item \textbf{Iteration 3 - Virtual Keys \& Multi-Provider:} Virtual key CRUD, Fernet encryption, provider verification, OpenAI and Anthropic adapters.
+    \item \textbf{Iteration 4 - ML Routing:} Feature extraction pipeline, XGBoost classifier/regressor training, heuristic fallback, confidence upgrade mechanism.
+    \item \textbf{Iteration 5 - Frontend Dashboard:} React SPA with login/register, key management, chat playground, and analytics visualisation.
+    \item \textbf{Iteration 6 - Production Hardening:} Rate limiting, Sentry error tracking, PostHog telemetry, Docker Compose, Alembic migration automation, test suite.
+\end{enumerate}
+
+Each iteration concluded with working, deployable software. The incremental approach allowed early validation of the core routing concept before investing in the UI layer, and enabled parallel work on the ML components and frontend.
+
+% ═════════════════════════════════════════════════════════════
+%  CHAPTER 3: SYSTEM DESIGN
+% ═════════════════════════════════════════════════════════════
+\chapter{System Design}
+
+\section{Design Approach}
+
+The system employs an \textbf{Object-Oriented Design (OOD)} approach combined with a \textbf{Layered Architecture} pattern. The design is driven by three principles:
+
+\begin{enumerate}[nosep]
+    \item \textbf{Separation of Concerns:} Each layer (API routes, business logic, data access, provider integration) has distinct responsibilities. Inter-layer communication occurs through well-defined interfaces (Pydantic models for data transfer, abstract base classes for provider integration).
+    \item \textbf{Dependency Inversion:} High-level routing logic depends on the \texttt{BaseProvider} abstraction, not concrete provider implementations. Provider classes are registered via a registry pattern and instantiated dynamically at dispatch time.
+    \item \textbf{Open/Closed Principle:} New providers can be added by implementing the \texttt{BaseProvider} interface and importing the module (which triggers self-registration). No routing, dispatch, or API-layer code needs modification.
+\end{enumerate}
+
+\section{Detailed Design}
+
+\subsection{System Architecture Overview}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/deployment_diagram.png}
+    \caption{Deployment Diagram Showing Component Distribution Across Services}
+    \label{fig:deployment}
+\end{figure}
+
+The system follows a client-server architecture with three deployment nodes:
+
+\begin{enumerate}[nosep]
+    \item \textbf{Vercel (Frontend):} Hosts the React SPA. API requests to \texttt{/v1/*}, \texttt{/auth/*}, \texttt{/keys/*}, and \texttt{/analytics/*} are proxied to the backend via Vite's dev server (in development) or Vercel's rewrites (in production).
+    \item \textbf{Render / Docker (Backend):} Hosts the FastAPI application. In production, Render runs \texttt{uvicorn main:app} with the \texttt{startCommand} defined in \texttt{render.yaml}. In development, Docker Compose orchestrates the backend container alongside a PostgreSQL instance.
+    \item \textbf{PostgreSQL (Database):} Stores all persistent data. Run as a sidecar container in development (\texttt{postgres:16-alpine}), managed as a Render-managed PostgreSQL in production.
+\end{enumerate}
+
+\subsection{Prompt Routing Pipeline}
+
+The core request flow through the system can be visualised as follows:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/routing_pipeline.png}
+    \caption{Prompt Routing Pipeline — From Request Ingestion to Provider Dispatch}
+    \label{fig:pipeline}
+\end{figure}
+
+\noindent The routing pipeline (implemented in \texttt{core/router.py}) executes the following decision logic:
+
+\begin{enumerate}[nosep]
+    \item \textbf{Feature Extraction (\texttt{core/feature\_extractor.py}):} The raw prompt text is analysed to produce a 22-dimensional feature vector. Features include:
+    \begin{itemize}[nosep]
+        \item \textbf{Lexical:} character count, word count, sentence count, average word length, unique word ratio, average sentence length, Flesch-Kincaid Grade Level.
+        \item \textbf{Semantic flags (binary):} \texttt{is\_coding}, \texttt{is\_debugging}, \texttt{is\_reasoning}, \texttt{is\_creative}, \texttt{is\_multistep}, \texttt{is\_math}, \texttt{is\_summarize}, \texttt{is\_simple\_qa}.
+        \item \textbf{Structural:} has code blocks (\texttt{```}), has numbers, question count, comma count, bullet points, constraint language (must/require/limit/only/exactly), capitalisation ratio.
+        \item \textbf{Composite:} \texttt{complexity\_score} --- a weighted sum of the above features normalised to a 0--10 scale.
+    \end{itemize}
+
+    \item \textbf{ML Classification:} If the XGBoost classifier is loaded:
+    \begin{itemize}[nosep]
+        \item \texttt{CLASSIFIER.predict\_proba(features)} returns a 3-element probability vector.
+        \item The tier with the highest probability is selected: \texttt{tier = argmax(probs)}.
+        \item \texttt{confidence = probs[tier]} is the model's certainty.
+        \item If \texttt{confidence < 0.60} and \texttt{tier < 2}, the tier is incremented by 1 (conservative upgrade).
+    \end{itemize}
+
+    \item \textbf{Heuristic Fallback:} If the classifier is not loaded (model files missing or corrupt):
+    \begin{itemize}[nosep]
+        \item \texttt{complexity\_score < 2.0} $\rightarrow$ tier 0 (weak)
+        \item \texttt{2.0 $\le$ complexity\_score < 4.0} $\rightarrow$ tier 1 (mid)
+        \item \texttt{complexity\_score $\ge$ 4.0} $\rightarrow$ tier 2 (strong)
+    \end{itemize}
+
+    \item \textbf{Difficulty Regression:} The regressor (if loaded) predicts a continuous difficulty score. Otherwise, difficulty is estimated as \texttt{min(complexity\_score / 10.0, 1.0)}.
+    \item \textbf{Routing Response:} Returned as a dictionary with \texttt{tier}, \texttt{tier\_name}, \texttt{confidence}, \texttt{difficulty\_score}, \texttt{upgraded}, and \texttt{rerouted} fields.
+\end{enumerate}
+
+\subsection{Provider Adapter Architecture}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/provider_adapter_uml.png}
+    \caption{UML Class Diagram for the Provider Adapter Pattern}
+    \label{fig:provider_uml}
+\end{figure}
+
+\noindent The provider system is built on four design elements:
+
+\begin{enumerate}[nosep]
+    \item \textbf{Abstract Base (core/providers/base.py):} Declares two abstract methods: \texttt{chat(messages, model, api\_key, **kwargs) -> dict} for synchronous responses and \texttt{chat\_stream(...) -> AsyncGenerator} for streaming. Both return normalised formats.
+    \item \textbf{Concrete Adapters:} Each provider (OpenAI-compatible, Anthropic, Gemini) implements \texttt{BaseProvider}:
+    \begin{itemize}[nosep]
+        \item \texttt{OpenAIProvider}: Uses the \texttt{openai.AsyncOpenAI} SDK. Handles any OpenAI-compatible endpoint (NVIDIA NIM, Together, Groq, etc.) via configurable \texttt{base\_url}.
+        \item \texttt{AnthropicProvider}: Uses the \texttt{anthropic.AsyncAnthropic} SDK. Extracts the system message from the messages array (required as a top-level field in Anthropic's API). Converts message format to Anthropic's schema.
+        \item \texttt{GeminiProvider}: Uses the \texttt{google.genai} SDK. Converts messages to Gemini's content format. Handles system instructions via \texttt{GenerateContentConfig}.
+    \end{itemize}
+    \item \textbf{Registry (core/providers/registry.py):} A module-level dictionary (\texttt{PROVIDER\_MAP}) mapping provider name strings to provider classes. Registration occurs via the \texttt{register\_provider()} function, called as a module import side effect in each adapter file.
+    \item \textbf{Dispatch (core/dispatcher.py):} The \texttt{dispatch\_stream()} and \texttt{dispatch\_sync()} functions accept messages, a \texttt{VirtualKey} object, and a tier integer. They dynamically select the appropriate attribute (e.g., \texttt{virtual\_key.weak\_model}, \texttt{virtual\_key.weak\_api\_key}), decrypt the API key using Fernet, resolve the provider via \texttt{get\_provider()}, and invoke the normalised interface.
+\end{enumerate}
+
+\subsection{Dispatch and Fallback Mechanism}
+
+The cascading fallback logic (implemented in \texttt{api/v1/chat.py}) operates as follows:
+
+\begin{lstlisting}[caption={Cascading Fallback Algorithm}, label={lst:fallback}]
+original_tier = routing["tier"]
+attempts = list(range(original_tier, -1, -1))
+
+for attempt in attempts:
+    try:
+        stream_obj, model_used = await dispatch_stream(
+            messages, virtual_key, attempt
+        )
+        if attempt != original_tier:
+            # Mark rerouting metadata
+            routing["rerouted"] = True
+            routing["original_tier"] = original_tier
+            routing["tier"] = attempt
+        yield stream chunks with routing metadata
+        break
+    except Exception:
+        if attempt == 0:
+            yield error
+        else:
+            continue  # fallback to next tier
+\end{lstlisting}
+
+This ensures that if the assigned tier's provider is unreachable, the system gracefully degrades to a cheaper tier rather than returning an error. The client receives routing metadata (via the \texttt{x-llmrouter} header/field in the response body) indicating the original assigned tier and the final serving tier.
+
+\subsection{Database Schema Design}
+
+The database schema comprises three tables connected through foreign key relationships:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figures/er_diagram.png}
+    \caption{Entity-Relationship Diagram for the ClassiRoute2 Database}
+    \label{fig:er}
+\end{figure}
+
+\subsubsection{Users Table}
+
+\begin{table}[H]
+    \centering
+    \caption{Users Table Schema}
+    \label{tab:users}
+    \begin{tabularx}{\textwidth}{l l X l}
+    \toprule
+    \textbf{Column} & \textbf{Type} & \textbf{Constraints} \\
+    \midrule
+    id & UUID & PK, default uuid4 \\
+    email & String & UNIQUE, NOT NULL, INDEX \\
+    username & String & NOT NULL \\
+    password\_hash & String & NOT NULL \\
+    is\_admin & Boolean & DEFAULT false \\
+    created\_at & DateTime & DEFAULT now() \\
+    \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsubsection{Virtual Keys Table}
+
+\begin{table}[H]
+    \centering
+    \caption{Virtual Keys Table Schema}
+    \label{tab:keys}
+    \begin{tabularx}{\textwidth}{l l X}
+    \toprule
+    \textbf{Column} & \textbf{Type} & \textbf{Constraints} \\
+    \midrule
+    id & UUID & PK \\
+    user\_id & UUID & FK $\rightarrow$ users.id, ON DELETE CASCADE \\
+    name & String & NOT NULL \\
+    key\_hash & String & UNIQUE, NOT NULL, INDEX \\
+    weak\_model & String & NOT NULL \\
+    weak\_api\_key & String & NOT NULL (Fernet-encrypted) \\
+    weak\_base\_url & String & NULLABLE \\
+    weak\_provider\_type & String(20) & DEFAULT 'openai' \\
+    mid\_model & String & NOT NULL \\
+    mid\_api\_key & String & NOT NULL (Fernet-encrypted) \\
+    mid\_base\_url & String & NULLABLE \\
+    mid\_provider\_type & String(20) & DEFAULT 'openai' \\
+    strong\_model & String & NOT NULL \\
+    strong\_api\_key & String & NOT NULL (Fernet-encrypted) \\
+    strong\_base\_url & String & NULLABLE \\
+    strong\_provider\_type & String(20) & DEFAULT 'openai' \\
+    is\_active & Boolean & DEFAULT true \\
+    created\_at & DateTime & DEFAULT now() \\
+    last\_used\_at & DateTime & NULLABLE \\
+    \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsubsection{Request Logs Table}
+
+\begin{table}[H]
+    \centering
+    \caption{Request Logs Table Schema}
+    \label{tab:logs}
+    \begin{tabularx}{\textwidth}{l l X}
+    \toprule
+    \textbf{Column} & \textbf{Type} & \textbf{Constraints} \\
+    \midrule
+    id & UUID & PK \\
+    virtual\_key\_id & UUID & FK $\rightarrow$ virtual\_keys.id \\
+    user\_id & UUID & FK $\rightarrow$ users.id, ON DELETE CASCADE \\
+    prompt\_preview & String(200) & NULLABLE \\
+    prompt\_length & Integer & NOT NULL \\
+    tier\_assigned & Integer & NOT NULL \\
+    confidence & Float & NOT NULL \\
+    model\_used & String & NOT NULL \\
+    input\_tokens & Integer & NULLABLE \\
+    output\_tokens & Integer & NULLABLE \\
+    latency\_ms & Integer & NOT NULL \\
+    cost\_estimate\_usd & Float & NULLABLE \\
+    status & String & NOT NULL \\
+    error\_message & String & NULLABLE \\
+    created\_at & DateTime & DEFAULT now() \\
+    \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{API Route Design}
+
+The system exposes the following route groups:
+
+\begin{table}[H]
+    \centering
+    \caption{API Route Map}
+    \label{tab:routes}
+    \begin{tabularx}{\textwidth}{l l X}
+    \toprule
+    \textbf{Prefix} & \textbf{Methods} & \textbf{Description} \\
+    \midrule
+    \texttt{/auth} & POST register, POST login, GET me & Authentication \\
+    \texttt{/v1/chat/completions} & POST & Chat completions (streaming \& sync) \\
+    \texttt{/keys} & POST create, POST revoke, GET list & Virtual key CRUD \\
+    \texttt{/v1/keys/anthropic} & POST verify, POST models & Anthropic verification \\
+    \texttt{/v1/keys/gemini} & POST verify, POST models & Gemini verification \\
+    \texttt{/analytics} & GET summary, GET requests, GET daily & Analytics aggregation \\
+    \texttt{/users} & GET \text{/}, GET me, GET \{\_id\}, PUT me & User management \\
+    \texttt{/v1/internal} & POST evaluate & Routing evaluation \\
+    \texttt{/health} & GET & Health check \\
+    \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Authentication and Authorisation Flow}
+
+The system implements a dual authentication strategy:
+
+\begin{enumerate}[nosep]
+    \item \textbf{JWT Token Auth (Web UI):} Used for all frontend-facing routes (\texttt{/keys/*}, \texttt{/analytics/*}, \texttt{/auth/me}, \texttt{/users/*}). The \texttt{get\_current\_user} dependency extracts the Bearer token from the \texttt{Authorization} header, decodes the JWT (validating signature and expiry), looks up the user by the \texttt{sub} claim (user UUID), and injects the \texttt{User} object into the route handler.
+    \item \textbf{Virtual Key Auth (API):} Used exclusively for the \texttt{/v1/chat/completions} endpoint. The \texttt{get\_virtual\_key} dependency expects a Bearer token starting with \texttt{clr-}. It SHA-256 hashes the raw key, looks up the hash in the \texttt{virtual\_keys} table, verifies the key is active, and injects the \texttt{VirtualKey} object into the handler.
+\end{enumerate}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{figures/auth_flow.png}
+    \caption{Authentication and Authorisation Flow Diagram}
+    \label{fig:auth}
+\end{figure}
+
+\subsection{Frontend Component Architecture}
+
+\begin{table}[H]
+    \centering
+    \caption{Frontend Component Hierarchy and Routing}
+    \label{tab:frontend}
+    \begin{tabularx}{\textwidth}{l l X}
+    \toprule
+    \textbf{Component} & \textbf{Route} & \textbf{Description} \\
+    \midrule
+    \texttt{App} & - & Root router with lazy-loaded pages \\
+    \texttt{Layout} & (wrapper) & Sidebar + Outlet, auth redirect \\
+    \texttt{Login} & /login & Email/password form \\
+    \texttt{Register} & /register & Registration form \\
+    \texttt{Dashboard} & / & Analytics summary cards + charts \\
+    \texttt{Keys} & /keys & Virtual key CRUD with provider tabs \\
+    \texttt{Analytics} & /analytics & Detailed analytics with filters \\
+    \texttt{Chat} & /chat & Interactive chat playground \\
+    \texttt{Profile} & /profile & User profile management \\
+    \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{Rate Limiting Design}
+
+The \texttt{SlidingWindowRateLimiter} (in \texttt{core/rate\_limiter.py}) implements an in-memory sliding window algorithm:
+
+\begin{itemize}[nosep]
+    \item Each rate limit key (e.g., \texttt{chat:\{user\_id}\}) maintains a sorted list of Unix timestamps representing request times.
+    \item On each request, timestamps older than \texttt{window\_seconds} are evicted (\textquotedbl{}cleanup\textquotedbl{}).
+    \item If the count of remaining timestamps exceeds \texttt{max\_requests}, the request is rejected with HTTP 429.
+    \item The \texttt{Retry-After} header is computed from the oldest timestamp in the window.
+\end{itemize}
+
+The rate limiter uses \texttt{asyncio.Lock} for thread-safe concurrent access in the async context. Rate limits are configured per endpoint group:
+
+\begin{itemize}[nosep]
+    \item Chat: 60 requests per 60 seconds per user
+    \item Auth: 20 requests per 60 seconds per IP
+    \item API: 200 requests per 60 seconds per user
+    \item Admin: 100 requests per 60 seconds per user
+\end{itemize}
+
+% ═════════════════════════════════════════════════════════════
+%  CHAPTER 4: IMPLEMENTATION AND TESTING
+% ═════════════════════════════════════════════════════════════
+\chapter{Implementation and Testing}
+
+\section{Introduction to Languages, IDEs, Tools and Technologies}
+
+\begin{table}[H]
+    \centering
+    \caption{Technology Stack Summary}
+    \label{tab:techstack}
+    \begin{tabularx}{\textwidth}{l l X}
+    \toprule
+    \textbf{Category} & \textbf{Technology} & \textbf{Purpose} \\
+    \midrule
+    Backend Runtime & Python 3.13 & Async runtime, async/await concurrency \\
+    Web Framework & FastAPI 0.136+ & High-performance async REST framework \\
+    ORM & SQLAlchemy 2.0 (async) & Async ORM with connection pooling \\
+    Database & PostgreSQL 16 & Relational data store \\
+    \rowcolor{gray!10}
+    Frontend Framework & React 19 & Component-based UI library \\
+    Build Tool & Vite 8 & Dev server with HMR, production bundling \\
+    Styling & Tailwind CSS v4 & Utility-first CSS framework \\
+    UI Components & Radix UI + shadcn/ui & Accessible, unstyled primitives \\
+    \rowcolor{gray!10}
+    ML Framework & XGBoost 3.2 & Gradient-boosted decision trees \\
+    Feature Extraction & textstat 0.7 & Readability metrics \\
+    Authentication & python-jose & JWT encoding/decoding \\
+    \rowcolor{gray!10}
+    Encryption & cryptography (Fernet) & Symmetric API key encryption \\
+    Password Hashing & passlib (bcrypt) & Password hashing \\
+    Containerisation & Docker + Docker Compose & Local dev environment \\
+    CI/CD & Render + Vercel & Production hosting \\
+    \rowcolor{gray!10}
+    Monitoring & Sentry + PostHog & Error tracking, product telemetry \\
+    Testing & pytest + vitest & Backend and frontend testing \\
+    \bottomrule
+    \end{tabularx}
+\end{table}
+
+\begin{description}[nosep]
+    \item[IDE:] VS Code with Python and TypeScript extensions, Pylance for type checking, and ESLint for linting.
+    \item[Version Control:] Git with GitHub for source code management.
+    \item[API Testing:] curl, httpx (for integration tests), and the built-in Swagger UI at \texttt{/docs}.
+    \item[Database Migration:] Alembic for schema versioning, with auto-generated migration stubs from SQLAlchemy model changes.
+\end{description}
+
+\section{Algorithm/Pseudocode Used}
+
+\subsection{Feature Extraction Algorithm}
+
+The feature extractor (\texttt{core/feature\_extractor.py}) computes a 22-dimensional feature vector from raw prompt text. The algorithm proceeds in the following stages:
+
+\begin{enumerate}[nosep]
+    \item \textbf{Lexical Analysis:} Character count, word count (via \texttt{textstat.lexicon\_count}), sentence count (via \texttt{textstat.sentence\_count}), average word length, unique word ratio using \texttt{re.findall(r'\textbackslash b\textbackslash w+\textbackslash b', text\_lower)}.
+    \item \textbf{Readability Scoring:} Flesch-Kincaid Grade Level is computed via \texttt{textstat.flesch\_kincaid\_grade(text)}.
+    \item \textbf{Pattern Detection (binary classification):} Eight regex-based semantic detectors operate on the lowercased text:
+    \begin{itemize}[nosep]
+        \item \texttt{is\_coding}: matches \texttt{\textbackslash b(code|implement|function|class|algorithm|...)\textbackslash b}
+        \item \texttt{is\_debugging}: matches \texttt{\textbackslash b(debug|error|traceback|exception|fix|bug|...)\textbackslash b}
+        \item \texttt{is\_reasoning}: matches \texttt{\textbackslash b(explain|why|how does|analyze|compare|...)\textbackslash b}
+        \item \texttt{is\_creative}: matches \texttt{\textbackslash b(poem|story|creative|imagine|fiction|...)\textbackslash b}
+        \item \texttt{is\_multistep}: matches \texttt{\textbackslash b(design|architecture|plan|scalable|system|...)\textbackslash b}
+        \item \texttt{is\_math}: matches \texttt{\textbackslash b(solve|calculate|equation|integral|...)\textbackslash b}
+        \item \texttt{is\_summarize}: matches \texttt{\textbackslash b(summarize|summary|tldr|brief|overview|...)\textbackslash b}
+        \item \texttt{is\_simple\_qa}: matches \texttt{\textbackslash b(what is|who is|when did|where is|capital of|...)\textbackslash b}
+    \end{itemize}
+    \item \textbf{Structural Indicators:} Code block presence (\texttt{```}), number presence, question count, comma count, bullet presence (lines starting with \texttt{-} or \texttt{*}), constraint language (must/require/limit/only/exactly), and capitalisation ratio.
+    \item \textbf{Complexity Score:} A weighted composite score computed from the above features, normalised to a 0--10 scale. Higher values indicate prompts requiring more capable models.
+\end{enumerate}
+
+\subsection{ML Routing Algorithm}
+
+\begin{lstlisting}[caption={XGBoost Routing Algorithm}, label={lst:routing}]
+Input: prompt_text (string)
+Output: routing_decision (dict)
+
+1. features = extract_features(prompt_text)
+2. feature_vector = get_feature_vector(prompt_text)
+
+3. if CLASSIFIER is not loaded:
+4.     if features.complexity_score < 2.0:
+5.         tier = 0
+6.     else if features.complexity_score < 4.0:
+7.         tier = 1
+8.     else:
+9.         tier = 2
+10.    return heuristic_result
+
+11. # ML Classification
+12. probs = CLASSIFIER.predict_proba([feature_vector])
+13. tier = argmax(probs)
+14. confidence = probs[tier]
+
+15. # Difficulty Regression
+16. if REGRESSOR is loaded:
+17.     difficulty = REGRESSOR.predict([feature_vector])
+18. else:
+19.     difficulty = min(complexity_score / 10.0, 1.0)
+
+20. # Confidence Upgrade
+21. if confidence < 0.60 AND tier < 2:
+22.     tier += 1
+23.     upgraded = True
+
+24. return {
+25.     "tier": tier,
+26.     "tier_name": TIER_NAMES[tier],
+27.     "confidence": confidence,
+28.     "difficulty_score": difficulty,
+29.     "upgraded": upgraded,
+30.     "rerouted": False
+31. }
+\end{lstlisting}
+
+\subsection{Cascading Fallback Algorithm}
+
+\begin{lstlisting}[caption={Cascading Fallback Algorithm}, label={lst:fallback_alg}]
+Input: messages, virtual_key, assigned_tier
+Output: stream of response chunks or error
+
+1. attempts = [assigned_tier, assigned_tier-1, ..., 0]
+2. for each tier t in attempts:
+3.     model = virtual_key.get_model(t)
+4.     api_key = decrypt(virtual_key.get_api_key(t))
+5.     provider = get_provider(virtual_key.get_provider_type(t))
+6.     try:
+7.         stream = provider.chat_stream(messages, model, api_key)
+8.         for chunk in stream:
+9.             if t != assigned_tier:
+10.                attach routing metadata (x-llmrouter)
+11.            yield chunk
+12.        break  # success
+13.    catch Exception:
+14.        if t == 0:
+15.            yield error
+16.        else:
+17.            continue  # try next tier
+\end{lstlisting}
+
+\subsection{Analytics Aggregation Algorithm}
+
+The analytics summarisation (in \texttt{db/crud.py}) computes per-user statistics over configurable time windows:
+
+\begin{lstlisting}[caption={Analytics Aggregation Pseudocode}, label={lst:analytics}]
+Input: user_id, key_id (optional), days (default 30)
+Output: summary statistics dict
+
+1. cutoff = now() - days
+2. logs = SELECT * FROM request_logs
+     WHERE user_id = user_id
+       AND created_at >= cutoff
+       [AND virtual_key_id = key_id]
+
+3. For each log in logs:
+     by_tier[log.tier_assigned] += 1
+     total_cost += log.cost_estimate_usd
+     total_latency += log.latency_ms
+     if log.status == "success": success_count += 1
+     cost_if_all_strong += calculate_strong_cost(log)
+
+4. return {
+     "total_requests": len(logs),
+     "by_tier": by_tier,
+     "total_cost_usd": total_cost,
+     "cost_saved_vs_always_strong": cost_if_all_strong - total_cost,
+     "avg_latency_ms": total_latency / len(logs),
+     "success_rate": success_count / len(logs)
+   }
+\end{lstlisting}
+
+The \texttt{cost\_saved\_vs\_always\_strong} metric compares the actual cost (using tier-specific rates) against a hypothetical scenario where every request was served by the strongest tier at \$3.00 per million tokens.
+
+\section{Testing Techniques}
+
+\subsection{Testing Strategy}
+
+The project employs a multi-layered testing strategy:
+
+\begin{enumerate}[nosep]
+    \item \textbf{Unit Tests (Backend):} pytest-based tests for individual modules---feature extraction, password hashing, JWT token creation/validation, rate limiter logic, and database CRUD operations. These tests use mocked database sessions and do not require a running PostgreSQL instance.
+    \item \textbf{Integration Tests (Backend):} pytest-asyncio tests that exercise the full API stack against a running database and API server. The \texttt{conftest.py} creates temporary users via the \texttt{/auth/register} endpoint and uses \texttt{httpx.AsyncClient} for HTTP-level testing. Integration tests are gated behind the \texttt{RUN\_INTEGRATION=1} environment variable.
+    \item \textbf{Unit Tests (Frontend):} Vitest tests for the API client module (\texttt{client.test.ts})---testing JWT token attachment, error handling, and response parsing. LocalStorage is stubbed using \texttt{vi.stubGlobal}.
+    \item \textbf{Component Tests (Frontend):} Vitest with jsdom environment for UI component rendering tests. Test files co-located with components (\texttt{ChatInput.test.tsx}, \texttt{ConfirmationDialog.test.tsx}, \texttt{EmptyState.test.tsx}, \texttt{ErrorState.test.tsx}, \texttt{Skeleton.test.tsx}, \texttt{Toast.test.tsx}).
+    \item \textbf{Mutation Testing Concept:} The project structure includes an \texttt{edge\_cases/} test directory for boundary-value and negative-path testing.
+\end{enumerate}
+
+\subsection{Tests Configuration}
+
+The backend pytest configuration (\texttt{pytest.ini}) specifies:
+
+\begin{itemize}[nosep]
+    \item \texttt{addopts = -q --disable-warnings --maxfail=10}
+    \item \texttt{asyncio\_default\_fixture\_loop\_scope = session}
+    \item Custom markers: \texttt{integration} (requires external dependencies) and \texttt{unit} (self-contained).
+\end{itemize}
+
+The frontend test configuration is embedded in \texttt{vite.config.ts}: \texttt{environment: 'jsdom'} with a setup file at \texttt{src/test/setup.ts}.
+
+\section{Test Cases Designed}
+
+\begin{table}[H]
+    \centering
+    \caption{Backend Test Cases}
+    \label{tab:backend_tests}
+    \begin{tabularx}{\textwidth}{l l X l}
+    \toprule
+    \textbf{Module} & \textbf{Test} & \textbf{Description} & \textbf{Type} \\
+    \midrule
+    Auth & test\_register & Verify new user creation returns token & Integration \\
+    Auth & test\_login\_valid & Valid credentials return JWT & Integration \\
+    Auth & test\_login\_invalid & Invalid credentials return 401 & Integration \\
+    \rowcolor{gray!10}
+    Feature & test\_coding\_detection & Code keyword triggers is\_coding flag & Unit \\
+    Feature & test\_empty\_text & Empty text returns default features & Unit \\
+    Feature & test\_complexity\_score & Verify score range 0--10 & Unit \\
+    \rowcolor{gray!10}
+    Routing & test\_heuristic\_fallback & No classifier $\rightarrow$ heuristic & Unit \\
+    Routing & test\_confidence\_upgrade & Low confidence $\rightarrow$ tier+1 & Unit \\
+    Routing & test\_tier\_assignment & Verify routing output structure & Unit \\
+    \rowcolor{gray!10}
+    Keys & test\_create\_virtual\_key & Key creation returns raw key & Integration \\
+    Keys & test\_revoke\_key & Revoked key returns 401 & Integration \\
+    Keys & test\_list\_keys & User sees only own keys & Integration \\
+    \rowcolor{gray!10}
+    Chat & test\_chat\_basic & Basic chat returns response & Integration \\
+    Chat & test\_chat\_streaming & Streaming returns SSE chunks & Integration \\
+    Chat & test\_chat\_no\_auth & Missing auth returns 401 & Integration \\
+    \rowcolor{gray!10}
+    Analytics & test\_summary & Summary returns valid structure & Integration \\
+    Analytics & test\_requests & Request log pagination works & Integration \\
+    \bottomrule
+    \end{tabularx}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Frontend Test Cases}
+    \label{tab:frontend_tests}
+    \begin{tabularx}{\textwidth}{l l X}
+    \toprule
+    \textbf{Component} & \textbf{Test} & \textbf{Description} \\
+    \midrule
+    API Client & attach\_auth\_header & Bearer token from localStorage \\
+    API Client & no\_auth\_when\_logged\_out & No Authorization header \\
+    API Client & throw\_api\_error & Non-ok response throws ApiError \\
+    \rowcolor{gray!10}
+    ChatInput & renders\_input & Input field is rendered \\
+    ChatInput & send\_on\_enter & Enter key triggers send \\
+    \rowcolor{gray!10}
+    ConfirmationDialog & opens\_on\_trigger & Dialog appears on trigger \\
+    ConfirmationDialog & fires\_on\_confirm & Confirm button fires callback \\
+    \rowcolor{gray!10}
+    EmptyState & renders\_message & Empty state shows message \\
+    ErrorState & renders\_error & Error state shows error message \\
+    \rowcolor{gray!10}
+    Skeleton & renders\_cards & Skeleton cards render \\
+    Toast & shows\_and\_hides & Toast auto-dismisses \\
+    \bottomrule
+    \end{tabularx}
+\end{table}
+
+% ═════════════════════════════════════════════════════════════
+%  CHAPTER 5: RESULTS AND DISCUSSIONS
+% ═════════════════════════════════════════════════════════════
+\chapter{Results and Discussions}
+
+\section{User Interface Representation}
+
+\subsection{Brief Description of Various Modules of the System}
+
+\subsubsection{Authentication Module}
+The login and registration pages provide a clean, card-based interface with email/password forms. Input validation occurs client-side before submission; server-side errors (duplicate email, invalid credentials) are displayed inline. Upon successful authentication, the JWT token and user profile are stored in localStorage and the user is redirected to the Dashboard.
+
+\subsubsection{Dashboard Module}
+The Dashboard presents an at-a-glance analytics overview with four summary cards (Total Requests, Cost Saved, Avg Latency, Success Rate) and two charts: a donut chart showing tier distribution (Weak / Mid / Strong) and an area chart showing daily request volume over a 30-day window. The colour coding (orange for in-flight, blue for mid, green for success threshold) provides intuitive status understanding.
+
+\subsubsection{Playground Module}
+The Chat page provides an interactive interface for testing virtual keys. Users select a virtual key from a dropdown, type prompts, and receive streaming responses rendered with Markdown and syntax highlighting. Each response displays routing metadata---assigned tier, model used, and any fallback events. Chat history is persisted in localStorage for session continuity. The interface distinguishes user messages (left-aligned, brand-orange accent) from assistant messages (right-aligned, surface background).
+
+\subsubsection{Keys Management Module}
+The Keys page presents a table of existing virtual keys with their tier configurations, active status, and creation date. A multi-tab dialog (OpenAI-compatible, Anthropic, Gemini) facilitates key creation with dynamic model listing---when users enter their API key for a provider, the system fetches available models from that provider's API. Provider verification happens in real-time as the form is filled.
+
+\subsubsection{Analytics Module}
+The Analytics page provides detailed, filterable analytics with three main sections: summary cards, a request log table (paginated, filterable by virtual key), and daily trend charts (requests and cost over time). The tier distribution is visualised through a bar chart, and a line chart shows daily cost and request volume.
+
+\subsubsection{Profile Module}
+The Profile page allows users to update their username, email, and password. Changes are validated before submission, and success/error messages are displayed inline.
+
+\section{Snapshots of the System}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/screenshot_dashboard.png}
+    \caption{Dashboard Page Showing Analytics Summary and Tier Distribution}
+    \label{fig:dashboard}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/screenshot_chat.png}
+    \caption{Chat Playground Showing Streaming Response with Routing Metadata}
+    \label{fig:chat}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/screenshot_keys.png}
+    \caption{API Keys Management Page with Create Dialog}
+    \label{fig:keys}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/screenshot_analytics.png}
+    \caption{Detailed Analytics View with Request Logs and Daily Trends}
+    \label{fig:analytics}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/screenshot_analytics2.png}
+    \caption{Analytics Charts Showing Cost Savings and Tier Utilisation}
+    \label{fig:analytics2}
+\end{figure}
+
+\section{Backend Representation}
+
+\subsection{Database Tables}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figures/db_users.png}
+    \caption{Users Table in PostgreSQL}
+    \label{fig:db_users}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figures/db_keys.png}
+    \caption{Virtual Keys Table Showing Encrypted API Key Storage}
+    \label{fig:db_keys}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figures/db_logs.png}
+    \caption{Request Logs Table Capturing Per-Request Routing and Usage Data}
+    \label{fig:db_logs}
+\end{figure}
+
+\subsection{Cost Savings Analysis}
+
+The core value proposition of ClassiRoute2 is cost optimisation through intelligent tier routing. Consider a production application processing 100,000 requests per month with the following distribution:
+
+\begin{itemize}[nosep]
+    \item Weak tier (40\% of requests): \textasciitilde{}40,000 requests routed to cheap models like GPT-4o-mini (\$0.15/M tokens) or Claude-3-Haiku (\$0.25/M tokens).
+    \item Mid tier (35\%): \textasciitilde{}35,000 requests to mid-range models like GPT-4o-mini or Gemini-2.0-Flash (\$0.10--\$0.50/M tokens).
+    \item Strong tier (25\%): \textasciitilde{}25,000 requests to frontier models like GPT-4o (\$2.50/M tokens) or Claude-3.5 Sonnet (\$3.00/M tokens).
+\end{itemize}
+
+Compared to routing all 100,000 requests to the strongest tier, the cost savings are approximately 55--70\%, depending on the specific model pricing and average prompt/response lengths. The analytics dashboard quantifies this as \texttt{cost\_saved\_vs\_always\_strong}, providing users with a concrete measure of the routing engine's financial impact.
+
+% ═════════════════════════════════════════════════════════════
+%  CHAPTER 6: CONCLUSION AND FUTURE SCOPE
+% ═════════════════════════════════════════════════════════════
+\chapter{Conclusion and Future Scope}
+
+\section{Conclusion}
+
+ClassiRoute2 successfully demonstrates the feasibility and value of ML-powered intelligent routing in the LLM API ecosystem. The system delivers on all stated objectives:
+
+\begin{enumerate}[nosep]
+    \item A fully functional three-tier LLM routing gateway with configurable provider and model assignments per tier.
+    \item An XGBoost-based classifier that analyses 22 linguistic and structural features to assign prompts to optimal tiers, with a confidence-based safety upgrade mechanism that prevents underpowered assignments.
+    \item A provider adapter pattern supporting three major LLM providers (OpenAI-compatible, Anthropic, Google Gemini), with a registry-based extension model that allows adding new providers by writing a single class.
+    \item A cascading fallback mechanism that transparently recovers from provider failures by retrying on progressively cheaper tiers.
+    \item A full-stack web dashboard providing user authentication, virtual key management, an interactive chat playground, and comprehensive analytics with cost-savings quantification.
+    \item An OpenAI-compatible \texttt{/v1/chat/completions} endpoint enabling drop-in replacement of existing OpenAI SDK integrations without code changes.
+    \item Production-grade observability through rate limiting, Sentry error tracking, PostHog telemetry, and structured logging.
+    \item Containerised deployment via Docker Compose with configurations for Render and Vercel hosting.
+\end{enumerate}
+
+The system's architecture---particularly the provider adapter pattern and the separation between routing logic and provider dispatch---ensures that ClassiRoute2 can evolve with the rapidly changing LLM landscape without requiring fundamental rewrites.
+
+\section{Future Scope}
+
+While the current implementation is production-ready for many use cases, several avenues for enhancement remain:
+
+\begin{enumerate}[nosep]
+    \item \textbf{Adaptive Model Training:} Currently, the ML models are trained on a static synthetic dataset. A feedback loop could be implemented where routing decisions are periodically evaluated against user-defined quality metrics (e.g., thumbs-up/thumbs-down on responses) and the model is re-trained to optimise for user satisfaction rather than prompt complexity alone.
+    \item \textbf{Caching Layer:} A response cache (Redis-based) could serve identical or semantically similar prompts from cache, eliminating API calls entirely for frequently asked questions. This would further reduce costs and latency.
+    \item \textbf{User-Specific Routing Policies:} Allow users to define custom routing rules that override ML predictions---e.g., "always use strong tier for prompts containing my company name" or "never use Gemini for code-related prompts."
+    \item \textbf{Multi-Modal Support:} Extend the provider adapters to handle image, audio, and video inputs as providers expand their multi-modal capabilities (GPT-4V, Claude-3 Vision, Gemini-Pro-Vision).
+    \item \textbf{Fine-Grained Cost Allocation:} Implement per-project, per-team, and per-customer billing breakdowns, enabling organisations to attribute LLM costs to specific business units.
+    \item \textbf{Load Balancing Across Multiple API Keys:} For high-traffic deployments, distribute requests across multiple API keys for the same provider to circumvent rate limits and increase throughput.
+    \item \textbf{WebSocket Support:} Add WebSocket-based chat endpoints for persistent bidirectional communication, enabling real-time applications like AI-powered customer support agents.
+    \item \textbf{API Key Rotation and Expiry:} Implement automated key rotation policies and configurable key expiration dates for enhanced security compliance.
+\end{enumerate}
+
+% ═════════════════════════════════════════════════════════════
+%  REFERENCES
+% ═════════════════════════════════════════════════════════════
+\begin{thebibliography}{20}
+\addcontentsline{toc}{chapter}{References/Bibliography}
+
+\bibitem{chen2016xgboost}
+T. Chen and C. Guestrin, ``XGBoost: A Scalable Tree Boosting System,'' in \textit{Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining}, 2016, pp. 785--794.
+
+\bibitem{fastapi}
+S. Ramirez, \textit{FastAPI: Web Framework for Building APIs with Python}. [Online]. Available: \url{https://fastapi.tiangolo.com/}
+
+\bibitem{openai2023gpt4}
+OpenAI, ``GPT-4 Technical Report,'' 2023. [Online]. Available: \url{https://arxiv.org/abs/2303.08774}
+
+\bibitem{anthropic2024claude}
+Anthropic, ``The Claude Model Family.'' [Online]. Available: \url{https://docs.anthropic.com/en/docs/about-claude/models}
+
+\bibitem{google2024gemini}
+Google DeepMind, ``Gemini: A Family of Highly Capable Multimodal Models,'' 2024. [Online]. Available: \url{https://arxiv.org/abs/2312.11805}
+
+\bibitem{sqlalchemy}
+M. Bayer, \textit{SQLAlchemy: The Database Toolkit for Python}. [Online]. Available: \url{https://www.sqlalchemy.org/}
+
+\bibitem{react19}
+React Team, \textit{React 19 Documentation}. [Online]. Available: \url{https://react.dev/}
+
+\bibitem{tailwindcss}
+A. Postigo et al., \textit{Tailwind CSS v4 Documentation}. [Online]. Available: \url{https://tailwindcss.com/}
+
+\bibitem{radix}
+WorkOS, \textit{Radix UI: Unstyled, Accessible React UI Primitives}. [Online]. Available: \url{https://www.radix-ui.com/}
+
+\bibitem{recharts}
+J. Chen et al., \textit{Recharts: A Composable Charting Library for React}. [Online]. Available: \url{https://recharts.org/}
+
+\bibitem{alembic}
+M. Bayer, \textit{Alembic: Database Migrations for SQLAlchemy}. [Online]. Available: \url{https://alembic.sqlalchemy.org/}
+
+\bibitem{docker}
+Docker Inc., \textit{Docker Documentation}. [Online]. Available: \url{https://docs.docker.com/}
+
+\bibitem{posthog}
+PostHog Inc., \textit{PostHog Product Analytics Documentation}. [Online]. Available: \url{https://posthog.com/docs}
+
+\bibitem{sentry}
+Functional Software Inc., \textit{Sentry Error Tracking Documentation}. [Online]. Available: \url{https://docs.sentry.io/}
+
+\bibitem{passlib}
+E. Lindblad, \textit{Passlib: Python Password Hashing Library}. [Online]. Available: \url{https://passlib.readthedocs.io/}
+
+\bibitem{fernet}
+Python Cryptographic Authority, \textit{cryptography.io: Fernet Symmetric Encryption}. [Online]. Available: \url{https://cryptography.io/en/latest/fernet/}
+
+\end{thebibliography}
+
+\end{document}

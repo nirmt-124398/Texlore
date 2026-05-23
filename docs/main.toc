@@ -1,0 +1,72 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{Abstract}{1}{chapter*.1}%
+\contentsline {chapter}{Acknowledgement}{2}{chapter*.2}%
+\contentsline {chapter}{List of Figures}{3}{chapter*.3}%
+\contentsline {chapter}{List of Tables}{4}{chapter*.4}%
+\contentsline {chapter}{Table of Contents}{7}{chapter*.5}%
+\contentsline {chapter}{\numberline {1}Introduction}{8}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Introduction to Project}{8}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Project Category}{8}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Problem Formulation}{9}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Identification/Recognition of Need}{9}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Existing System}{10}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Objectives}{11}{section.1.6}%
+\contentsline {section}{\numberline {1.7}Proposed System}{11}{section.1.7}%
+\contentsline {section}{\numberline {1.8}Unique Features of the Proposed System}{13}{section.1.8}%
+\contentsline {chapter}{\numberline {2}Requirement Analysis and System Specification}{15}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Feasibility Study}{15}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Technical Feasibility}{15}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Economical Feasibility}{15}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Operational Feasibility}{16}{subsection.2.1.3}%
+\contentsline {section}{\numberline {2.2}Software Requirement Specification}{16}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Data Requirements}{16}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Functional Requirements}{16}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Performance Requirements}{18}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Dependability Requirements}{18}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.5}Maintainability Requirements}{18}{subsection.2.2.5}%
+\contentsline {subsection}{\numberline {2.2.6}Security Requirements}{19}{subsection.2.2.6}%
+\contentsline {subsection}{\numberline {2.2.7}Look and Feel Requirements}{19}{subsection.2.2.7}%
+\contentsline {section}{\numberline {2.3}SDLC Model to be Used}{19}{section.2.3}%
+\contentsline {chapter}{\numberline {3}System Design}{21}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Design Approach}{21}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Detailed Design}{22}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}System Architecture Overview}{22}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Prompt Routing Pipeline}{23}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Provider Adapter Architecture}{24}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Dispatch and Fallback Mechanism}{25}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}Database Schema Design}{26}{subsection.3.2.5}%
+\contentsline {subsubsection}{Users Table}{27}{figure.caption.10}%
+\contentsline {subsubsection}{Virtual Keys Table}{28}{table.caption.11}%
+\contentsline {subsubsection}{Request Logs Table}{29}{table.caption.12}%
+\contentsline {subsection}{\numberline {3.2.6}API Route Design}{29}{subsection.3.2.6}%
+\contentsline {subsection}{\numberline {3.2.7}Authentication and Authorisation Flow}{30}{subsection.3.2.7}%
+\contentsline {subsection}{\numberline {3.2.8}Frontend Component Architecture}{31}{subsection.3.2.8}%
+\contentsline {subsection}{\numberline {3.2.9}Rate Limiting Design}{32}{subsection.3.2.9}%
+\contentsline {chapter}{\numberline {4}Implementation and Testing}{33}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introduction to Languages, IDEs, Tools and Technologies}{33}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Algorithm/Pseudocode Used}{34}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Feature Extraction Algorithm}{34}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}ML Routing Algorithm}{35}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Cascading Fallback Algorithm}{36}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Analytics Aggregation Algorithm}{36}{subsection.4.2.4}%
+\contentsline {section}{\numberline {4.3}Testing Techniques}{37}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Testing Strategy}{37}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Tests Configuration}{38}{subsection.4.3.2}%
+\contentsline {section}{\numberline {4.4}Test Cases Designed}{39}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Results and Discussions}{41}{chapter.5}%
+\contentsline {section}{\numberline {5.1}User Interface Representation}{41}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Brief Description of Various Modules of the System}{41}{subsection.5.1.1}%
+\contentsline {subsubsection}{Authentication Module}{41}{subsection.5.1.1}%
+\contentsline {subsubsection}{Dashboard Module}{41}{subsection.5.1.1}%
+\contentsline {subsubsection}{Playground Module}{41}{subsection.5.1.1}%
+\contentsline {subsubsection}{Keys Management Module}{41}{subsection.5.1.1}%
+\contentsline {subsubsection}{Analytics Module}{42}{subsection.5.1.1}%
+\contentsline {subsubsection}{Profile Module}{42}{subsection.5.1.1}%
+\contentsline {section}{\numberline {5.2}Snapshots of the System}{42}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Backend Representation}{45}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Database Tables}{45}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Cost Savings Analysis}{47}{subsection.5.3.2}%
+\contentsline {chapter}{\numberline {6}Conclusion and Future Scope}{48}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Conclusion}{48}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Future Scope}{49}{section.6.2}%
+\contentsline {chapter}{References/Bibliography}{50}{chapter*.28}%

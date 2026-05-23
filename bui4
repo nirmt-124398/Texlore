@@ -1,0 +1,1506 @@
+[1mdiff --git a/.gitignore b/.gitignore[m
+[1mindex adefb21..3e81a6e 100644[m
+[1m--- a/.gitignore[m
+[1m+++ b/.gitignore[m
+[36m@@ -2,4 +2,4 @@[m [mnode_modules/[m
+ .opencode/node_modules/[m
+ outputs/[m
+ constraints/[m
+[31m-.sisyphus/[m
+[32m+[m[32m.sisphus/[m
+[1mdiff --git a/.opencode/opencode.json b/.opencode/opencode.json[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e74d6d9[m
+[1m--- /dev/null[m
+[1m+++ b/.opencode/opencode.json[m
+[36m@@ -0,0 +1,5 @@[m
+[32m+[m[32m{[m
+[32m+[m[32m  "plugin": [[m
+[32m+[m[32m    ".opencode/plugins/graphify.js"[m
+[32m+[m[32m  ][m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/.opencode/plugins/graphify.js b/.opencode/plugins/graphify.js[m
+[1mnew file mode 100644[m
+[1mindex 0000000..ae478e7[m
+[1m--- /dev/null[m
+[1m+++ b/.opencode/plugins/graphify.js[m
+[36m@@ -0,0 +1,22 @@[m
+[32m+[m[32m// graphify OpenCode plugin[m
+[32m+[m[32m// Injects a knowledge graph reminder before bash tool calls when the graph exists.[m
+[32m+[m[32mimport { existsSync } from "fs";[m
+[32m+[m[32mimport { join } from "path";[m
+[32m+[m
+[32m+[m[32mexport const GraphifyPlugin = async ({ directory }) => {[m
+[32m+[m[32m  let reminded = false;[m
+[32m+[m
+[32m+[m[32m  return {[m
+[32m+[m[32m    "tool.execute.before": async (input, output) => {[m
+[32m+[m[32m      if (reminded) return;[m
+[32m+[m[32m      if (!existsSync(join(directory, "graphify-out", "graph.json"))) return;[m
+[32m+[m
+[32m+[m[32m      if (input.tool === "bash") {[m
+[32m+[m[32m        output.args.command =[m
+[32m+[m[32m          'echo "[graphify] Knowledge graph available. Read graphify-out/GRAPH_REPORT.md for god nodes and architecture context before searching files." && ' +[m
+[32m+[m[32m          output.args.command;[m
+[32m+[m[32m        reminded = true;[m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m  };[m
+[32m+[m[32m};[m
+[1mdiff --git a/.sisyphus/run-continuation/ses_1ae625f9fffeK0O4nMcGbzhgkE.json b/.sisyphus/run-continuation/ses_1ae625f9fffeK0O4nMcGbzhgkE.json[m
+[1mnew file mode 100644[m
+[1mindex 0000000..902bea5[m
+[1m--- /dev/null[m
+[1m+++ b/.sisyphus/run-continuation/ses_1ae625f9fffeK0O4nMcGbzhgkE.json[m
+[36m@@ -0,0 +1,10 @@[m
+[32m+[m[32m{[m
+[32m+[m[32m  "sessionID": "ses_1ae625f9fffeK0O4nMcGbzhgkE",[m
+[32m+[m[32m  "updatedAt": "2026-05-22T21:37:20.047Z",[m
+[32m+[m[32m  "sources": {[m
+[32m+[m[32m    "background-task": {[m
+[32m+[m[32m      "state": "idle",[m
+[32m+[m[32m      "updatedAt": "2026-05-22T21:37:20.047Z"[m
+[32m+[m[32m    }[m
+[32m+[m[32m  }[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/.sisyphus/run-continuation/ses_1ae9ce6adffeX3G0Ui4M9DlYFn.json b/.sisyphus/run-continuation/ses_1ae9ce6adffeX3G0Ui4M9DlYFn.json[m
+[1mnew file mode 100644[m
+[1mindex 0000000..485f893[m
+[1m--- /dev/null[m
+[1m+++ b/.sisyphus/run-continuation/ses_1ae9ce6adffeX3G0Ui4M9DlYFn.json[m
+[36m@@ -0,0 +1,10 @@[m
+[32m+[m[32m{[m
+[32m+[m[32m  "sessionID": "ses_1ae9ce6adffeX3G0Ui4M9DlYFn",[m
+[32m+[m[32m  "updatedAt": "2026-05-22T21:07:41.411Z",[m
+[32m+[m[32m  "sources": {[m
+[32m+[m[32m    "background-task": {[m
+[32m+[m[32m      "state": "idle",[m
+[32m+[m[32m      "updatedAt": "2026-05-22T21:07:41.411Z"[m
+[32m+[m[32m    }[m
+[32m+[m[32m  }[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/.sisyphus/run-continuation/ses_1aec110ccffedp2uT2zXogIaYK.json b/.sisyphus/run-continuation/ses_1aec110ccffedp2uT2zXogIaYK.json[m
+[1mnew file mode 100644[m
+[1mindex 0000000..4c42169[m
+[1m--- /dev/null[m
+[1m+++ b/.sisyphus/run-continuation/ses_1aec110ccffedp2uT2zXogIaYK.json[m
+[36m@@ -0,0 +1,10 @@[m
+[32m+[m[32m{[m
+[32m+[m[32m  "sessionID": "ses_1aec110ccffedp2uT2zXogIaYK",[m
+[32m+[m[32m  "updatedAt": "2026-05-22T20:04:52.260Z",[m
+[32m+[m[32m  "sources": {[m
+[32m+[m[32m    "background-task": {[m
+[32m+[m[32m      "state": "idle",[m
+[32m+[m[32m      "updatedAt": "2026-05-22T20:04:52.260Z"[m
+[32m+[m[32m    }[m
+[32m+[m[32m  }[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/agents.md b/AGENTS.md[m
+[1msimilarity index 89%[m
+[1mrename from agents.md[m
+[1mrename to AGENTS.md[m
+[1mindex ea4196d..3269dc1 100644[m
+[1m--- a/agents.md[m
+[1m+++ b/AGENTS.md[m
+[36m@@ -147,3 +147,12 @@[m [mRules:[m
+ /compile-latex       ←  /write-latex-report  ←[m
+ (up to 3 auto-fixes)[m
+ ```[m
+[32m+[m[32m## graphify[m
+[32m+[m
+[32m+[m[32mThis project has a graphify knowledge graph at graphify-out/.[m
+[32m+[m
+[32m+[m[32mRules:[m
+[32m+[m[32m- Before answering architecture or codebase questions, read graphify-out/GRAPH_REPORT.md for god nodes and community structure[m
+[32m+[m[32m- If graphify-out/wiki/index.md exists, navigate it instead of reading raw files[m
+[32m+[m[32m- For cross-module "how does X relate to Y" questions, prefer `graphify query "<question>"`, `graphify path "<A>" "<B>"`, or `graphify explain "<concept>"` over grep — these traverse the graph's EXTRACTED + INFERRED edges instead of scanning files[m
+[32m+[m[32m- After modifying code files in this session, run `graphify update .` to keep the graph current (AST-only, no API cost)[m
+[1mdiff --git a/constraints/.gitkeep b/constraints/.gitkeep[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e69de29[m
+[1mdiff --git a/docs/ClassiRoute_Report.docx b/docs/ClassiRoute_Report.docx[m
+[1mnew file mode 100644[m
+[1mindex 0000000..54fa1e2[m
+Binary files /dev/null and b/docs/ClassiRoute_Report.docx differ
+[1mdiff --git a/docs/README.md b/docs/README.md[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e0263a0[m
+[1m--- /dev/null[m
+[1m+++ b/docs/README.md[m
+[36m@@ -0,0 +1,44 @@[m
+[32m+[m[32m# ClassiRoute2 — System Architecture \& Design (Part 2)[m
+[32m+[m
+[32m+[m[32m> Part 1 (ML Core) is separate. This covers only the full-stack architecture, system design, and deployment.[m
+[32m+[m
+[32m+[m[32m## Structure[m
+[32m+[m
+[32m+[m[32m| File | Description |[m
+[32m+[m[32m|------|-------------|[m
+[32m+[m[32m| `main.tex` | Main LaTeX document (all chapters, references) |[m
+[32m+[m[32m| `figures/` | Place your images here (see below) |[m
+[32m+[m
+[32m+[m[32m## Required Figures[m
+[32m+[m
+[32m+[m[32mThe document references the following images. Place them in `figures/`:[m
+[32m+[m
+[32m+[m[32m| Image File | Description |[m
+[32m+[m[32m|------------|-------------|[m
+[32m+[m[32m| `gndec_logo.png` | GNDEC logo (title page) |[m
+[32m+[m[32m| `system_architecture.png` | High-level system architecture diagram |[m
+[32m+[m[32m| `deployment_diagram.png` | Deployment diagram (Vercel, Render, PostgreSQL) |[m
+[32m+[m[32m| `routing_pipeline.png` | Prompt routing pipeline flow |[m
+[32m+[m[32m| `provider_adapter_uml.png` | UML class diagram for provider adapters |[m
+[32m+[m[32m| `er_diagram.png` | Entity-relationship diagram |[m
+[32m+[m[32m| `auth_flow.png` | Authentication flow diagram |[m
+[32m+[m[32m| `screenshot_dashboard.png` | Dashboard page screenshot |[m
+[32m+[m[32m| `screenshot_chat.png` | Chat playground screenshot |[m
+[32m+[m[32m| `screenshot_keys.png` | Keys management page screenshot |[m
+[32m+[m[32m| `screenshot_analytics.png` | Analytics page screenshot |[m
+[32m+[m[32m| `screenshot_analytics2.png` | Additional analytics visualizations |[m
+[32m+[m[32m| `db_users.png` | Users table in PostgreSQL |[m
+[32m+[m[32m| `db_keys.png` | Virtual keys table screenshot |[m
+[32m+[m[32m| `db_logs.png` | Request logs table screenshot |[m
+[32m+[m
+[32m+[m[32m## Compiling[m
+[32m+[m
+[32m+[m[32m```bash[m
+[32m+[m[32mcd reports[m
+[32m+[m[32mpdflatex main.tex[m
+[32m+[m[32mbibtex main[m
+[32m+[m[32mpdflatex main.tex[m
+[32m+[m[32mpdflatex main.tex[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32mOr use your preferred LaTeX editor (Overleaf, TeXShop, etc.).[m
+[1mdiff --git a/docs/figures/auth_flow.png b/docs/figures/auth_flow.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..1bae5d6[m
+Binary files /dev/null and b/docs/figures/auth_flow.png differ
+[1mdiff --git a/docs/figures/db_keys.png b/docs/figures/db_keys.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..7b57ace[m
+Binary files /dev/null and b/docs/figures/db_keys.png differ
+[1mdiff --git a/docs/figures/db_logs.png b/docs/figures/db_logs.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..8421412[m
+Binary files /dev/null and b/docs/figures/db_logs.png differ
+[1mdiff --git a/docs/figures/db_users.png b/docs/figures/db_users.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..3861693[m
+Binary files /dev/null and b/docs/figures/db_users.png differ
+[1mdiff --git a/docs/figures/deployment_diagram.png b/docs/figures/deployment_diagram.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..8f15a80[m
+Binary files /dev/null and b/docs/figures/deployment_diagram.png differ
+[1mdiff --git a/docs/figures/er_diagram.png b/docs/figures/er_diagram.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..02630c8[m
+Binary files /dev/null and b/docs/figures/er_diagram.png differ
+[1mdiff --git a/docs/figures/provider_adapter_uml.png b/docs/figures/provider_adapter_uml.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..fd50579[m
+Binary files /dev/null and b/docs/figures/provider_adapter_uml.png differ
+[1mdiff --git a/docs/figures/routing_pipeline.png b/docs/figures/routing_pipeline.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..144a6ca[m
+Binary files /dev/null and b/docs/figures/routing_pipeline.png differ
+[1mdiff --git a/docs/figures/screenshot_analytics.png b/docs/figures/screenshot_analytics.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..eee7e82[m
+Binary files /dev/null and b/docs/figures/screenshot_analytics.png differ
+[1mdiff --git a/docs/figures/screenshot_analytics2.png b/docs/figures/screenshot_analytics2.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..1485259[m
+Binary files /dev/null and b/docs/figures/screenshot_analytics2.png differ
+[1mdiff --git a/docs/figures/screenshot_chat.png b/docs/figures/screenshot_chat.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..9d3627d[m
+Binary files /dev/null and b/docs/figures/screenshot_chat.png differ
+[1mdiff --git a/docs/figures/screenshot_dashboard.png b/docs/figures/screenshot_dashboard.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..69f8038[m
+Binary files /dev/null and b/docs/figures/screenshot_dashboard.png differ
+[1mdiff --git a/docs/figures/screenshot_keys.png b/docs/figures/screenshot_keys.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..ccee986[m
+Binary files /dev/null and b/docs/figures/screenshot_keys.png differ
+[1mdiff --git a/docs/figures/system_architecture.png b/docs/figures/system_architecture.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..a6543e2[m
+Binary files /dev/null and b/docs/figures/system_architecture.png differ
+[1mdiff --git a/docs/gndec_logo.png b/docs/gndec_logo.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..ed5379c[m
+Binary files /dev/null and b/docs/gndec_logo.png differ
+[1mdiff --git a/docs/main.aux b/docs/main.aux[m
+[1mnew file mode 100644[m
+[1mindex 0000000..4c17d1d[m
+[1m--- /dev/null[m
+[1m+++ b/docs/main.aux[m
+[36m@@ -0,0 +1,161 @@[m
+[32m+[m[32m\relax[m[41m [m
+[32m+[m[32m\providecommand \babel@aux [2]{\global \let \babel@toc \@gobbletwo }[m
+[32m+[m[32m\@nameuse{bbl@beforestart}[m
+[32m+[m[32m\providecommand\hyper@newdestlabel[2]{}[m
+[32m+[m[32m\providecommand\HyField@AuxAddToFields[1]{}[m
+[32m+[m[32m\providecommand\HyField@AuxAddToCoFields[2]{}[m
+[32m+[m[32m\babel@aux{english}{}[m
+[32m+[m[32m\@writefile{toc}{\contentsline {chapter}{Abstract}{1}{chapter*.1}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {chapter}{Acknowledgement}{2}{chapter*.2}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {chapter}{List of Figures}{3}{chapter*.3}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {chapter}{List of Tables}{4}{chapter*.4}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {chapter}{Table of Contents}{7}{chapter*.5}\protected@file@percent }[m
+[32m+[m[32m\citation{chen2016xgboost}[m
+[32m+[m[32m\@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{8}{chapter.1}\protected@file@percent }[m
+[32m+[m[32m\@writefile{lof}{\addvspace {10\p@ }}[m
+[32m+[m[32m\@writefile{lot}{\addvspace {10\p@ }}[m
+[32m+[m[32m\@writefile{toc}{\contentsline {section}{\numberline {1.1}Introduction to Project}{8}{section.1.1}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {section}{\numberline {1.2}Project Category}{8}{section.1.2}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {section}{\numberline {1.3}Problem Formulation}{9}{section.1.3}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {section}{\numberline {1.4}Identification/Recognition of Need}{9}{section.1.4}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {section}{\numberline {1.5}Existing System}{10}{section.1.5}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {section}{\numberline {1.6}Objectives}{11}{section.1.6}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {section}{\numberline {1.7}Proposed System}{11}{section.1.7}\protected@file@percent }[m
+[32m+[m[32m\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces ClassiRoute2 System Architecture Overview}}{12}{figure.caption.6}\protected@file@percent }[m
+[32m+[m[32m\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}[m
+[32m+[m[32m\newlabel{fig:architecture}{{1.1}{12}{ClassiRoute2 System Architecture Overview}{figure.caption.6}{}}[m
+[32m+[m[32m\@writefile{toc}{\contentsline {section}{\numberline {1.8}Unique Features of the Proposed System}{13}{section.1.8}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {chapter}{\numberline {2}Requirement Analysis and System Specification}{15}{chapter.2}\protected@file@percent }[m
+[32m+[m[32m\@writefile{lof}{\addvspace {10\p@ }}[m
+[32m+[m[32m\@writefile{lot}{\addvspace {10\p@ }}[m
+[32m+[m[32m\@writefile{toc}{\contentsline {section}{\numberline {2.1}Feasibility Study}{15}{section.2.1}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1}Technical Feasibility}{15}{subsection.2.1.1}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2}Economical Feasibility}{15}{subsection.2.1.2}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.3}Operational Feasibility}{16}{subsection.2.1.3}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {section}{\numberline {2.2}Software Requirement Specification}{16}{section.2.2}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Data Requirements}{16}{subsection.2.2.1}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Functional Requirements}{16}{subsection.2.2.2}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.3}Performance Requirements}{18}{subsection.2.2.3}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.4}Dependability Requirements}{18}{subsection.2.2.4}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.5}Maintainability Requirements}{18}{subsection.2.2.5}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.6}Security Requirements}{19}{subsection.2.2.6}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.7}Look and Feel Requirements}{19}{subsection.2.2.7}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {section}{\numberline {2.3}SDLC Model to be Used}{19}{section.2.3}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {chapter}{\numberline {3}System Design}{21}{chapter.3}\protected@file@percent }[m
+[32m+[m[32m\@writefile{lof}{\addvspace {10\p@ }}[m
+[32m+[m[32m\@writefile{lot}{\addvspace {10\p@ }}[m
+[32m+[m[32m\@writefile{toc}{\contentsline {section}{\numberline {3.1}Design Approach}{21}{section.3.1}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {section}{\numberline {3.2}Detailed Design}{22}{section.3.2}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}System Architecture Overview}{22}{subsection.3.2.1}\protected@file@percent }[m
+[32m+[m[32m\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Deployment Diagram Showing Component Distribution Across Services}}{22}{figure.caption.7}\protected@file@percent }[m
+[32m+[m[32m\newlabel{fig:deployment}{{3.1}{22}{Deployment Diagram Showing Component Distribution Across Services}{figure.caption.7}{}}[m
+[32m+[m[32m\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Prompt Routing Pipeline}{23}{subsection.3.2.2}\protected@file@percent }[m
+[32m+[m[32m\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Prompt Routing Pipeline — From Request Ingestion to Provider Dispatch}}{23}{figure.caption.8}\protected@file@percent }[m
+[32m+[m[32m\newlabel{fig:pipeline}{{3.2}{23}{Prompt Routing Pipeline — From Request Ingestion to Provider Dispatch}{figure.caption.8}{}}[m
+[32m+[m[32m\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}Provider Adapter Architecture}{24}{subsection.3.2.3}\protected@file@percent }[m
+[32m+[m[32m\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces UML Class Diagram for the Provider Adapter Pattern}}{24}{figure.caption.9}\protected@file@percent }[m
+[32m+[m[32m\newlabel{fig:provider_uml}{{3.3}{24}{UML Class Diagram for the Provider Adapter Pattern}{figure.caption.9}{}}[m
+[32m+[m[32m\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.4}Dispatch and Fallback Mechanism}{25}{subsection.3.2.4}\protected@file@percent }[m
+[32m+[m[32m\newlabel{lst:fallback}{{3.1}{25}{Cascading Fallback Algorithm}{lstlisting.3.1}{}}[m
+[32m+[m[32m\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.1}{\ignorespaces Cascading Fallback Algorithm}}{25}{lstlisting.3.1}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.5}Database Schema Design}{26}{subsection.3.2.5}\protected@file@percent }[m
+[32m+[m[32m\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Entity-Relationship Diagram for the ClassiRoute2 Database}}{27}{figure.caption.10}\protected@file@percent }[m
+[32m+[m[32m\newlabel{fig:er}{{3.4}{27}{Entity-Relationship Diagram for the ClassiRoute2 Database}{figure.caption.10}{}}[m
+[32m+[m[32m\@writefile{toc}{\contentsline {subsubsection}{Users Table}{27}{figure.caption.10}\protected@file@percent }[m
+[32m+[m[32m\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Users Table Schema}}{27}{table.caption.11}\protected@file@percent }[m
+[32m+[m[32m\newlabel{tab:users}{{3.1}{27}{Users Table Schema}{table.caption.11}{}}[m
+[32m+[m[32m\@writefile{toc}{\contentsline {subsubsection}{Virtual Keys Table}{28}{table.caption.11}\protected@file@percent }[m
+[32m+[m[32m\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces Virtual Keys Table Schema}}{28}{table.caption.12}\protected@file@percent }[m
+[32m+[m[32m\newlabel{tab:keys}{{3.2}{28}{Virtual Keys Table Schema}{table.caption.12}{}}[m
+[32m+[m[32m\@writefile{toc}{\contentsline {subsubsection}{Request Logs Table}{29}{table.caption.12}\protected@file@percent }[m
+[32m+[m[32m\@writefile{lot}{\contentsline {table}{\numberline {3.3}{\ignorespaces Request Logs Table Schema}}{29}{table.caption.13}\protected@file@percent }[m
+[32m+[m[32m\newlabel{tab:logs}{{3.3}{29}{Request Logs Table Schema}{table.caption.13}{}}[m
+[32m+[m[32m\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.6}API Route Design}{29}{subsection.3.2.6}\protected@file@percent }[m
+[32m+[m[32m\@writefile{lot}{\contentsline {table}{\numberline {3.4}{\ignorespaces API Route Map}}{30}{table.caption.14}\protected@file@percent }[m
+[32m+[m[32m\newlabel{tab:routes}{{3.4}{30}{API Route Map}{table.caption.14}{}}[m
+[32m+[m[32m\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.7}Authentication and Authorisation Flow}{30}{subsection.3.2.7}\protected@file@percent }[m
+[32m+[m[32m\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Authentication and Authorisation Flow Diagram}}{31}{figure.caption.15}\protected@file@percent }[m
+[32m+[m[32m\newlabel{fig:auth}{{3.5}{31}{Authentication and Authorisation Flow Diagram}{figure.caption.15}{}}[m
+[32m+[m[32m\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.8}Frontend Component Architecture}{31}{subsection.3.2.8}\protected@file@percent }[m
+[32m+[m[32m\@writefile{lot}{\contentsline {table}{\numberline {3.5}{\ignorespaces Frontend Component Hierarchy and Routing}}{31}{table.caption.16}\protected@file@percent }[m
+[32m+[m[32m\newlabel{tab:frontend}{{3.5}{31}{Frontend Component Hierarchy and Routing}{table.caption.16}{}}[m
+[32m+[m[32m\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.9}Rate Limiting Design}{32}{subsection.3.2.9}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {chapter}{\numberline {4}Implementation and Testing}{33}{chapter.4}\protected@file@percent }[m
+[32m+[m[32m\@writefile{lof}{\addvspace {10\p@ }}[m
+[32m+[m[32m\@writefile{lot}{\addvspace {10\p@ }}[m
+[32m+[m[32m\@writefile{toc}{\contentsline {section}{\numberline {4.1}Introduction to Languages, IDEs, Tools and Technologies}{33}{section.4.1}\protected@file@percent }[m
+[32m+[m[32m\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Technology Stack Summary}}{33}{table.caption.17}\protected@file@percent }[m
+[32m+[m[32m\newlabel{tab:techstack}{{4.1}{33}{Technology Stack Summary}{table.caption.17}{}}[m
+[32m+[m[32m\@writefile{toc}{\contentsline {section}{\numberline {4.2}Algorithm/Pseudocode Used}{34}{section.4.2}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Feature Extraction Algorithm}{34}{subsection.4.2.1}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}ML Routing Algorithm}{35}{subsection.4.2.2}\protected@file@percent }[m
+[32m+[m[32m\newlabel{lst:routing}{{4.1}{35}{XGBoost Routing Algorithm}{lstlisting.4.1}{}}[m
+[32m+[m[32m\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.1}{\ignorespaces XGBoost Routing Algorithm}}{35}{lstlisting.4.1}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}Cascading Fallback Algorithm}{36}{subsection.4.2.3}\protected@file@percent }[m
+[32m+[m[32m\newlabel{lst:fallback_alg}{{4.2}{36}{Cascading Fallback Algorithm}{lstlisting.4.2}{}}[m
+[32m+[m[32m\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.2}{\ignorespaces Cascading Fallback Algorithm}}{36}{lstlisting.4.2}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.4}Analytics Aggregation Algorithm}{36}{subsection.4.2.4}\protected@file@percent }[m
+[32m+[m[32m\newlabel{lst:analytics}{{4.3}{37}{Analytics Aggregation Pseudocode}{lstlisting.4.3}{}}[m
+[32m+[m[32m\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.3}{\ignorespaces Analytics Aggregation Pseudocode}}{37}{lstlisting.4.3}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {section}{\numberline {4.3}Testing Techniques}{37}{section.4.3}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Testing Strategy}{37}{subsection.4.3.1}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Tests Configuration}{38}{subsection.4.3.2}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {section}{\numberline {4.4}Test Cases Designed}{39}{section.4.4}\protected@file@percent }[m
+[32m+[m[32m\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces Backend Test Cases}}{39}{table.caption.18}\protected@file@percent }[m
+[32m+[m[32m\newlabel{tab:backend_tests}{{4.2}{39}{Backend Test Cases}{table.caption.18}{}}[m
+[32m+[m[32m\@writefile{lot}{\contentsline {table}{\numberline {4.3}{\ignorespaces Frontend Test Cases}}{40}{table.caption.19}\protected@file@percent }[m
+[32m+[m[32m\newlabel{tab:frontend_tests}{{4.3}{40}{Frontend Test Cases}{table.caption.19}{}}[m
+[32m+[m[32m\@writefile{toc}{\contentsline {chapter}{\numberline {5}Results and Discussions}{41}{chapter.5}\protected@file@percent }[m
+[32m+[m[32m\@writefile{lof}{\addvspace {10\p@ }}[m
+[32m+[m[32m\@writefile{lot}{\addvspace {10\p@ }}[m
+[32m+[m[32m\@writefile{toc}{\contentsline {section}{\numberline {5.1}User Interface Representation}{41}{section.5.1}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Brief Description of Various Modules of the System}{41}{subsection.5.1.1}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {subsubsection}{Authentication Module}{41}{subsection.5.1.1}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {subsubsection}{Dashboard Module}{41}{subsection.5.1.1}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {subsubsection}{Playground Module}{41}{subsection.5.1.1}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {subsubsection}{Keys Management Module}{41}{subsection.5.1.1}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {subsubsection}{Analytics Module}{42}{subsection.5.1.1}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {subsubsection}{Profile Module}{42}{subsection.5.1.1}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {section}{\numberline {5.2}Snapshots of the System}{42}{section.5.2}\protected@file@percent }[m
+[32m+[m[32m\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Dashboard Page Showing Analytics Summary and Tier Distribution}}{42}{figure.caption.20}\protected@file@percent }[m
+[32m+[m[32m\newlabel{fig:dashboard}{{5.1}{42}{Dashboard Page Showing Analytics Summary and Tier Distribution}{figure.caption.20}{}}[m
+[32m+[m[32m\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Chat Playground Showing Streaming Response with Routing Metadata}}{43}{figure.caption.21}\protected@file@percent }[m
+[32m+[m[32m\newlabel{fig:chat}{{5.2}{43}{Chat Playground Showing Streaming Response with Routing Metadata}{figure.caption.21}{}}[m
+[32m+[m[32m\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces API Keys Management Page with Create Dialog}}{43}{figure.caption.22}\protected@file@percent }[m
+[32m+[m[32m\newlabel{fig:keys}{{5.3}{43}{API Keys Management Page with Create Dialog}{figure.caption.22}{}}[m
+[32m+[m[32m\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Detailed Analytics View with Request Logs and Daily Trends}}{44}{figure.caption.23}\protected@file@percent }[m
+[32m+[m[32m\newlabel{fig:analytics}{{5.4}{44}{Detailed Analytics View with Request Logs and Daily Trends}{figure.caption.23}{}}[m
+[32m+[m[32m\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Analytics Charts Showing Cost Savings and Tier Utilisation}}{44}{figure.caption.24}\protected@file@percent }[m
+[32m+[m[32m\newlabel{fig:analytics2}{{5.5}{44}{Analytics Charts Showing Cost Savings and Tier Utilisation}{figure.caption.24}{}}[m
+[32m+[m[32m\@writefile{toc}{\contentsline {section}{\numberline {5.3}Backend Representation}{45}{section.5.3}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Database Tables}{45}{subsection.5.3.1}\protected@file@percent }[m
+[32m+[m[32m\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces Users Table in PostgreSQL}}{45}{figure.caption.25}\protected@file@percent }[m
+[32m+[m[32m\newlabel{fig:db_users}{{5.6}{45}{Users Table in PostgreSQL}{figure.caption.25}{}}[m
+[32m+[m[32m\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces Virtual Keys Table Showing Encrypted API Key Storage}}{46}{figure.caption.26}\protected@file@percent }[m
+[32m+[m[32m\newlabel{fig:db_keys}{{5.7}{46}{Virtual Keys Table Showing Encrypted API Key Storage}{figure.caption.26}{}}[m
+[32m+[m[32m\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces Request Logs Table Capturing Per-Request Routing and Usage Data}}{46}{figure.caption.27}\protected@file@percent }[m
+[32m+[m[32m\newlabel{fig:db_logs}{{5.8}{46}{Request Logs Table Capturing Per-Request Routing and Usage Data}{figure.caption.27}{}}[m
+[32m+[m[32m\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Cost Savings Analysis}{47}{subsection.5.3.2}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {chapter}{\numberline {6}Conclusion and Future Scope}{48}{chapter.6}\protected@file@percent }[m
+[32m+[m[32m\@writefile{lof}{\addvspace {10\p@ }}[m
+[32m+[m[32m\@writefile{lot}{\addvspace {10\p@ }}[m
+[32m+[m[32m\@writefile{toc}{\contentsline {section}{\numberline {6.1}Conclusion}{48}{section.6.1}\protected@file@percent }[m
+[32m+[m[32m\@writefile{toc}{\contentsline {section}{\numberline {6.2}Future Scope}{49}{section.6.2}\protected@file@percent }[m
+[32m+[m[32m\bibcite{chen2016xgboost}{1}[m
+[32m+[m[32m\bibcite{fastapi}{2}[m
+[32m+[m[32m\bibcite{openai2023gpt4}{3}[m
+[32m+[m[32m\bibcite{anthropic2024claude}{4}[m
+[32m+[m[32m\bibcite{google2024gemini}{5}[m
+[32m+[m[32m\bibcite{sqlalchemy}{6}[m
+[32m+[m[32m\bibcite{react19}{7}[m
+[32m+[m[32m\bibcite{tailwindcss}{8}[m
+[32m+[m[32m\bibcite{radix}{9}[m
+[32m+[m[32m\bibcite{recharts}{10}[m
+[32m+[m[32m\bibcite{alembic}{11}[m
+[32m+[m[32m\bibcite{docker}{12}[m
+[32m+[m[32m\bibcite{posthog}{13}[m
+[32m+[m[32m\bibcite{sentry}{14}[m
+[32m+[m[32m\@writefile{toc}{\contentsline {chapter}{References/Bibliography}{50}{chapter*.28}\protected@file@percent }[m
+[32m+[m[32m\bibcite{passlib}{15}[m
+[32m+[m[32m\bibcite{fernet}{16}[m
+[32m+[m[32m\gdef \@abspage@last{53}[m
+[1mdiff --git a/docs/main.lof b/docs/main.lof[m
+[1mnew file mode 100644[m
+[1mindex 0000000..1141e42[m
+[1m--- /dev/null[m
+[1m+++ b/docs/main.lof[m
+[36m@@ -0,0 +1,21 @@[m
+[32m+[m[32m\babel@toc {english}{}\relax[m[41m [m
+[32m+[m[32m\addvspace {10\p@ }[m
+[32m+[m[32m\contentsline {figure}{\numberline {1.1}{\ignorespaces ClassiRoute2 System Architecture Overview}}{12}{figure.caption.6}%[m
+[32m+[m[32m\addvspace {10\p@ }[m
+[32m+[m[32m\addvspace {10\p@ }[m
+[32m+[m[32m\contentsline {figure}{\numberline {3.1}{\ignorespaces Deployment Diagram Showing Component Distribution Across Services}}{22}{figure.caption.7}%[m
+[32m+[m[32m\contentsline {figure}{\numberline {3.2}{\ignorespaces Prompt Routing Pipeline — From Request Ingestion to Provider Dispatch}}{23}{figure.caption.8}%[m
+[32m+[m[32m\contentsline {figure}{\numberline {3.3}{\ignorespaces UML Class Diagram for the Provider Adapter Pattern}}{24}{figure.caption.9}%[m
+[32m+[m[32m\contentsline {figure}{\numberline {3.4}{\ignorespaces Entity-Relationship Diagram for the ClassiRoute2 Database}}{27}{figure.caption.10}%[m
+[32m+[m[32m\contentsline {figure}{\numberline {3.5}{\ignorespaces Authentication and Authorisation Flow Diagram}}{31}{figure.caption.15}%[m
+[32m+[m[32m\addvspace {10\p@ }[m
+[32m+[m[32m\addvspace {10\p@ }[m
+[32m+[m[32m\contentsline {figure}{\numberline {5.1}{\ignorespaces Dashboard Page Showing Analytics Summary and Tier Distribution}}{42}{figure.caption.20}%[m
+[32m+[m[32m\contentsline {figure}{\numberline {5.2}{\ignorespaces Chat Playground Showing Streaming Response with Routing Metadata}}{43}{figure.caption.21}%[m
+[32m+[m[32m\contentsline {figure}{\numberline {5.3}{\ignorespaces API Keys Management Page with Create Dialog}}{43}{figure.caption.22}%[m
+[32m+[m[32m\contentsline {figure}{\numberline {5.4}{\ignorespaces Detailed Analytics View with Request Logs and Daily Trends}}{44}{figure.caption.23}%[m
+[32m+[m[32m\contentsline {figure}{\numberline {5.5}{\ignorespaces Analytics Charts Showing Cost Savings and Tier Utilisation}}{44}{figure.caption.24}%[m
+[32m+[m[32m\contentsline {figure}{\numberline {5.6}{\ignorespaces Users Table in PostgreSQL}}{45}{figure.caption.25}%[m
+[32m+[m[32m\contentsline {figure}{\numberline {5.7}{\ignorespaces Virtual Keys Table Showing Encrypted API Key Storage}}{46}{figure.caption.26}%[m
+[32m+[m[32m\contentsline {figure}{\numberline {5.8}{\ignorespaces Request Logs Table Capturing Per-Request Routing and Usage Data}}{46}{figure.caption.27}%[m
+[32m+[m[32m\addvspace {10\p@ }[m
+[1mdiff --git a/docs/main.log b/docs/main.log[m
+[1mnew file mode 100644[m
+[1mindex 0000000..f67d265[m
+[1m--- /dev/null[m
+[1m+++ b/docs/main.log[m
+[36m@@ -0,0 +1,1141 @@[m
+[32m+[m[32mThis is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.23)  23 MAY 2026 02:42[m
+[32m+[m[32mentering extended mode[m
+[32m+[m[32m restricted \write18 enabled.[m
+[32m+[m[32m %&-line parsing enabled.[m
+[32m+[m[32m**main.tex[m
+[32m+[m[32m(./main.tex[m
+[32m+[m[32mLaTeX2e <2025-11-01>[m
+[32m+[m[32mL3 programming layer <2026-03-20>[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls[m
+[32m+[m[32mDocument Class: report 2025/01/22 v1.4n Standard LaTeX document class[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo[m
+[32m+[m[32mFile: size12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)[m
+[32m+[m[32m)[m
+[32m+[m[32m\c@part=\count275[m
+[32m+[m[32m\c@chapter=\count276[m
+[32m+[m[32m\c@section=\count277[m
+[32m+[m[32m\c@subsection=\count278[m
+[32m+[m[32m\c@subsubsection=\count279[m
+[32m+[m[32m\c@paragraph=\count280[m
+[32m+[m[32m\c@subparagraph=\count281[m
+[32m+[m[32m\c@figure=\count282[m
+[32m+[m[32m\c@table=\count283[m
+[32m+[m[32m\abovecaptionskip=\skip49[m
+[32m+[m[32m\belowcaptionskip=\skip50[m
+[32m+[m[32m\bibindent=\dimen150[m
+[32m+[m[32m)[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty[m
+[32m+[m[32mPackage: inputenc 2024/02/08 v1.3d Input encoding file[m
+[32m+[m[32m\inpenc@prehook=\toks17[m
+[32m+[m[32m\inpenc@posthook=\toks18[m
+[32m+[m[32m)[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty[m
+[32m+[m[32mPackage: fontenc 2025/07/18 v2.1d Standard LaTeX package[m
+[32m+[m[32m)[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/lm/lmodern.sty[m
+[32m+[m[32mPackage: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts[m
+[32m+[m[32mLaTeX Font Info:    Overwriting symbol font `operators' in version `normal'[m
+[32m+[m[32m(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.[m
+[32m+[m[32mLaTeX Font Info:    Overwriting symbol font `letters' in version `normal'[m
+[32m+[m[32m(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.[m
+[32m+[m[32mLaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'[m
+[32m+[m[32m(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.[m
+[32m+[m[32mLaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'[m
+[32m+[m[32m(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.[m
+[32m+[m[32mLaTeX Font Info:    Overwriting symbol font `operators' in version `bold'[m
+[32m+[m[32m(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.[m
+[32m+[m[32mLaTeX Font Info:    Overwriting symbol font `letters' in version `bold'[m
+[32m+[m[32m(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.[m
+[32m+[m[32mLaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'[m
+[32m+[m[32m(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.[m
+[32m+[m[32mLaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'[m
+[32m+[m[32m(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.[m
+[32m+[m[32mLaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'[m
+[32m+[m[32m(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.[m
+[32m+[m[32mLaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'[m
+[32m+[m[32m(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.[m
+[32m+[m[32mLaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'[m
+[32m+[m[32m(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.[m
+[32m+[m[32mLaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'[m
+[32m+[m[32m(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.[m
+[32m+[m[32mLaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'[m
+[32m+[m[32m(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.[m
+[32m+[m[32mLaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'[m
+[32m+[m[32m(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.[m
+[32m+[m[32mLaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'[m
+[32m+[m[32m(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.[m
+[32m+[m[32mLaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'[m
+[32m+[m[32m(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.[m
+[32m+[m[32m)[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty[m
+[32m+[m[32mPackage: babel 2026/04/15 v26.6 The multilingual framework for LuaLaTeX, pdfLaT[m
+[32m+[m[32meX and XeLaTeX[m
+[32m+[m[32m\babel@savecnt=\count284[m
+[32m+[m[32mLaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input li[m
+[32m+[m[32mne 2078.[m
+[32m+[m[32mLaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input li[m
+[32m+[m[32mne 2080.[m
+[32m+[m[32mLaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input lin[m
+[32m+[m[32me 2082.[m
+[32m+[m[32mLaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input lin[m
+[32m+[m[32me 2083.[m
+[32m+[m[32mLaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?)[m[41m [m
+[32m+[m[32mon input line 2084.[m
+[32m+[m[32mLaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?)[m[41m [m
+[32m+[m[32mon input line 2086.[m
+[32m+[m[32mLaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?)[m[41m [m
+[32m+[m[32mon input line 2111.[m
+[32m+[m[32m\U@D=\dimen151[m
+[32m+[m[32m\l@unhyphenated=\language23[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)[m
+[32m+[m[32m\bbl@readstream=\read2[m
+[32m+[m[32m\bbl@dirlevel=\count285[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/generic/babel/locale/en/babel-english.tex)[m
+[32m+[m[32mPackage babel Info: Importing font and identification data for english[m
+[32m+[m[32m(babel)             from babel-en.ini. Reported on input line 4330.[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf[m
+[32m+[m[32mLanguage: english 2017/06/06 v3.3r English support from the babel system[m
+[32m+[m[32mPackage babel Info: Hyphen rules for 'canadian' set to \l@english[m
+[32m+[m[32m(babel)             (\language0). Reported on input line 102.[m
+[32m+[m[32mPackage babel Info: Hyphen rules for 'australian' set to \l@ukenglish[m
+[32m+[m[32m(babel)             (\language3). Reported on input line 105.[m
+[32m+[m[32mPackage babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish[m
+[32m+[m[32m(babel)             (\language3). Reported on input line 108.[m
+[32m+[m[32m))[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty[m
+[32m+[m[32mPackage: geometry 2026/03/07 v6.0 Page Geometry[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty[m
+[32m+[m[32mPackage: keyval 2022/05/29 v1.15 key=value parser (DPC)[m
+[32m+[m[32m\KV@toks@=\toks19[m
+[32m+[m[32m)[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty[m
+[32m+[m[32mPackage: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty[m
+[32m+[m[32mPackage: iftex 2024/12/12 v1.0g TeX engine tests[m
+[32m+[m[32m))[m
+[32m+[m[32m\Gm@cnth=\count286[m
+[32m+[m[32m\Gm@cntv=\count287[m
+[32m+[m[32m\c@Gm@tempcnt=\count288[m
+[32m+[m[32m\Gm@bindingoffset=\dimen152[m
+[32m+[m[32m\Gm@wd@mp=\dimen153[m
+[32m+[m[32m\Gm@odd@mp=\dimen154[m
+[32m+[m[32m\Gm@even@mp=\dimen155[m
+[32m+[m[32m\Gm@layoutwidth=\dimen156[m
+[32m+[m[32m\Gm@layoutheight=\dimen157[m
+[32m+[m[32m\Gm@layouthoffset=\dimen158[m
+[32m+[m[32m\Gm@layoutvoffset=\dimen159[m
+[32m+[m[32m\Gm@dimlist=\toks20[m
+[32m+[m[32m)[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty[m
+[32m+[m[32mPackage: setspace 2022/12/04 v6.7b set line spacing[m
+[32m+[m[32m)[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty[m
+[32m+[m[32mPackage: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty[m
+[32m+[m
+[32m+[m[32mLaTeX Warning: You have requested release `2026/06/01' of LaTeX,[m
+[32m+[m[32m               but only release `2025-11-01' is available.[m
+[32m+[m
+[32m+[m[32mPackage: array 2026/01/25 v2.7a Tabular extension package (FMi)[m
+[32m+[m[32m\col@sep=\dimen160[m
+[32m+[m[32m\ar@mcellbox=\box53[m
+[32m+[m[32m\extrarowheight=\dimen161[m
+[32m+[m[32m\NC@list=\toks21[m
+[32m+[m[32m\extratabsurround=\skip51[m
+[32m+[m[32m\backup@length=\skip52[m
+[32m+[m[32m\ar@cellbox=\box54[m
+[32m+[m[32m)[m
+[32m+[m[32m\TX@col@width=\dimen162[m
+[32m+[m[32m\TX@old@table=\dimen163[m
+[32m+[m[32m\TX@old@col=\dimen164[m
+[32m+[m[32m\TX@target=\dimen165[m
+[32m+[m[32m\TX@delta=\dimen166[m
+[32m+[m[32m\TX@cols=\count289[m
+[32m+[m[32m\TX@ftn=\toks22[m
+[32m+[m[32m) (/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty[m
+[32m+[m[32mPackage: longtable 2026-01-28 v4.27 Multi-page Table package (DPC)[m
+[32m+[m[32m\LTleft=\skip53[m
+[32m+[m[32m\LTright=\skip54[m
+[32m+[m[32m\LTpre=\skip55[m
+[32m+[m[32m\LTpost=\skip56[m
+[32m+[m[32m\LTchunksize=\count290[m
+[32m+[m[32m\LTcapwidth=\dimen167[m
+[32m+[m[32m\LT@head=\box55[m
+[32m+[m[32m\LT@firsthead=\box56[m
+[32m+[m[32m\LT@foot=\box57[m
+[32m+[m[32m\LT@lastfoot=\box58[m
+[32m+[m[32m\LT@gbox=\box59[m
+[32m+[m[32m\LT@cols=\count291[m
+[32m+[m[32m\LT@rows=\count292[m
+[32m+[m[32m\c@LT@tables=\count293[m
+[32m+[m[32m\c@LT@chunks=\count294[m
+[32m+[m[32m\LT@p@ftn=\toks23[m
+[32m+[m[32m)[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty[m
+[32m+[m[32mPackage: booktabs 2020/01/12 v1.61803398 Publication quality tables[m
+[32m+[m[32m\heavyrulewidth=\dimen168[m
+[32m+[m[32m\lightrulewidth=\dimen169[m
+[32m+[m[32m\cmidrulewidth=\dimen170[m
+[32m+[m[32m\belowrulesep=\dimen171[m
+[32m+[m[32m\belowbottomsep=\dimen172[m
+[32m+[m[32m\aboverulesep=\dimen173[m
+[32m+[m[32m\abovetopsep=\dimen174[m
+[32m+[m[32m\cmidrulesep=\dimen175[m
+[32m+[m[32m\cmidrulekern=\dimen176[m
+[32m+[m[32m\defaultaddspace=\dimen177[m
+[32m+[m[32m\@cmidla=\count295[m
+[32m+[m[32m\@cmidlb=\count296[m
+[32m+[m[32m\@aboverulesep=\dimen178[m
+[32m+[m[32m\@belowrulesep=\dimen179[m
+[32m+[m[32m\@thisruleclass=\count297[m
+[32m+[m[32m\@lastruleclass=\count298[m
+[32m+[m[32m\@thisrulewidth=\dimen180[m
+[32m+[m[32m)[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty[m
+[32m+[m[32mPackage: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty[m
+[32m+[m[32mPackage: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty[m
+[32m+[m[32mPackage: trig 2023/12/02 v1.11 sin cos tan (DPC)[m
+[32m+[m[32m)[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg[m
+[32m+[m[32mFile: graphics.cfg 2016/06/04 v1.11 sample graphics configuration[m
+[32m+[m[32m)[m
+[32m+[m[32mPackage graphics Info: Driver file: pdftex.def on input line 106.[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def[m
+[32m+[m[32mFile: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex[m
+[32m+[m[32m))[m
+[32m+[m[32m\Gin@req@height=\dimen181[m
+[32m+[m[32m\Gin@req@width=\dimen182[m
+[32m+[m[32m)[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty[m
+[32m+[m[32mPackage: float 2001/11/08 v1.3d Float enhancements (AL)[m
+[32m+[m[32m\c@float@type=\count299[m
+[32m+[m[32m\float@exts=\toks24[m
+[32m+[m[32m\float@box=\box60[m
+[32m+[m[32m\@float@everytoks=\toks25[m
+[32m+[m[32m\@floatcapt=\box61[m
+[32m+[m[32m)[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty[m
+[32m+[m[32mPackage: caption 2023/08/05 v3.6o Customizing captions (AR)[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty[m
+[32m+[m[32mPackage: caption3 2023/07/31 v2.4d caption3 kernel (AR)[m
+[32m+[m[32m\caption@tempdima=\dimen183[m
+[32m+[m[32m\captionmargin=\dimen184[m
+[32m+[m[32m\caption@leftmargin=\dimen185[m
+[32m+[m[32m\caption@rightmargin=\dimen186[m
+[32m+[m[32m\caption@width=\dimen187[m
+[32m+[m[32m\caption@indent=\dimen188[m
+[32m+[m[32m\caption@parindent=\dimen189[m
+[32m+[m[32m\caption@hangindent=\dimen190[m
+[32m+[m[32mPackage caption Info: Standard document class detected.[m
+[32m+[m[32m)[m
+[32m+[m[32m\c@caption@flags=\count300[m
+[32m+[m[32m\c@continuedfloat=\count301[m
+[32m+[m[32mPackage caption Info: float package is loaded.[m
+[32m+[m[32mPackage caption Info: longtable package is loaded.[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty[m
+[32m+[m[32mPackage: ltcaption 2021/01/08 v1.4c longtable captions (AR)[m
+[32m+[m[32m))[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty[m
+[32m+[m[32mPackage: hyperref 2026-04-24 v7.01q Hypertext links for LaTeX[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty[m
+[32m+[m[32mPackage: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)[m
+[32m+[m[32m)[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty[m
+[32m+[m[32mPackage: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)[m
+[32m+[m[32m)[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty[m
+[32m+[m[32mPackage: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty[m
+[32m+[m[32mPackage: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)[m
+[32m+[m[32m)[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty[m
+[32m+[m[32mPackage: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO[m
+[32m+[m[32m)[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty[m
+[32m+[m[32mPackage: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)[m
+[32m+[m[32m)[m
+[32m+[m[32mPackage pdftexcmds Info: \pdf@primitive is available.[m
+[32m+[m[32mPackage pdftexcmds Info: \pdf@ifprimitive is available.[m
+[32m+[m[32mPackage pdftexcmds Info: \pdfdraftmode found.[m
+[32m+[m[32m))[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty[m
+[32m+[m[32mPackage: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)[m
+[32m+[m[32m)[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty[m
+[32m+[m[32mPackage: nameref 2026-01-29 v2.58 Cross-referencing by name of section[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty[m
+[32m+[m[32mPackage: refcount 2019/12/15 v3.6 Data extraction from label references (HO)[m
+[32m+[m[32m)[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty[m
+[32m+[m[32mPackage: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty[m
+[32m+[m[32mPackage: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)[m
+[32m+[m[32m))[m
+[32m+[m[32m\c@section@level=\count302[m
+[32m+[m[32m)[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty[m
+[32m+[m[32mPackage: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)[m
+[32m+[m[32m\etb@tempcnta=\count303[m
+[32m+[m[32m)[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/generic/stringenc/stringenc.sty[m
+[32m+[m[32mPackage: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO[m
+[32m+[m[32m)[m
+[32m+[m[32m)[m
+[32m+[m[32m\@linkdim=\dimen191[m
+[32m+[m[32m\Hy@linkcounter=\count304[m
+[32m+[m[32m\Hy@pagecounter=\count305[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def[m
+[32m+[m[32mFile: pd1enc.def 2026-04-24 v7.01q Hyperref: PDFDocEncoding definition (HO)[m
+[32m+[m[32mNow handling font encoding PD1 ...[m
+[32m+[m[32m... no UTF-8 mapping file for font encoding PD1[m
+[32m+[m[32m)[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty[m
+[32m+[m[32mPackage: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)[m
+[32m+[m[32m)[m
+[32m+[m[32m\Hy@SavedSpaceFactor=\count306[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def[m
+[32m+[m[32mFile: puenc.def 2026-04-24 v7.01q Hyperref: PDF Unicode definition (HO)[m
+[32m+[m[32mNow handling font encoding PU ...[m
+[32m+[m[32m... no UTF-8 mapping file for font encoding PU[m
+[32m+[m[32m)[m
+[32m+[m[32mPackage hyperref Info: Hyper figures OFF on input line 4199.[m
+[32m+[m[32mPackage hyperref Info: Link nesting OFF on input line 4204.[m
+[32m+[m[32mPackage hyperref Info: Hyper index ON on input line 4207.[m
+[32m+[m[32mPackage hyperref Info: Plain pages OFF on input line 4214.[m
+[32m+[m[32mPackage hyperref Info: Backreferencing OFF on input line 4219.[m
+[32m+[m[32mPackage hyperref Info: Implicit mode ON; LaTeX internals redefined.[m
+[32m+[m[32mPackage hyperref Info: Bookmarks ON on input line 4466.[m
+[32m+[m[32m\c@Hy@tempcnt=\count307[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty[m
+[32m+[m[32m\Urlmuskip=\muskip17[m
+[32m+[m[32mPackage: url 2013/09/16  ver 3.4  Verb mode for urls, etc.[m
+[32m+[m[32m)[m
+[32m+[m[32mLaTeX Info: Redefining \url on input line 4805.[m
+[32m+[m[32m\XeTeXLinkMargin=\dimen192[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty[m
+[32m+[m[32mPackage: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty[m
+[32m+[m[32mPackage: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO[m
+[32m+[m[32m)[m
+[32m+[m[32m))[m
+[32m+[m[32m\Fld@menulength=\count308[m
+[32m+[m[32m\Field@Width=\dimen193[m
+[32m+[m[32m\Fld@charsize=\dimen194[m
+[32m+[m[32mPackage hyperref Info: Hyper figures OFF on input line 6091.[m
+[32m+[m[32mPackage hyperref Info: Link nesting OFF on input line 6096.[m
+[32m+[m[32mPackage hyperref Info: Hyper index ON on input line 6099.[m
+[32m+[m[32mPackage hyperref Info: backreferencing OFF on input line 6106.[m
+[32m+[m[32mPackage hyperref Info: Link coloring OFF on input line 6111.[m
+[32m+[m[32mPackage hyperref Info: Link coloring with OCG OFF on input line 6116.[m
+[32m+[m[32mPackage hyperref Info: PDF/A mode OFF on input line 6121.[m
+[32m+[m[32m\Hy@abspage=\count309[m
+[32m+[m[32m\c@Item=\count310[m
+[32m+[m[32m\c@Hfootnote=\count311[m
+[32m+[m[32m)[m
+[32m+[m[32mPackage hyperref Info: Driver (autodetected): hpdftex.[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def[m
+[32m+[m[32mFile: hpdftex.def 2026-04-24 v7.01q Hyperref driver for pdfTeX[m
+[32m+[m[32m\Fld@listcount=\count312[m
+[32m+[m[32m\c@bookmark@seq@number=\count313[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty[m
+[32m+[m[32mPackage: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty[m
+[32m+[m[32mPackage: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)[m
+[32m+[m[32m)[m
+[32m+[m[32mPackage uniquecounter Info: New unique counter `rerunfilecheck' on input line 2[m
+[32m+[m[32m84.[m
+[32m+[m[32m)[m
+[32m+[m[32m\Hy@SectionHShift=\skip57[m
+[32m+[m[32m)[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty[m
+[32m+[m[32mPackage: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg[m
+[32m+[m[32mFile: color.cfg 2016/01/02 v1.6 sample color configuration[m
+[32m+[m[32m)[m
+[32m+[m[32mPackage xcolor Info: Driver file: pdftex.def on input line 274.[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx)[m
+[32m+[m[32mPackage xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.[m
+[32m+[m[32mPackage xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.[m
+[32m+[m[32mPackage xcolor Info: Model `RGB' extended on input line 1365.[m
+[32m+[m[32mPackage xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.[m
+[32m+[m[32mPackage xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.[m
+[32m+[m[32mPackage xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.[m
+[32m+[m[32mPackage xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.[m
+[32m+[m[32mPackage xcolor Info: Model `Gray' substituted by `gray' on input line 1371.[m
+[32m+[m[32mPackage xcolor Info: Model `wave' substituted by `hsb' on input line 1372.[m
+[32m+[m[32m)[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty[m
+[32m+[m[32mPackage: colortbl 2024/10/29 v1.0k Color table columns (DPC)[m
+[32m+[m[32m\everycr=\toks26[m
+[32m+[m[32m\minrowclearance=\skip58[m
+[32m+[m[32m\rownum=\count314[m
+[32m+[m[32m)[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty[m
+[32m+[m[32m\lst@mode=\count315[m
+[32m+[m[32m\lst@gtempboxa=\box62[m
+[32m+[m[32m\lst@token=\toks27[m
+[32m+[m[32m\lst@length=\count316[m
+[32m+[m[32m\lst@currlwidth=\dimen195[m
+[32m+[m[32m\lst@column=\count317[m
+[32m+[m[32m\lst@pos=\count318[m
+[32m+[m[32m\lst@lostspace=\dimen196[m
+[32m+[m[32m\lst@width=\dimen197[m
+[32m+[m[32m\lst@newlines=\count319[m
+[32m+[m[32m\lst@lineno=\count320[m
+[32m+[m[32m\lst@maxwidth=\dimen198[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/listings/lstpatch.sty[m
+[32m+[m[32mFile: lstpatch.sty 2025/11/14 1.11b (Carsten Heinz)[m
+[32m+[m[32m)[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty[m
+[32m+[m[32mFile: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)[m
+[32m+[m[32m\c@lstnumber=\count321[m
+[32m+[m[32m\lst@skipnumbers=\count322[m
+[32m+[m[32m\lst@framebox=\box63[m
+[32m+[m[32m)[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg[m
+[32m+[m[32mFile: listings.cfg 2025/11/14 1.11b listings configuration[m
+[32m+[m[32m))[m
+[32m+[m[32mPackage: listings 2025/11/14 1.11b (Carsten Heinz)[m
+[32m+[m
+[32m+[m[32m==> First Aid for listings.sty no longer applied![m
+[32m+[m[32m    Expected:[m
+[32m+[m[32m        2024/09/23 1.10c (Carsten Heinz)[m
+[32m+[m[32m    but found:[m
+[32m+[m[32m        2025/11/14 1.11b (Carsten Heinz)[m
+[32m+[m[32m    so I'm assuming it got fixed.[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty[m
+[32m+[m[32mPackage: enumitem 2025/02/06 v3.11 Customized lists[m
+[32m+[m[32m\labelindent=\skip59[m
+[32m+[m[32m\enit@outerparindent=\dimen199[m
+[32m+[m[32m\enit@toks=\toks28[m
+[32m+[m[32m\enit@inbox=\box64[m
+[32m+[m[32m\enit@count@id=\count323[m
+[32m+[m[32m\enitdp@description=\count324[m
+[32m+[m[32m)[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty[m
+[32m+[m[32mPackage: amsmath 2025/07/09 v2.17z AMS math features[m
+[32m+[m[32m\@mathmargin=\skip60[m
+[32m+[m
+[32m+[m[32mFor additional information on amsmath, use the `?' option.[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty[m
+[32m+[m[32mPackage: amstext 2024/11/17 v2.01 AMS text[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty[m
+[32m+[m[32mFile: amsgen.sty 1999/11/30 v2.0 generic functions[m
+[32m+[m[32m\@emptytoks=\toks29[m
+[32m+[m[32m\ex@=\dimen256[m
+[32m+[m[32m))[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty[m
+[32m+[m[32mPackage: amsbsy 1999/11/29 v1.2d Bold Symbols[m
+[32m+[m[32m\pmbraise@=\dimen257[m
+[32m+[m[32m)[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty[m
+[32m+[m[32mPackage: amsopn 2022/04/08 v2.04 operator names[m
+[32m+[m[32m)[m
+[32m+[m[32m\inf@bad=\count325[m
+[32m+[m[32mLaTeX Info: Redefining \frac on input line 233.[m
+[32m+[m[32m\uproot@=\count326[m
+[32m+[m[32m\leftroot@=\count327[m
+[32m+[m[32mLaTeX Info: Redefining \overline on input line 398.[m
+[32m+[m[32mLaTeX Info: Redefining \colon on input line 409.[m
+[32m+[m[32m\classnum@=\count328[m
+[32m+[m[32m\DOTSCASE@=\count329[m
+[32m+[m[32mLaTeX Info: Redefining \ldots on input line 495.[m
+[32m+[m[32mLaTeX Info: Redefining \dots on input line 498.[m
+[32m+[m[32mLaTeX Info: Redefining \cdots on input line 619.[m
+[32m+[m[32m\Mathstrutbox@=\box65[m
+[32m+[m[32m\strutbox@=\box66[m
+[32m+[m[32mLaTeX Info: Redefining \big on input line 721.[m
+[32m+[m[32mLaTeX Info: Redefining \Big on input line 722.[m
+[32m+[m[32mLaTeX Info: Redefining \bigg on input line 723.[m
+[32m+[m[32mLaTeX Info: Redefining \Bigg on input line 724.[m
+[32m+[m[32m\big@size=\dimen258[m
+[32m+[m[32mLaTeX Font Info:    Redeclaring font encoding OML on input line 742.[m
+[32m+[m[32mLaTeX Font Info:    Redeclaring font encoding OMS on input line 743.[m
+[32m+[m[32m\macc@depth=\count330[m
+[32m+[m[32mLaTeX Info: Redefining \bmod on input line 904.[m
+[32m+[m[32mLaTeX Info: Redefining \pmod on input line 909.[m
+[32m+[m[32mLaTeX Info: Redefining \smash on input line 939.[m
+[32m+[m[32mLaTeX Info: Redefining \relbar on input line 969.[m
+[32m+[m[32mLaTeX Info: Redefining \Relbar on input line 970.[m
+[32m+[m[32m\c@MaxMatrixCols=\count331[m
+[32m+[m[32m\dotsspace@=\muskip18[m
+[32m+[m[32m\c@parentequation=\count332[m
+[32m+[m[32m\dspbrk@lvl=\count333[m
+[32m+[m[32m\tag@help=\toks30[m
+[32m+[m[32m\row@=\count334[m
+[32m+[m[32m\column@=\count335[m
+[32m+[m[32m\maxfields@=\count336[m
+[32m+[m[32m\andhelp@=\toks31[m
+[32m+[m[32m\eqnshift@=\dimen259[m
+[32m+[m[32m\alignsep@=\dimen260[m
+[32m+[m[32m\tagshift@=\dimen261[m
+[32m+[m[32m\tagwidth@=\dimen262[m
+[32m+[m[32m\totwidth@=\dimen263[m
+[32m+[m[32m\lineht@=\dimen264[m
+[32m+[m[32m\@envbody=\toks32[m
+[32m+[m[32m\multlinegap=\skip61[m
+[32m+[m[32m\multlinetaggap=\skip62[m
+[32m+[m[32m\mathdisplay@stack=\toks33[m
+[32m+[m[32mLaTeX Info: Redefining \[ on input line 2950.[m
+[32m+[m[32mLaTeX Info: Redefining \] on input line 2951.[m
+[32m+[m[32m)[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty[m
+[32m+[m[32mPackage: amssymb 2013/01/14 v3.01 AMS font symbols[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty[m
+[32m+[m[32mPackage: amsfonts 2013/01/14 v3.01 Basic AMSFonts support[m
+[32m+[m[32m\symAMSa=\mathgroup4[m
+[32m+[m[32m\symAMSb=\mathgroup5[m
+[32m+[m[32mLaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.[m
+[32m+[m[32mLaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'[m
+[32m+[m[32m(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.[m
+[32m+[m[32m))[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty[m
+[32m+[m[32mPackage: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers[m
+[32m+[m
+[32m+[m[32m\f@nch@headwidth=\skip63[m
+[32m+[m[32m\f@nch@offset@elh=\skip64[m
+[32m+[m[32m\f@nch@offset@erh=\skip65[m
+[32m+[m[32m\f@nch@offset@olh=\skip66[m
+[32m+[m[32m\f@nch@offset@orh=\skip67[m
+[32m+[m[32m\f@nch@offset@elf=\skip68[m
+[32m+[m[32m\f@nch@offset@erf=\skip69[m
+[32m+[m[32m\f@nch@offset@olf=\skip70[m
+[32m+[m[32m\f@nch@offset@orf=\skip71[m
+[32m+[m[32m\f@nch@height=\skip72[m
+[32m+[m[32m\f@nch@footalignment=\skip73[m
+[32m+[m[32m\f@nch@widthL=\skip74[m
+[32m+[m[32m\f@nch@widthC=\skip75[m
+[32m+[m[32m\f@nch@widthR=\skip76[m
+[32m+[m[32m\@temptokenb=\toks34[m
+[32m+[m[32m)[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty[m
+[32m+[m[32mPackage: titlesec 2025/01/04 v2.17 Sectioning titles[m
+[32m+[m[32m\ttl@box=\box67[m
+[32m+[m[32m\beforetitleunit=\skip77[m
+[32m+[m[32m\aftertitleunit=\skip78[m
+[32m+[m[32m\ttl@plus=\dimen265[m
+[32m+[m[32m\ttl@minus=\dimen266[m
+[32m+[m[32m\ttl@toksa=\toks35[m
+[32m+[m[32m\titlewidth=\dimen267[m
+[32m+[m[32m\titlewidthlast=\dimen268[m
+[32m+[m[32m\titlewidthfirst=\dimen269[m
+[32m+[m[32m)[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty[m
+[32m+[m[32mLaTeX Info: Redefining \cite on input line 302.[m
+[32m+[m[32mLaTeX Info: Redefining \nocite on input line 332.[m
+[32m+[m[32mPackage: cite 2015/02/27  v 5.5[m
+[32m+[m[32m)[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty[m
+[32m+[m[32mPackage: subcaption 2023/07/28 v1.6b Sub-captions (AR)[m
+[32m+[m[32mPackage caption Info: New subtype `subfigure' on input line 238.[m
+[32m+[m[32m\c@subfigure=\count337[m
+[32m+[m[32mPackage caption Info: New subtype `subtable' on input line 238.[m
+[32m+[m[32m\c@subtable=\count338[m
+[32m+[m[32m)[m
+[32m+[m[32mPackage hyperref Info: Option `colorlinks' set `true' on input line 47.[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty[m
+[32m+[m[32mFile: lstlang1.sty 2025/11/14 1.11b listings language file[m
+[32m+[m[32m)[m
+[32m+[m[32mLaTeX Font Info:    Trying to load font information for T1+lmr on input line 99[m
+[32m+[m[32m.[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/lm/t1lmr.fd[m
+[32m+[m[32mFile: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern[m
+[32m+[m[32m)[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def[m
+[32m+[m[32mFile: l3backend-pdftex.def 2026-02-18 L3 backend support: PDF output (pdfTeX)[m
+[32m+[m[32m\l__color_backend_stack_int=\count339[m
+[32m+[m[32m)[m
+[32m+[m[32m(./main.aux)[m
+[32m+[m[32m\openout1 = `main.aux'.[m
+[32m+[m
+[32m+[m[32mLaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 99.[m
+[32m+[m[32mLaTeX Font Info:    ... okay on input line 99.[m
+[32m+[m[32mLaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 99.[m
+[32m+[m[32mLaTeX Font Info:    ... okay on input line 99.[m
+[32m+[m[32mLaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 99.[m
+[32m+[m[32mLaTeX Font Info:    ... okay on input line 99.[m
+[32m+[m[32mLaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 99.[m
+[32m+[m[32mLaTeX Font Info:    ... okay on input line 99.[m
+[32m+[m[32mLaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 99.[m
+[32m+[m[32mLaTeX Font Info:    ... okay on input line 99.[m
+[32m+[m[32mLaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 99.[m
+[32m+[m[32mLaTeX Font Info:    ... okay on input line 99.[m
+[32m+[m[32mLaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 99.[m
+[32m+[m[32mLaTeX Font Info:    ... okay on input line 99.[m
+[32m+[m[32mLaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 99.[m
+[32m+[m[32mLaTeX Font Info:    ... okay on input line 99.[m
+[32m+[m[32mLaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 99.[m
+[32m+[m[32mLaTeX Font Info:    ... okay on input line 99.[m
+[32m+[m
+[32m+[m[32m*geometry* driver: auto-detecting[m
+[32m+[m[32m*geometry* detected driver: pdftex[m
+[32m+[m[32m*geometry* verbose mode - [ preamble ] result:[m
+[32m+[m[32m* driver: pdftex[m
+[32m+[m[32m* paper: a4paper[m
+[32m+[m[32m* layout: <same size as paper>[m
+[32m+[m[32m* layoutoffset:(h,v)=(0.0pt,0.0pt)[m
+[32m+[m[32m* modes:[m[41m [m
+[32m+[m[32m* h-part:(L,W,R)=(99.58464pt, 462.3573pt, 35.56593pt)[m
+[32m+[m[32m* v-part:(T,H,B)=(71.13188pt, 738.34903pt, 35.56593pt)[m
+[32m+[m[32m* \paperwidth=597.50787pt[m
+[32m+[m[32m* \paperheight=845.04684pt[m
+[32m+[m[32m* \textwidth=462.3573pt[m
+[32m+[m[32m* \textheight=738.34903pt[m
+[32m+[m[32m* \oddsidemargin=27.31465pt[m
+[32m+[m[32m* \evensidemargin=27.31465pt[m
+[32m+[m[32m* \topmargin=-40.6381pt[m
+[32m+[m[32m* \headheight=14.5pt[m
+[32m+[m[32m* \headsep=25.0pt[m
+[32m+[m[32m* \topskip=12.0pt[m
+[32m+[m[32m* \footskip=30.0pt[m
+[32m+[m[32m* \marginparwidth=35.0pt[m
+[32m+[m[32m* \marginparsep=10.0pt[m
+[32m+[m[32m* \columnsep=10.0pt[m
+[32m+[m[32m* \skip\footins=10.8pt plus 4.0pt minus 2.0pt[m
+[32m+[m[32m* \hoffset=0.0pt[m
+[32m+[m[32m* \voffset=0.0pt[m
+[32m+[m[32m* \mag=1000[m
+[32m+[m[32m* \@twocolumnfalse[m
+[32m+[m[32m* \@twosidefalse[m
+[32m+[m[32m* \@mparswitchfalse[m
+[32m+[m[32m* \@reversemarginfalse[m
+[32m+[m[32m* (1in=72.27pt=25.4mm, 1cm=28.453pt)[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii[m
+[32m+[m[32m[Loading MPS to PDF converter (version 2006.09.02).][m
+[32m+[m[32m\scratchcounter=\count340[m
+[32m+[m[32m\scratchdimen=\dimen270[m
+[32m+[m[32m\scratchbox=\box68[m
+[32m+[m[32m\nofMPsegments=\count341[m
+[32m+[m[32m\nofMParguments=\count342[m
+[32m+[m[32m\everyMPshowfont=\toks36[m
+[32m+[m[32m\MPscratchCnt=\count343[m
+[32m+[m[32m\MPscratchDim=\dimen271[m
+[32m+[m[32m\MPnumerator=\count344[m
+[32m+[m[32m\makeMPintoPDFobject=\count345[m
+[32m+[m[32m\everyMPtoPDFconversion=\toks37[m
+[32m+[m[32m) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty[m
+[32m+[m[32mPackage: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf[m
+[32m+[m[32mPackage epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4[m
+[32m+[m[32m85.[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg[m
+[32m+[m[32mFile: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv[m
+[32m+[m[32me[m
+[32m+[m[32m))[m
+[32m+[m[32mPackage caption Info: Begin \AtBeginDocument code.[m
+[32m+[m[32mPackage caption Info: hyperref package is loaded.[m
+[32m+[m[32mPackage caption Info: listings package is loaded.[m
+[32m+[m[32mPackage caption Info: End \AtBeginDocument code.[m
+[32m+[m[32mPackage hyperref Info: Link coloring ON on input line 99.[m
+[32m+[m
+[32m+[m[32m(./main.out) (./main.out)[m
+[32m+[m[32m\@outlinefile=\write3[m
+[32m+[m[32m\openout3 = `main.out'.[m
+[32m+[m
+[32m+[m[32m\c@lstlisting=\count346[m
+[32m+[m[32m<gndec_logo.png, id=253, 803.0pt x 602.25pt>[m
+[32m+[m[32mFile: gndec_logo.png Graphic file (type png)[m
+[32m+[m[32m<use gndec_logo.png>[m
+[32m+[m[32mPackage pdftex.def Info: gndec_logo.png  used on input line 156.[m
+[32m+[m[32m(pdftex.def)             Requested size: 85.35826pt x 64.01463pt.[m
+[32m+[m[32m [1[m
+[32m+[m
+[32m+[m[32m{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-di[m
+[32m+[m[32mst/fonts/enc/dvips/lm/lm-ec.enc} <./gndec_logo.png>] [2][m
+[32m+[m[32mLaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1[m
+[32m+[m[32m80.[m
+[32m+[m[32m (/usr/share/texlive/texmf-dist/tex/latex/lm/t1lmtt.fd[m
+[32m+[m[32mFile: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern[m
+[32m+[m[32m)[m
+[32m+[m[32mpdfTeX warning (ext4): destination with the same identifier (name{page.1}) has[m[41m [m
+[32m+[m[32mbeen already used, duplicate ignored[m
+[32m+[m[32m<to be read again>[m[41m [m
+[32m+[m[32m                   \relax[m[41m [m
+[32m+[m[32ml.187 \chapter[m
+[32m+[m[32m              *{Acknowledgement} [1[m
+[32m+[m
+[32m+[m[32m][m
+[32m+[m[32mpdfTeX warning (ext4): destination with the same identifier (name{page.2}) has[m[41m [m
+[32m+[m[32mbeen already used, duplicate ignored[m
+[32m+[m[32m<to be read again>[m[41m [m
+[32m+[m[32m                   \relax[m[41m [m
+[32m+[m[32ml.199 \listoffigures[m
+[32m+[m[32m                     [2[m
+[32m+[m
+[32m+[m[32m] (./main.lof[m
+[32m+[m[32mLaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3[m
+[32m+[m[32m.[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/lm/ot1lmr.fd[m
+[32m+[m[32mFile: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern[m
+[32m+[m[32m)[m
+[32m+[m[32mLaTeX Font Info:    Trying to load font information for OML+lmm on input line 3[m
+[32m+[m[32m.[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/lm/omllmm.fd[m
+[32m+[m[32mFile: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern[m
+[32m+[m[32m)[m
+[32m+[m[32mLaTeX Font Info:    Trying to load font information for OMS+lmsy on input line[m[41m [m
+[32m+[m[32m3.[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/lm/omslmsy.fd[m
+[32m+[m[32mFile: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern[m
+[32m+[m[32m)[m
+[32m+[m[32mLaTeX Font Info:    Trying to load font information for OMX+lmex on input line[m[41m [m
+[32m+[m[32m3.[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/lm/omxlmex.fd[m
+[32m+[m[32mFile: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern[m
+[32m+[m[32m)[m
+[32m+[m[32mLaTeX Font Info:    External font `lmex10' loaded for size[m
+[32m+[m[32m(Font)              <12> on input line 3.[m
+[32m+[m[32mLaTeX Font Info:    External font `lmex10' loaded for size[m
+[32m+[m[32m(Font)              <8> on input line 3.[m
+[32m+[m[32mLaTeX Font Info:    External font `lmex10' loaded for size[m
+[32m+[m[32m(Font)              <6> on input line 3.[m
+[32m+[m[32mLaTeX Font Info:    Trying to load font information for U+msa on input line 3.[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd[m
+[32m+[m[32mFile: umsa.fd 2013/01/14 v3.01 AMS symbols A[m
+[32m+[m[32m)[m
+[32m+[m[32mLaTeX Font Info:    Trying to load font information for U+msb on input line 3.[m
+[32m+[m
+[32m+[m[32m(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd[m
+[32m+[m[32mFile: umsb.fd 2013/01/14 v3.01 AMS symbols B[m
+[32m+[m[32m))[m
+[32m+[m[32m\tf@lof=\write4[m
+[32m+[m[32m\openout4 = `main.lof'.[m
+[32m+[m
+[32m+[m[32m [3[m
+[32m+[m
+[32m+[m[32m] (./main.lot)[m
+[32m+[m[32m\tf@lot=\write5[m
+[32m+[m[32m\openout5 = `main.lot'.[m
+[32m+[m
+[32m+[m
+[32m+[m[32m[4[m
+[32m+[m
+[32m+[m[32m] (./main.toc [5[m
+[32m+[m
+[32m+[m[32m] [6])[m
+[32m+[m[32m\tf@toc=\write6[m
+[32m+[m[32m\openout6 = `main.toc'.[m
+[32m+[m
+[32m+[m[32m [7][m
+[32m+[m[32mChapter 1.[m
+[32m+[m[32m[8[m
+[32m+[m
+[32m+[m
+[32m+[m[32m][m
+[32m+[m[32mLaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2[m
+[32m+[m[32m36.[m
+[32m+[m[32m (/usr/share/texlive/texmf-dist/tex/latex/lm/ts1lmr.fd[m
+[32m+[m[32mFile: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern[m
+[32m+[m[32m) [9{/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}][m
+[32m+[m[32mOverfull \hbox (10.20918pt too wide) in paragraph at lines 274--275[m
+[32m+[m[32m[]\T1/lmr/m/n/12 Enterprise API gate-ways pro-[m
+[32m+[m[32m [][m
+[32m+[m
+[32m+[m[32m[10][m
+[32m+[m[32mOverfull \hbox (22.2631pt too wide) in paragraph at lines 286--287[m
+[32m+[m[32m[]\T1/lmr/m/n/12 Implement a provider adapter pat-tern sup-port-ing OpenAI-comp[m
+[32m+[m[32matible end-points (NVIDIA[m
+[32m+[m[32m [][m
+[32m+[m
+[32m+[m[32m<figures/system_architecture.png, id=418, 803.0pt x 602.25pt>[m
+[32m+[m[32mFile: figures/system_architecture.png Graphic file (type png)[m
+[32m+[m[32m<use figures/system_architecture.png>[m
+[32m+[m[32mPackage pdftex.def Info: figures/system_architecture.png  used on input line 30[m
+[32m+[m[32m0.[m
+[32m+[m[32m(pdftex.def)             Requested size: 416.11874pt x 312.09662pt.[m
+[32m+[m[32m[11][m
+[32m+[m[32mOverfull \hbox (37.67229pt too wide) in paragraph at lines 309--310[m
+[32m+[m[32m[]\T1/lmr/bx/n/12 API Gate-way (FastAPI Back-end): \T1/lmr/m/n/12 The core requ[m
+[32m+[m[32mest-processing pipeline---authentication[m
+[32m+[m[32m [][m
+[32m+[m
+[32m+[m[32m[12{/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc} <./figures/[m
+[32m+[m[32msystem_architecture.png>][m
+[32m+[m[32mOverfull \hbox (0.93806pt too wide) in paragraph at lines 321--322[m
+[32m+[m[32m[]\T1/lmr/bx/n/12 Multi-Provider Adapter Ar-chi-tec-ture: \T1/lmr/m/n/12 The sy[m
+[32m+[m[32ms-tem sup-ports OpenAI-compatible[m
+[32m+[m[32m [][m
+[32m+[m
+[32m+[m
+[32m+[m[32mOverfull \hbox (2.70866pt too wide) in paragraph at lines 321--322[m
+[32m+[m[32m\T1/lmr/m/n/12 tern. Adding a new provider re-quires im-ple-ment-ing only the \[m
+[32m+[m[32mT1/lmtt/m/n/12 BaseProvider \T1/lmr/m/n/12 interface---[m
+[32m+[m[32m [][m
+[32m+[m
+[32m+[m
+[32m+[m[32mOverfull \hbox (17.99461pt too wide) in paragraph at lines 321--322[m
+[32m+[m[32m\T1/lmr/m/n/12 no core rout-ing logic changes. The reg-istry pat-tern (\T1/lmtt[m
+[32m+[m[32m/m/n/12 register_provider\T1/lmr/m/n/12 /\T1/lmtt/m/n/12 get_provider\T1/lmr/m/[m
+[32m+[m[32mn/12 )[m
+[32m+[m[32m [][m
+[32m+[m
+[32m+[m[32m[13] [14][m
+[32m+[m[32mChapter 2.[m
+[32m+[m
+[32m+[m[32mOverfull \hbox (7.17041pt too wide) in paragraph at lines 340--341[m
+[32m+[m[32m\T1/lmr/m/n/12 ten-sive doc-u-men-ta-tion. The model files (\T1/lmtt/m/n/12 rou[m
+[32m+[m[32mter_classifier.pkl\T1/lmr/m/n/12 , \T1/lmtt/m/n/12 router_regressor.pkl\T1/lmr/[m
+[32m+[m[32mm/n/12 )[m
+[32m+[m[32m [][m
+[32m+[m
+[32m+[m[32m[15[m
+[32m+[m
+[32m+[m[32m] [16] [17] [18][m
+[32m+[m[32mOverfull \hbox (5.77815pt too wide) in paragraph at lines 425--426[m
+[32m+[m[32m[]\T1/lmr/m/n/12 CORS shall be re-stricted to con-fig-ured ori-gins (de-fault:[m[41m [m
+[32m+[m[32mlo-cal-host:5173, lo-cal-host:3000).[m[41m [m
+[32m+[m[32m [][m
+[32m+[m
+[32m+[m
+[32m+[m[32mOverfull \hbox (5.0841pt too wide) in paragraph at lines 447--448[m
+[32m+[m[32m[]\T1/lmr/bx/n/12 Iteration 4 - ML Rout-ing: \T1/lmr/m/n/12 Fea-ture ex-trac-ti[m
+[32m+[m[32mon pipeline, XG-Boost clas-si-fier/regressor[m
+[32m+[m[32m [][m
+[32m+[m
+[32m+[m[32m[19][m
+[32m+[m[32mOverfull \hbox (5.67232pt too wide) in paragraph at lines 449--450[m
+[32m+[m[32m[]\T1/lmr/bx/n/12 Iteration 6 - Pro-duc-tion Hard-en-ing: \T1/lmr/m/n/12 Rate l[m
+[32m+[m[32mim-it-ing, Sen-try er-ror track-ing, PostHog[m
+[32m+[m[32m [][m
+[32m+[m
+[32m+[m[32m[20][m
+[32m+[m[32mChapter 3.[m
+[32m+[m
+[32m+[m[32mOverfull \hbox (32.33812pt too wide) in paragraph at lines 466--467[m
+[32m+[m[32m[]\T1/lmr/bx/n/12 Open/Closed Prin-ci-ple: \T1/lmr/m/n/12 New providers can be[m[41m [m
+[32m+[m[32madded by im-ple-ment-ing the \T1/lmtt/m/n/12 BaseProvider[m
+[32m+[m[32m [][m
+[32m+[m
+[32m+[m[32m<figures/deployment_diagram.png, id=493, 803.0pt x 602.25pt>[m
+[32m+[m[32mFile: figures/deployment_diagram.png Graphic file (type png)[m
+[32m+[m[32m<use figures/deployment_diagram.png>[m
+[32m+[m[32mPackage pdftex.def Info: figures/deployment_diagram.png  used on input line 475[m
+[32m+[m[32m.[m
+[32m+[m[32m(pdftex.def)             Requested size: 462.3573pt x 346.7781pt.[m
+[32m+[m[32m[21[m
+[32m+[m
+[32m+[m[32m][m
+[32m+[m[32mOverfull \hbox (2.84615pt too wide) in paragraph at lines 483--484[m
+[32m+[m[32m[]\T1/lmr/bx/n/12 Vercel (Fron-tend): \T1/lmr/m/n/12 Hosts the Re-act SPA. API[m[41m [m
+[32m+[m[32mre-quests to \T1/lmtt/m/n/12 /v1/*\T1/lmr/m/n/12 , \T1/lmtt/m/n/12 /auth/*\T1/l[m
+[32m+[m[32mmr/m/n/12 , \T1/lmtt/m/n/12 /keys/*\T1/lmr/m/n/12 ,[m
+[32m+[m[32m [][m
+[32m+[m
+[32m+[m[32m<figures/routing_pipeline.png, id=501, 803.0pt x 602.25pt>[m
+[32m+[m[32mFile: figures/routing_pipeline.png Graphic file (type png)[m
+[32m+[m[32m<use figures/routing_pipeline.png>[m
+[32m+[m[32mPackage pdftex.def Info: figures/routing_pipeline.png  used on input line 494.[m
+[32m+[m[32m(pdftex.def)             Requested size: 462.3573pt x 346.7781pt.[m
+[32m+[m[32m[22 <./figures/deployment_diagram.png>][m
+[32m+[m[32mLaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available[m
+[32m+[m[32m(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 502.[m
+[32m+[m
+[32m+[m[32mOverfull \hbox (28.74556pt too wide) in paragraph at lines 505--506[m
+[32m+[m[32m[]\T1/lmr/bx/n/12 Semantic flags (bi-nary): \T1/lmtt/m/n/12 is_coding\T1/lmr/m/[m
+[32m+[m[32mn/12 , \T1/lmtt/m/n/12 is_debugging\T1/lmr/m/n/12 , \T1/lmtt/m/n/12 is_reasonin[m
+[32m+[m[32mg\T1/lmr/m/n/12 , \T1/lmtt/m/n/12 is_creative\T1/lmr/m/n/12 ,[m
+[32m+[m[32m [][m
+[32m+[m
+[32m+[m[32m[23 <./figures/routing_pipeline.png>][m
+[32m+[m[32m<figures/provider_adapter_uml.png, id=516, 803.0pt x 602.25pt>[m
+[32m+[m[32mFile: figures/provider_adapter_uml.png Graphic file (type png)[m
+[32m+[m[32m<use figures/provider_adapter_uml.png>[m
+[32m+[m[32mPackage pdftex.def Info: figures/provider_adapter_uml.png  used on input line 5[m
+[32m+[m[32m33.[m
+[32m+[m[32m(pdftex.def)             Requested size: 369.88724pt x 277.42432pt.[m
+[32m+[m[32m [24 <./figures/provider_adapter_uml.png>][m
+[32m+[m[32mOverfull \hbox (56.00613pt too wide) in paragraph at lines 541--542[m
+[32m+[m[32m[]\T1/lmr/bx/n/12 Abstract Base (core/providers/base.py): \T1/lmr/m/n/12 De-cla[m
+[32m+[m[32mres two ab-stract meth-ods: \T1/lmtt/m/n/12 chat(messages,[m
+[32m+[m[32m [][m
+[32m+[m
+[32m+[m
+[32m+[m[32mOverfull \hbox (26.58575pt too wide) in paragraph at lines 541--542[m
+[32m+[m[32m\T1/lmtt/m/n/12 model, api_key, **kwargs) -> dict \T1/lmr/m/n/12 for syn-chrono[m
+[32m+[m[32mus re-sponses and \T1/lmtt/m/n/12 chat_stream(...)[m
+[32m+[m[32m [][m
+[32m+[m
+[32m+[m
+[32m+[m[32mOverfull \hbox (9.8044pt too wide) in paragraph at lines 548--549[m
+[32m+[m[32m[]\T1/lmr/bx/n/12 Registry (core/providers/registry.py): \T1/lmr/m/n/12 A modul[m
+[32m+[m[32me-level dic-tio-nary (\T1/lmtt/m/n/12 PROVIDER_MAP\T1/lmr/m/n/12 )[m
+[32m+[m[32m [][m
+[32m+[m
+[32m+[m
+[32m+[m[32mOverfull \hbox (53.3622pt too wide) in paragraph at lines 549--550[m
+[32m+[m[32m\T1/lmr/m/n/12 se-lect the ap-pro-pri-ate at-tribute (e.g., \T1/lmtt/m/n/12 vir[m
+[32m+[m[32mtual_key.weak_model\T1/lmr/m/n/12 , \T1/lmtt/m/n/12 virtual_key.weak_api_key\T1[m
+[32m+[m[32m/lmr/m/n/12 ),[m
+[32m+[m[32m [][m
+[32m+[m
+[32m+[m[32mPackage hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i[m
+[32m+[m[32mnput line 556.[m
+[32m+[m[32m[25][m
+[32m+[m[32m<figures/er_diagram.png, id=542, 803.0pt x 602.25pt>[m
+[32m+[m[32mFile: figures/er_diagram.png Graphic file (type png)[m
+[32m+[m[32m<use figures/er_diagram.png>[m
+[32m+[m[32mPackage pdftex.def Info: figures/er_diagram.png  used on input line 587.[m
+[32m+[m[32m(pdftex.def)             Requested size: 416.11874pt x 312.09662pt.[m
+[32m+[m[32m [26] [27 <./figures/er_diagram.png>] [28][m
+[32m+[m[32mUnderfull \hbox (badness 10000) in paragraph at lines 696--696[m
+[32m+[m[32m[]|\T1/lmr/m/n/12 Chat com-ple-[m
+[32m+[m[32m [][m
+[32m+[m
+[32m+[m
+[32m+[m[32mUnderfull \hbox (badness 10000) in paragraph at lines 696--696[m
+[32m+[m[32m[]|\T1/lmr/m/n/12 Virtual key[m
+[32m+[m[32m [][m
+[32m+[m
+[32m+[m
+[32m+[m[32mUnderfull \hbox (badness 1509) in paragraph at lines 696--696[m
+[32m+[m[32m[]|\T1/lmr/m/n/12 Gemini ver-i-fi-ca-[m
+[32m+[m[32m [][m
+[32m+[m
+[32m+[m
+[32m+[m[32mUnderfull \hbox (badness 10000) in paragraph at lines 696--696[m
+[32m+[m[32m[]|\T1/lmr/m/n/12 User man-age-[m
+[32m+[m[32m [][m
+[32m+[m
+[32m+[m
+[32m+[m[32mUnderfull \hbox (badness 1748) in paragraph at lines 696--696[m
+[32m+[m[32m[]|\T1/lmr/m/n/12 Routing eval-u-a-[m
+[32m+[m[32m [][m
+[32m+[m
+[32m+[m[32m[29][m
+[32m+[m[32mOverfull \hbox (38.28954pt too wide) in paragraph at lines 704--705[m
+[32m+[m[32m[]\T1/lmr/bx/n/12 JWT To-ken Auth (Web UI): \T1/lmr/m/n/12 Used for all fronten[m
+[32m+[m[32md-facing routes (\T1/lmtt/m/n/12 /keys/*\T1/lmr/m/n/12 , \T1/lmtt/m/n/12 /analy[m
+[32m+[m[32mtics/*\T1/lmr/m/n/12 ,[m
+[32m+[m[32m [][m
+[32m+[m
+[32m+[m[32m[30][m
+[32m+[m[32m<figures/auth_flow.png, id=582, 803.0pt x 602.25pt>[m
+[32m+[m[32mFile: figures/auth_flow.png Graphic file (type png)[m
+[32m+[m[32m<use figures/auth_flow.png>[m
+[32m+[m[32mPackage pdftex.def Info: figures/auth_flow.png  used on input line 710.[m
+[32m+[m[32m(pdftex.def)             Requested size: 393.00652pt x 294.76506pt.[m
+[32m+[m[32m [31 <./figures/auth_flow.png>] [32][m
+[32m+[m[32mChapter 4.[m
+[32m+[m
+[32m+[m[32mUnderfull \hbox (badness 10000) in paragraph at lines 795--795[m
+[32m+[m[32m[]|\T1/lmr/m/n/12 High-performance async REST[m
+[32m+[m[32m [][m
+[32m+[m
+[32m+[m[32m[33[m
+[32m+[m
+[32m+[m[32m][m
+[32m+[m[32mOverfull \hbox (132.69374pt too wide) in paragraph at lines 813--814[m
+[32m+[m[32m[]\T1/lmr/bx/n/12 Readability Scor-ing: \T1/lmr/m/n/12 Flesch-Kincaid Grade Lev[m
+[32m+[m[32mel is com-puted via \T1/lmtt/m/n/12 textstat.flesch_kincaid_grade(text)\T1/lmr/[m
+[32m+[m[32mm/n/12 .[m[41m [m
+[32m+[m[32m [][m
+[32m+[m
+[32m+[m
+[32m+[m[32mOverfull \hbox (2.97826pt too wide) in paragraph at lines 816--817[m
+[32m+[m[32m[]\T1/lmtt/m/n/12 is_coding\T1/lmr/m/n/12 : matches \T1/lmtt/m/n/12 \b(code|imp[m
+[32m+[m[32mlement|function|class|algorithm|...)\b[m[41m [m
+[32m+[m[32m [][m
+[32m+[m
+[32m+[m
+[32m+[m[32mOverfull \hbox (21.50327pt too wide) in paragraph at lines 817--818[m
+[32m+[m[32m[]\T1/lmtt/m/n/12 is_debugging\T1/lmr/m/n/12 : matches \T1/lmtt/m/n/12 \b(debug[m
+[32m+[m[32m|error|traceback|exception|fix|bug|...)\b[m[41m [m
+[32m+[m[32m [][m
+[32m+[m
+[32m+[m
+[32m+[m[32mOverfull \hbox (2.97826pt too wide) in paragraph at lines 818--819[m
+[32m+[m[32m[]\T1/lmtt/m/n/12 is_reasoning\T1/lmr/m/n/12 : matches \T1/lmtt/m/n/12 \b(expla[m
+[32m+[m[32min|why|how does|analyze|compare|...)\b[m[41m [m
+[32m+[m[32m [][m
+[32m+[m
+[32m+[m
+[32m+[m[32mOverfull \hbox (27.67827pt too wide) in paragraph at lines 820--821[m
+[32m+[m[32m[]\T1/lmtt/m/n/12 is_multistep\T1/lmr/m/n/12 : matches \T1/lmtt/m/n/12 \b(desig[m
+[32m+[m[32mn|architecture|plan|scalable|system|...)\b[m[41m [m
+[32m+[m[32m [][m
+[32m+[m
+[32m+[m
+[32m+[m[32mOverfull \hbox (9.15326pt too wide) in paragraph at lines 822--823[m
+[32m+[m[32m[]\T1/lmtt/m/n/12 is_summarize\T1/lmr/m/n/12 : matches \T1/lmtt/m/n/12 \b(summa[m
+[32m+[m[32mrize|summary|tldr|brief|overview|...)\b[m[41m [m
+[32m+[m[32m [][m
+[32m+[m
+[32m+[m
+[32m+[m[32mOverfull \hbox (46.20328pt too wide) in paragraph at lines 823--824[m
+[32m+[m[32m[]\T1/lmtt/m/n/12 is_simple_qa\T1/lmr/m/n/12 : matches \T1/lmtt/m/n/12 \b(what[m[41m [m
+[32m+[m[32mis|who is|when did|where is|capital of|...)\b[m[41m [m
+[32m+[m[32m [][m
+[32m+[m
+[32m+[m
+[32m+[m[32mOverfull \hbox (136.11382pt too wide) in paragraph at lines 825--826[m
+[32m+[m[32m\T1/lmr/m/n/12 comma count, bul-let pres-ence (lines start-ing with \T1/lmtt/m/[m
+[32m+[m[32mn/12 - \T1/lmr/m/n/12 or \T1/lmtt/m/n/12 *\T1/lmr/m/n/12 ), con-straint lan-gua[m
+[32m+[m[32mge (must/require/limit/only/exactly),[m
+[32m+[m[32m [][m
+[32m+[m
+[32m+[m[32m[34] [35] [36][m
+[32m+[m[32mOverfull \hbox (1.31448pt too wide) in paragraph at lines 929--930[m
+[32m+[m[32m[]\T1/lmr/m/n/12 The \T1/lmtt/m/n/12 cost_saved_vs_always_strong \T1/lmr/m/n/12[m
+[32m+[m[32m met-ric com-pares the ac-tual cost (us-ing tier-specific[m
+[32m+[m[32m [][m
+[32m+[m
+[32m+[m[32m[37][m
+[32m+[m[32mOverfull \hbox (95.04015pt too wide) in paragraph at lines 941--942[m
+[32m+[m[32m\T1/lmtt/m/n/12 ConfirmationDialog.test.tsx\T1/lmr/m/n/12 , \T1/lmtt/m/n/12 Emp[m
+[32m+[m[32mtyState.test.tsx\T1/lmr/m/n/12 , \T1/lmtt/m/n/12 ErrorState.test.tsx\T1/lmr/m/n[m
+[32m+[m[32m/12 , \T1/lmtt/m/n/12 Skeleton.test.tsx\T1/lmr/m/n/12 ,[m
+[32m+[m[32m [][m
+[32m+[m
+[32m+[m
+[32m+[m[32mOverfull \hbox (16.37256pt too wide) in paragraph at lines 955--956[m
+[32m+[m[32m[]\T1/lmr/m/n/12 The fron-tend test con-fig-u-ra-tion is em-bed-ded in \T1/lmtt[m
+[32m+[m[32m/m/n/12 vite.config.ts\T1/lmr/m/n/12 : \T1/lmtt/m/n/12 environment: 'jsdom'[m
+[32m+[m[32m [][m
+[32m+[m
+[32m+[m[32m[38] [39] [40][m
+[32m+[m[32mChapter 5.[m
+[32m+[m[32m[41[m
+[32m+[m
+[32m+[m[32m][m
+[32m+[m[32m<figures/screenshot_dashboard.png, id=726, 803.0pt x 602.25pt>[m
+[32m+[m[32mFile: figures/screenshot_dashboard.png Graphic file (type png)[m
+[32m+[m[32m<use figures/screenshot_dashboard.png>[m
+[32m+[m[32mPackage pdftex.def Info: figures/screenshot_dashboard.png  used on input line 1[m
+[32m+[m[32m051.[m
+[32m+[m[32m(pdftex.def)             Requested size: 369.88724pt x 277.42432pt.[m
+[32m+[m[32m<figures/screenshot_chat.png, id=727, 803.0pt x 602.25pt>[m
+[32m+[m[32mFile: figures/screenshot_chat.png Graphic file (type png)[m
+[32m+[m[32m<use figures/screenshot_chat.png>[m
+[32m+[m[32mPackage pdftex.def Info: figures/screenshot_chat.png  used on input line 1058.[m
+[32m+[m[32m(pdftex.def)             Requested size: 369.88724pt x 277.42432pt.[m
+[32m+[m[32m [42 <./figures/screenshot_dashboard.png>][m
+[32m+[m[32m<figures/screenshot_keys.png, id=732, 803.0pt x 602.25pt>[m
+[32m+[m[32mFile: figures/screenshot_keys.png Graphic file (type png)[m
+[32m+[m[32m<use figures/screenshot_keys.png>[m
+[32m+[m[32mPackage pdftex.def Info: figures/screenshot_keys.png  used on input line 1065.[m
+[32m+[m[32m(pdftex.def)             Requested size: 369.88724pt x 277.42432pt.[m
+[32m+[m[32m<figures/screenshot_analytics.png, id=733, 803.0pt x 602.25pt>[m
+[32m+[m[32mFile: figures/screenshot_analytics.png Graphic file (type png)[m
+[32m+[m[32m<use figures/screenshot_analytics.png>[m
+[32m+[m[32mPackage pdftex.def Info: figures/screenshot_analytics.png  used on input line 1[m
+[32m+[m[32m072.[m
+[32m+[m[32m(pdftex.def)             Requested size: 369.88724pt x 277.42432pt.[m
+[32m+[m[32m [43 <./figures/screenshot_chat.png> <./figures/screenshot_keys.png>][m
+[32m+[m[32m<figures/screenshot_analytics2.png, id=738, 803.0pt x 602.25pt>[m
+[32m+[m[32mFile: figures/screenshot_analytics2.png Graphic file (type png)[m
+[32m+[m[32m<use figures/screenshot_analytics2.png>[m
+[32m+[m[32mPackage pdftex.def Info: figures/screenshot_analytics2.png  used on input line[m[41m [m
+[32m+[m[32m1079.[m
+[32m+[m[32m(pdftex.def)

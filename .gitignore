@@ -3,3 +3,11 @@ node_modules/
 outputs/
 constraints/
 .sisyphus/
+graphify-out/cache/
+*.log
+*.aux
+*.pdf
+*.toc
+*.lof
+*.lot
+*.out
